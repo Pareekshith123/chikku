@@ -1,15 +1,16 @@
 /* Default styles for larger screens */
 .flex-container {
   display: flex;
-  height: 80vh;
+  width: full;
+  height: 85vh;
 }
 
 .sidebar {
-
+/* margin-top: 16px; */
   max-width: 15%;
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
  
  
@@ -22,14 +23,14 @@
   padding: 10px;
   background-color: #f8f9fa; 
 }
-.container {
-  flex: 1;
-
-
- 
-  width: full;
-  margin-left: 5%;
+.midatom {
+  flex: 2;
+  padding: 1%;
+  width: 100%;
+  margin-left: .01%;
 }
+
+
 
 .link {
   padding: 10px;
@@ -81,11 +82,13 @@
 @media (max-width: 720px) {
   .flex-container {
     flex-direction: row;
+    height: 90vh;
   }
 
   .sidebar {
+   
     max-width: 100%; /* Full width on mobile */
-    margin-bottom: 10px; /* Add some margin for better spacing */
+    /* Add some margin for better spacing */
   }
   .navbar {
     display:inline-flex;
@@ -93,13 +96,13 @@
     padding: 10px; /* Add padding for better spacing */
     align-items: center; /* Center items vertically */
   }
-  .container {
-    .container {
-      flex: 2;
-      padding: 8px;
-      max-width: 100%; 
-    } 
+  .midatom {
+    flex: 1;
+    padding-right: 44px;
+    padding-left: 44px;
+    max-width: 100%;
   }
+  
 
   .link {
     padding: 8px;
@@ -124,6 +127,20 @@
   .scale-effect {
     /* transform: scale(0.9);
     transition: transform 0.3s ease; */
+  }
+  .dropdown{
+    position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  display: flex; /* Hide by default */
+  flex-direction: column; /* Display items vertically */
+  background-color: #fff; /* Background color */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 6px; /* Border radius */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Box shadow */
+  padding: 10px; /* Padding */
+  font-family: sans-serif; /* Specify your custom font */
   }
 
   .scale-effect:hover {

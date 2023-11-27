@@ -32,6 +32,14 @@ export class AdminComponent {
    this.profiledown=true;
    console.log(this.profiledown,"his is that");
   }
+  closeprofile(){
+    this.profiledown=false;
+  }
   
+
+toggleProfile() {
+  this.profiledown = !this.profiledown;
+}
+
   handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
 }
