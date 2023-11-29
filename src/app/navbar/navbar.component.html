@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid ml-2">
+        <div class="top">
+            <a class="navbar-brand" href="#">
+                <img src="assets/Logo-Final-Chikku-01.png" alt="Logo" height="30">
+            </a>
+
+            <button class="navbar-toggler" type="button" (click)="toggleDropdown()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Web View -->
+        <div class="navbar-collapse collapse justify-content-end" (click)="Profiledown()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16" (click)="toggleProfile()">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+            <div class="drop" *ngIf="profiledown">
+                <a class="item" (click)="closeprofile()">{{ UserName }}</a>
+                <a class="item"  routerLink="/profile">Profile</a>
+                <a class="item" routerLink="/changePassword">Change Password</a>
+                <a class="item text-danger" href="#">Logout</a>
+            </div>
+        </div>
+
+
+     
+        <div class="dropdown " style="display: block;" *ngIf="isDropdownVisible">
+            <a class="dropdown-item" routerLink="/admin">{{ UserName }}</a>
+            <a class="dropdown-item" routerLink="/profile">Profile</a>
+            <a class="dropdown-item" routerLink="/changePassword">Change Password</a>
+            <a class="dropdown-item text-danger" routerLink="/">Logout</a>
+        </div>
+    </div>
+</nav>

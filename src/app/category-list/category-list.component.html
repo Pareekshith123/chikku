@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="flex">
+  <app-sidebar></app-sidebar>
+ 
+  <div class="container-fluid category">
+      <div class="row">
+        <div class="col-md-3">
+          <!-- Display Categories as List -->
+          <ul class="list-group">
+            <li *ngFor="let category of categories" class="list-group-item">
+              <img [src]="category.imageUrl" alt="{{ category.categoryName }}" class="img-fluid" style="max-width: 50px;">
+              {{ category.categoryName }}
+              <button class="btn btn-danger btn-sm float-right" (click)="deleteCategory(category.categoryId)">Delete</button>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-md-9">
+          <!-- Add Category Form -->
+          <form (ngSubmit)="addCategory()">
+            <div class="mb-3">
+              <label for="categoryName" class="form-label">Category Name</label>
+              <input type="text" id="categoryName" name="categoryName" [(ngModel)]="categoryName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="imageUrl" class="form-label">Image</label>
+              <input type="file" (change)="onFileChange($event)" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Category</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+  

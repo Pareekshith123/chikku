@@ -1,0 +1,24 @@
+.category{
+    position: absolute;
+    max-width: 70%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+.flex{
+    display: flex;
+}
+.navbill{
+    width:250px;
+}
+
+@media (max-width: 720px) {
+    .navbill {
+        visibility: hidden;
+    }
+    .category{
+        position: absolute;
+        max-width: 70%;
+        margin-left: 21%;
+        
+    }
+}

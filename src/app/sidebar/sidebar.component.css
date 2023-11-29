@@ -1,0 +1,90 @@
+
+
+  
+  .sidebar-1 {
+ width: fit-content;
+ min-height: 550px;
+ 
+   
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+   
+  }
+    
+
+  
+  
+  
+  
+  /* Media query for smaller screens (e.g., mobile) */
+  @media (max-width: 720px) {
+    .flex-container {
+      flex-direction: row;
+      height: 90vh;
+    }
+  
+    .sidebar {
+     
+      max-width: 100%; /* Full width on mobile */
+      /* Add some margin for better spacing */
+    }
+    .navbar {
+      display:inline-flex;
+      justify-content: space-between; /* Separate logo and dropdown */
+      padding: 10px; /* Add padding for better spacing */
+      align-items: center; /* Center items vertically */
+    }
+    .midatom {
+      flex: 1;
+      padding-right: 44px;
+      padding-left: 44px;
+      max-width: 100%;
+    }
+    
+  
+    .link {
+      padding: 8px;
+      margin: 4px 0;
+    }
+  
+    /* Adjust font sizes for better readability on smaller screens */
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+  
+    /* Ensure images are responsive */
+    img {
+      max-width: 30%;
+      height: auto;
+      
+    }
+   .top{
+    display:flex;
+   }
+    /* Adjust scaling effect for better interaction on touch screens */
+    .scale-effect {
+      /* transform: scale(0.9);
+      transition: transform 0.3s ease; */
+    }
+    .dropdown{
+      position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: flex; /* Hide by default */
+    flex-direction: column; /* Display items vertically */
+    background-color: #fff; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 6px; /* Border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Box shadow */
+    padding: 10px; /* Padding */
+    font-family: sans-serif; /* Specify your custom font */
+    }
+  
+    .scale-effect:hover {
+      transform: scale(1);
+    }
+  }
+  

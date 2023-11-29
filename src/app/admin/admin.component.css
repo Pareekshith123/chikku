@@ -1,8 +1,29 @@
 /* Default styles for larger screens */
 .flex-container {
   display: flex;
-  width: full;
-  height: 85vh;
+  
+
+}
+.dash {
+  display: flex;
+}
+
+.container.wide {
+  display: flexbox;
+  width: 100%;
+  max-width: 1900px; /* Set your preferred max-width */
+  margin: 0 auto; /* Center the container */
+  padding: 10px; /* Add padding as needed */
+  margin-right: 20px;
+}
+
+.box {
+  background-color: #f0f0f0; /* Background color for the boxes */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 3%;
+  padding: 20px; /* Padding for the boxes */
+  margin-bottom: 20px; /* Margin between boxes */
+ 
 }
 
 .sidebar {
@@ -24,12 +45,10 @@
   background-color: #f8f9fa; 
 }
 .midatom {
-  flex: 2;
-  padding: 1%;
-  width: 100%;
-  margin-left: .01%;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
 }
-
 
 
 .link {
@@ -70,8 +89,12 @@
   background-color: #ddd; /* Hover background color */
   color: #333; /* Hover text color */
 }
-
-
+.dash{
+  display: flex;
+}
+.navbill{
+  width:250px;
+}
 
 
 
@@ -80,6 +103,9 @@
 
 /* Media query for smaller screens (e.g., mobile) */
 @media (max-width: 720px) {
+  .container.wide {
+    
+  }
   .flex-container {
     flex-direction: row;
     height: 90vh;
@@ -102,7 +128,9 @@
     padding-left: 44px;
     max-width: 100%;
   }
-  
+  .dash{
+    display: flex;
+  }
 
   .link {
     padding: 8px;
@@ -145,5 +173,68 @@
 
   .scale-effect:hover {
     transform: scale(1);
+  }
+}
+.midatom {
+  width: 1250px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 100px;
+  margin-top:-520px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 100%;
+}
+
+.box {
+  flex: 1;
+  height: 100px;
+  margin: 0 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.box:nth-child(1) {
+  background-color: #3498db;
+}
+
+.box:nth-child(2) {
+  background-color: #e74c3c;
+}
+
+.box:nth-child(3) {
+  background-color: #2ecc71;
+}
+
+.box:nth-child(4) {
+  background-color: #f39c12;
+}
+@media (max-width: 600px) {
+  .col {
+    flex-wrap: wrap;
+    flex: 1 0 50%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove right margin on smaller screens */
   }
 }

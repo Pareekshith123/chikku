@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="contains">
+    <app-sidebar></app-sidebar>
+    <!-- category.component.html -->
+<div class="category-container">
+    <div class="category-selection">
+      <label for="categoryDropdown">Select Category:</label>
+      <select id="categoryDropdown" [(ngModel)]="selectedCategoryId" (change)="onCategoryChange()">
+        <option value="" disabled>Select a category</option>
+        <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+      </select>
+    </div>
+  
+    <div class="add-section">
+     
+  
+      <div class="add-subcategory">
+        <h2>Add Subcategory:</h2>
+        <form (ngSubmit)="onSubmit()">
+            <label for="subcategoryName">Name:</label>
+            <input type="text" id="subcategoryName" [(ngModel)]="newSubcategory.name" required>
+
+            <label for="subcategoryDescription">Description:</label>
+            <textarea id="subcategoryDescription" [(ngModel)]="newSubcategory.description" required></textarea>
+
+            <button type="submit">Add Subcategory</button>
+        </form>
+      </div>
+      <!-- admin-subcategory.component.html -->
+
+<div class="subcategories-list" *ngIf="selectedCategoryId">
+    <h2>Subcategories:</h2>
+    <ul>
+      <li *ngFor="let subcategory of subcategories" class="subcategory-item">
+        <span>{{ subcategory.name }}</span>
+        <button (click)="onDeleteSubcategory(subcategory.id)" class="delete-button">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
+    </div>
+  
+   
+  </div>
+  
+
+
+</div>
