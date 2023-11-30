@@ -15,6 +15,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FileInterceptor } from 'src/file.interceptor';
+import { EngineerComponent } from './engineer/engineer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +28,15 @@ import { FileInterceptor } from 'src/file.interceptor';
     ServiceListComponent,
     CategoryListComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    EngineerComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-   
+ 
     ReactiveFormsModule,
     AppRoutingModule
   ],

@@ -40,20 +40,23 @@ onDeleteSubcategory: any;
   }
 
   onSubmit(): void {
+    console.log(this.selectedCategoryId,this.newSubcategory.name,this.newSubcategory.description)
     if (this.selectedCategoryId && this.newSubcategory.name && this.newSubcategory.description) {
-      // Assuming addSubcategory method takes the newSubcategory object as the second parameter
-      this.adminServiceService.addSubcategory(this.selectedCategoryId, this.newSubcategory).subscribe(
-        () => {
-          // Handle success, maybe show a success message
-          console.log('Subcategory added successfully');
-          this.newSubcategory = {}; // Clear the form
-          this.onCategoryChange(); // Refresh the subcategories list
-        },
-        (error) => {
-          // Handle error, maybe show an error message
-          console.error('Error adding subcategory:', error);
-        }
-      );
+        this.adminServiceService.addSubcategory(this.selectedCategoryId, this.newSubcategory).subscribe(
+            () => {
+                console.log('Subcategory added successfully');
+                this.newSubcategory = {}; // Clear the form
+                this.onCategoryChange(); // Refresh the subcategories list
+            },
+            (error) => {
+              console.error('Error adding subcategory:', error);
+            }
+            
+        );
+    } else {
+        console.error('Please fill in all the required fields');
+        // You might want to show a user-friendly error message here
     }
-  }
+}
+
 }

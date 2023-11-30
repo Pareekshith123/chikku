@@ -1,0 +1,61 @@
+/* Add this CSS in your existing stylesheet or create a new one */
+.surface-300 {
+    background-color: #ecf0f1; /* Default background color for indicators */
+}
+
+/* Add indicator colors based on percentage */
+.bg-orange-500 {
+    background-color: #f39c12; /* Orange color for 50% */
+}
+
+.bg-cyan-500 {
+    background-color: #00bcd4; /* Cyan color for 16% */
+}
+
+.bg-pink-500 {
+    background-color: #e91e63; /* Pink color for 67% */
+}
+
+.bg-green-500 {
+    background-color: #4caf50; /* Green color for 35% */
+}
+
+.bg-purple-500 {
+    background-color: #9c27b0; /* Purple color for 75% */
+}
+
+.bg-teal-500 {
+    background-color: #009688; /* Teal color for 40% */
+}
+.card {
+    background-color: #fff; /* Set your desired background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Set your desired shadow */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .card-header {
+    background-color: #4CAF50; /* Set your desired header background color */
+    color: #fff; /* Set your desired header text color */
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .list-none li {
+    /* Your existing list item styles */
+    /* You can add more specific styles for the list items if needed */
+  }
+  
+
+  
+
+
+
+@media (max-width: 768px) {
+    .card {
+        /* Add responsive styles here */
+    }
+
+    /* Add more responsive styles as needed */
+}

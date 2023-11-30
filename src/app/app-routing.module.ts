@@ -7,6 +7,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ServiceListComponent } from './service-list/service-list.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { AdminSubcategoryComponent } from './admin-subcategory/admin-subcategory.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -19,16 +20,24 @@ const routes: Routes = [
   },
   {
     path: 'subcategory',
-    component:AdminSubcategoryComponent,
+    component: AdminSubcategoryComponent,
   },
   {
     path: 'admin',
     component: AdminComponent,
   },
-  {path:'servicelist',
-component:ServiceListComponent},
-{path:'categorylist',
-component:CategoryListComponent}
+  {
+    path: 'dash',
+    component: DashboardComponent,
+  },
+  {
+    path: 'servicelist',
+    component: ServiceListComponent
+  },
+  {
+    path: 'categorylist',
+    component: CategoryListComponent
+  }
 ];
 
 @NgModule({

@@ -26,7 +26,7 @@ export class AdminServiceService {
    }
    addSubcategory(id:any,newCategory:any){
     const headers = new HttpHeaders();
-    return this.http.post(`${this.baseUrl} /create/category/${id}`,newCategory ,{ headers });
+    return this.http.post(`${this.baseUrl}/create/category/${id}`,newCategory,{ headers });
    
    }
   deleteCategory(id: number): Observable<any> {

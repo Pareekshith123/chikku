@@ -18,14 +18,15 @@
         <h2>Add Subcategory:</h2>
         <form (ngSubmit)="onSubmit()">
             <label for="subcategoryName">Name:</label>
-            <input type="text" id="subcategoryName" [(ngModel)]="newSubcategory.name" required>
-
+            <input type="text" id="subcategoryName"  name="name"  [(ngModel)]="newSubcategory.name" name="subcategoryName" required>
+    
             <label for="subcategoryDescription">Description:</label>
-            <textarea id="subcategoryDescription" [(ngModel)]="newSubcategory.description" required></textarea>
-
+            <textarea id="subcategoryDescription" name="description" [(ngModel)]="newSubcategory.description" name="subcategoryDescription" required></textarea>
+    
             <button type="submit">Add Subcategory</button>
         </form>
-      </div>
+    </div>
+    
       <!-- admin-subcategory.component.html -->
 
 <div class="subcategories-list" *ngIf="selectedCategoryId">

@@ -1,8 +1,9 @@
 <app-navbar></app-navbar>
+
 <div class="flex">
+  
   <app-sidebar></app-sidebar>
- 
-  <div class="container-fluid category">
+  <div class=" category">
       <div class="row">
         <div class="col-md-3">
           <!-- Display Categories as List -->
@@ -15,7 +16,7 @@
           </ul>
         </div>
         
-        <div class="col-md-9">
+        <div class="col-md-9 addCategory">
           <!-- Add Category Form -->
           <form (ngSubmit)="addCategory()">
             <div class="mb-3">
