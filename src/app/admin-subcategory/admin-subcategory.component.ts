@@ -10,9 +10,9 @@ export class AdminSubcategoryComponent implements OnInit {
   categories: any[] = [];
   selectedCategoryId: number = 0;
   subcategories: any[] = [];
-
+  subcategoryData: any = {};
   newSubcategory: any = {};
-onDeleteSubcategory: any;
+ 
 
   constructor(private adminServiceService: AdminServiceService) {}
 
@@ -28,35 +28,53 @@ onDeleteSubcategory: any;
   }
 
   onCategoryChange(): void {
-    
     if (this.selectedCategoryId) {
       console.log(this.selectedCategoryId);
       this.adminServiceService.getSubcategories(this.selectedCategoryId).subscribe((data: any) => {
         this.subcategories = data.subCategories;
         console.log(data);
       });
-     
     }
   }
-
-  onSubmit(): void {
-    console.log(this.selectedCategoryId,this.newSubcategory.name,this.newSubcategory.description)
-    if (this.selectedCategoryId && this.newSubcategory.name && this.newSubcategory.description) {
-        this.adminServiceService.addSubcategory(this.selectedCategoryId, this.newSubcategory).subscribe(
-            () => {
-                console.log('Subcategory added successfully');
-                this.newSubcategory = {}; // Clear the form
-                this.onCategoryChange(); // Refresh the subcategories list
-            },
-            (error) => {
-              console.error('Error adding subcategory:', error);
-            }
-            
-        );
-    } else {
-        console.error('Please fill in all the required fields');
-        // You might want to show a user-friendly error message here
+ 
+  onDeleteSubcategory(id: any): void {
+    if (confirm('Are you sure you want to delete this subcategory?')) {
+      this.adminServiceService.deleteSubcategory(id).subscribe(
+        () => {
+          console.log('Subcategory deleted successfully');
+          this.onCategoryChange(); // Refresh the subcategories list
+        },
+        (error) => {
+          console.error('Error deleting subcategory:', error);
+        }
+      );
     }
-}
-
+  }
+  
+  onSubmit(): void {
+    // Include selectedCategoryId in the newSubcategory object
+    this.subcategoryData = {
+      categoryId: this.selectedCategoryId,
+      subCategoryName: this.newSubcategory.subCategoryName, // Corrected property name
+      description: this.newSubcategory.description
+    };
+  
+    if (this.selectedCategoryId && this.newSubcategory.subCategoryName && this.newSubcategory.description) {
+      this.adminServiceService.addSubcategory(this.selectedCategoryId, this.subcategoryData).subscribe(
+        () => {
+          console.log('Subcategory added successfully');
+          this.subcategoryData = {};
+          this.newSubcategory = {}; 
+          this.onCategoryChange(); 
+        },
+        (error) => {
+          console.error('Error adding subcategory:', error);
+        }
+      );
+    } else {
+      console.error('Please fill in all the required fields');
+      // You might want to show a user-friendly error message here
+    }
+  }
+  
 }

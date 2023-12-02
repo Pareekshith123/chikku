@@ -1,17 +1,119 @@
-
 <app-navbar></app-navbar>
 
-   <div class="dash">
-    <app-sidebar></app-sidebar>
-  
-    <div class="container wide">
-        <div class="box">Total Orders</div>
-        <div class="box">Today Orders</div>
-        <div class="box">Completed Orders</div>
-        <div class="box">Pending Orders</div>
-        
+<div class="dash">
+
+   <app-sidebar></app-sidebar>
+   <div class="board">
+      <div class="component ">
+         <div class="container max-w-80">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 h-50 ">
+                <div class="text-bg-primary p-4 component rounded-2 Larger-shadow scale-effect">
+                  Total orders
+                </div>
+              </div>
+              <div class="col-md-3 h-50 col-sm-6 h-50">
+                <div class="text-bg-secondary p-4 rounded-2 Larger shadow scale-effect">
+                  Completed today
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 h-50">
+                <div class="text-bg-success p-4 rounded-2 Larger shadow scale-effect">
+                  Pending Orders
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 h-50 ">
+               <div class="text-bg-warning rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
+                 Canceled Orders
+               </div>
+             </div>
+            </div>
+          </div>
+          
+
       </div>
-      
+      <div class="d-flex ml-auto justify-content-md-evenly">
+         <div
+            class="d-flex flex-column justify-content-center justify-content-between justify-content-md-evenly  p-2 flex-md-row">
+            <div class="notifications-container">
+               <h2>Trending Services and more</h2>
+               <ul class="services-list">
+                  <li>LapTops</li>
+                  <li>Networking</li>
+                  <li>Servers</li>
+                  <li>Printers</li>
+               </ul>
+            </div>
+            <div class="ml-auto p-3">
+               <canvas class="border p-2 w-570 w-md-35 h-70 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
+                  height="300"></canvas>
+
+            </div>
+            <div class="notifications-container ">
+               <h2>Notifiactions and Orders</h2>
+               <ul class="services-list">
+                  <li>Orders</li>
+                  <li>Ratings and Reviews</li>
+                  <li>Engineers </li>
+                  <li>Customer support</li>
+               </ul>
+            </div>
+         </div>
+
+      </div>
+
    </div>
-   
-  
+</div>
+
+<div class="d-md-flex flex-column flex-md-row justify-content-md-evenly ">
+   <div>
+      <div class="notifications-container ">
+         <div class="">
+         <h2 class="">List of Categories</h2>
+         <button class="  btn btn-primary" routerLink="/categorylist">Add category</button></div>
+         <ul class="services-list">
+            <li *ngFor="let category of categories" class="list-group-item">
+               <img [src]="category.imageUrl" alt="{{ category.categoryName }}" class="img-fluid" style="max-width: 50px;">
+               {{ category.categoryName }}
+             </li>
+         </ul>
+      </div>
+   </div>
+   <div>
+      <div class="notifications-container ">
+         <h2>List of Subcategories</h2>
+         <button class="btn btn-danger " routerLink="/subcategory"> subcategory </button>
+
+            <ul class="services-list">
+               <!-- Add Bootstrap classes to the <li> element -->
+<li *ngFor="let subcategory of subCategories" class="list-group-item subcategory-item">
+
+ 
+   <div class="flex-column">
+     <div class="col-6">
+       <span>{{ subcategory.subCategoryName }}</span>
+     </div>
+     <div class="col-6">
+ 
+       <span>{{ subcategory.description | slice:0:20 }}{{ subcategory.description.length > 20 ? '...' : '' }}</span>
+     </div>
+   </div>
+ 
+ </li>
+ 
+            </ul>
+      </div>
+   </div>
+   <div>
+      <div class="notifications-container ">
+         <h2> List of services</h2>
+         <button class="btn btn-success" routerLink="/addservices"> services</button>
+         <ul class="services-list">
+            <li *ngFor="let category of services" class="list-group-item">
+               <img [src]="category.imageUrl" alt="{{ category.imageUrl }}" class="img-fluid" style="max-width: 50px;">
+               {{ category.serviceName }}
+             </li>
+         </ul>
+      </div>
+   </div>
+</div>

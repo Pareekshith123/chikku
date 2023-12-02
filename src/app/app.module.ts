@@ -17,6 +17,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FileInterceptor } from 'src/file.interceptor';
 import { EngineerComponent } from './engineer/engineer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddservicesComponent } from './addservices/addservices.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     SidebarComponent,
     EngineerComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddservicesComponent
   ],
   imports: [
     BrowserModule,
