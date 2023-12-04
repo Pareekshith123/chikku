@@ -5,37 +5,47 @@
    <app-sidebar></app-sidebar>
    <div class="board">
       <div class="component ">
-         <div class="container max-w-80">
+         <div class="container max-w-160">
             <div class="row">
-              <div class="col-md-3 col-sm-6 h-50 ">
-                <div class="text-bg-primary p-4 component rounded-2 Larger-shadow scale-effect">
-                  Total orders
-                </div>
-              </div>
-              <div class="col-md-3 h-50 col-sm-6 h-50">
-                <div class="text-bg-secondary p-4 rounded-2 Larger shadow scale-effect">
-                  Completed today
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 h-50">
-                <div class="text-bg-success p-4 rounded-2 Larger shadow scale-effect">
-                  Pending Orders
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 h-50 ">
-               <div class="text-bg-warning rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
-                 Canceled Orders
+               <div class="col-md-4 col-sm-6 h-50 p-2 ">
+                  <div class="text-bg-primary p-4 component rounded-2 Larger-shadow scale-effect">
+                     Total orders
+                  </div>
                </div>
-             </div>
+               <div class="col-md-4 h-50 col-sm-6 h-50 p-2">
+                  <div class="text-bg-secondary p-4 rounded-2 Larger shadow scale-effect">
+                     Completed today
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 h-50 p-2">
+                  <div class="text-bg-success p-4 rounded-2 Larger shadow scale-effect">
+                     Pending Orders
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 h-50 p-2">
+                  <div class="text-bg-warning rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
+                     Canceled Orders
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 h-50 p-2">
+                  <div class="text-bg-info rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
+                     Alloted Orders
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 h-50 p-2">
+                  <div class="text-bg-danger rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
+                     Paylater Orders
+                  </div>
+               </div>
             </div>
-          </div>
-          
+         </div>
+
 
       </div>
       <div class="d-flex ml-auto justify-content-md-evenly">
          <div
             class="d-flex flex-column justify-content-center justify-content-between justify-content-md-evenly  p-2 flex-md-row">
-            <div class="notifications-container">
+            <div class="notifications-container m-3">
                <h2>Trending Services and more</h2>
                <ul class="services-list">
                   <li>LapTops</li>
@@ -49,7 +59,7 @@
                   height="300"></canvas>
 
             </div>
-            <div class="notifications-container ">
+            <div class="notifications-container m-3 ">
                <h2>Notifiactions and Orders</h2>
                <ul class="services-list">
                   <li>Orders</li>
@@ -65,54 +75,64 @@
    </div>
 </div>
 
-<div class="d-md-flex flex-column flex-md-row justify-content-md-evenly ">
-   <div>
-      <div class="notifications-container ">
-         <div class="">
+<div class="d-md-flex flex-column flex-md-row justify-content-md-evenly -mt-40 ">
+   <div class="border">
+      <div class="border rounded-2 text-bg-warning shadow">
          <h2 class="">List of Categories</h2>
-         <button class="  btn btn-primary" routerLink="/categorylist">Add category</button></div>
+         <button class="  btn btn-primary" routerLink="/categorylist">Add category</button>
+      </div>
+      <div class="notifications-container ">
+        
          <ul class="services-list">
             <li *ngFor="let category of categories" class="list-group-item">
-               <img [src]="category.imageUrl" alt="{{ category.categoryName }}" class="img-fluid" style="max-width: 50px;">
+               <img [src]="category.imageUrl" alt="{{ category.categoryName }}" class="img-fluid"
+                  style="max-width: 50px;">
                {{ category.categoryName }}
-             </li>
+            </li>
          </ul>
       </div>
    </div>
-   <div>
-      <div class="notifications-container ">
+   <div class="border">
+      <div class="border rounded-2 text-bg-secondary shadow ">
          <h2>List of Subcategories</h2>
          <button class="btn btn-danger " routerLink="/subcategory"> subcategory </button>
+      </div>
+     
+      <div class="notifications-container ">
+  
 
-            <ul class="services-list">
-               <!-- Add Bootstrap classes to the <li> element -->
-<li *ngFor="let subcategory of subCategories" class="list-group-item subcategory-item">
+         <ul class="services-list">
+            <li *ngFor="let subcategory of subCategories" class="list-group-item subcategory-item">
 
- 
-   <div class="flex-column">
-     <div class="col-6">
-       <span>{{ subcategory.subCategoryName }}</span>
-     </div>
-     <div class="col-6">
- 
-       <span>{{ subcategory.description | slice:0:20 }}{{ subcategory.description.length > 20 ? '...' : '' }}</span>
-     </div>
-   </div>
- 
- </li>
- 
-            </ul>
+
+               <div class="flex-column">
+                  <div class="col-6">
+                     <span>{{ subcategory.subCategoryName }}</span>
+                  </div>
+                  <div class="col-6">
+
+                     <span>{{ subcategory.description | slice:0:30 }}{{ subcategory.description.length > 30 ? '...' : ''
+                        }}</span>
+                  </div>
+               </div>
+
+            </li>
+
+         </ul>
       </div>
    </div>
-   <div>
-      <div class="notifications-container ">
+   <div class="border" >
+      <div class="border rounded-2 text-bg-info shadow ">
          <h2> List of services</h2>
-         <button class="btn btn-success" routerLink="/addservices"> services</button>
+      <button class="btn btn-success" routerLink="/addservices"> services</button>
+      </div>
+      <div class="notifications-container ">
+   
          <ul class="services-list">
             <li *ngFor="let category of services" class="list-group-item">
                <img [src]="category.imageUrl" alt="{{ category.imageUrl }}" class="img-fluid" style="max-width: 50px;">
                {{ category.serviceName }}
-             </li>
+            </li>
          </ul>
       </div>
    </div>

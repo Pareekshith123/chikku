@@ -9,6 +9,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { AdminSubcategoryComponent } from './admin-subcategory/admin-subcategory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddservicesComponent } from './addservices/addservices.component';
+import { EngineerFormComponent } from './engineer-form/engineer-form.component';
+import { EngineerComponent } from './engineer/engineer.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,13 @@ const routes: Routes = [
   {
     path: 'addservices',
     component: AddservicesComponent
+  },  {
+    path: 'addengineer',
+    component: EngineerFormComponent
+  },
+  {
+    path:'orderallot',
+    component: EngineerComponent
   }
 ];
 

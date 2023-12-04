@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-admin-subcategory',
   templateUrl: './admin-subcategory.component.html',
@@ -19,6 +19,7 @@ export class AdminSubcategoryComponent implements OnInit {
   ngOnInit(): void {
     this.getCategories();
     console.log(this.selectedCategoryId);
+    Swal.fire("Add the Subcategories carefully  by selecting Category");
   }
 
   getCategories(): void {

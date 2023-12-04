@@ -18,6 +18,11 @@
   margin-right: 20px;
 }
 
+.notifications-container {
+  max-width: 100%;
+  scroll-behavior: hidden;
+  scroll-margin: 2px;
+}
 .component {
   display: flex;
 }
@@ -65,7 +70,7 @@
 }
   .notifications-container {
     max-width: 100%;
-    scroll-behavior: smooth;
+    scroll-behavior: hidden;
     scroll-margin: 6px;
   }
 }
@@ -97,6 +102,8 @@ body {
 .services-list {
   list-style-type: none;
   padding: 0;
+  max-height: 350px;
+  scroll-behavior: smooth;
 }
 
 .services-list li {

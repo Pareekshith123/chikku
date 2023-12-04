@@ -1,6 +1,6 @@
 .sidebar-1 {
   width: fit-content;
-  min-height: 550px;
+  min-height: 650px;
   background-color: #333;
   color: white;
   padding: 10px;
@@ -11,6 +11,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  float: inline-start;
 }
 
 /* Adding styles for the SVG icons */

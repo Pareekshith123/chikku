@@ -1,1 +1,87 @@
-<p>engineer works!</p>
+<app-navbar></app-navbar>
+
+<div class="d-flex">
+    <app-sidebar></app-sidebar>
+    <div class="d-flex justify-content-md-evenly flex-column flex-md-row ml-4 p-6">
+        <div class="container border rounded-2 mt-4 p-6 m-3">
+            <h1>Orders List</h1>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Order 1</span>
+                    <input type="checkbox">
+                    <button class="btn btn-success">view service</button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Order 2</span>
+                    <input type="checkbox">
+                    <button class="btn btn-success">view service</button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Order 3</span>
+                    <input type="checkbox">
+                    <button class="btn btn-success">view service</button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Order 4</span>
+                    <input type="checkbox">
+                    <button class="btn btn-success">view service</button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Order 5</span>
+                    <input type="checkbox">
+                    <button class="btn btn-success">view service</button>
+                </li>
+             
+            </ul>
+        </div>
+        <div class="container border rounded-2 mt-4 p-6 m-3">
+            <h1>Alloted Engineer</h1>
+            <button class="btn btn-success" (click)="assign()" >Assign</button>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <input type="checkbox">
+                    <span>Engineer 1</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <input type="checkbox">
+                    <span>Engineer 2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <input type="checkbox">
+                    <span>Engineer 3</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <input type="checkbox">
+                    <span>Engineer 3</span>
+                </li>
+            </ul>
+           
+        </div>
+        <div class="container border rounded-2 mt-4 p-6 m-3">
+            <h1>order status table</h1>
+            <table class="table table-bordered table-sm table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">SL</th>
+                        <th scope="col">Orders</th>
+                        <th scope="col">Alloted Engineer</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Cancel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Order 1</td>
+                        <td>Engineer 1</td>
+                        <td>Active</td>
+                        <td><button class="btn btn-primary">Edit</button></td>
+                        <td><button class="btn btn-danger">Cancel</button></td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </div>
+   
+</div>

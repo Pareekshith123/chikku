@@ -48,4 +48,7 @@ export class AdminServiceService {
     return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getAllServices`);
 
   }
+  createEngineer(engineer:any){
+    return this.http.post(`https://staging.chikku4u.com/chikku/api/engineer/createEngineer`,engineer);
+  }
 }

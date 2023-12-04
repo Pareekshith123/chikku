@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output, OnInit ,AfterViewInit} from '@a
 import { WebSocketService } from '../web-socket.service';
 import Chart from 'chart.js/auto';
 import { AdminServiceService } from '../admin-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin',
@@ -28,6 +29,7 @@ export class AdminComponent implements OnInit,AfterViewInit {
     this.getCategories();
     this.getSubCategories();
     this.getServies();
+    Swal.fire("welcome");
   }
   getCategories(): void {
     this.categoryService.getCategories().subscribe((data: any) => {

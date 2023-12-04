@@ -18,6 +18,7 @@ import { FileInterceptor } from 'src/file.interceptor';
 import { EngineerComponent } from './engineer/engineer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddservicesComponent } from './addservices/addservices.component';
+import { EngineerFormComponent } from './engineer-form/engineer-form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddservicesComponent } from './addservices/addservices.component';
     SidebarComponent,
     EngineerComponent,
     DashboardComponent,
-    AddservicesComponent
+    AddservicesComponent,
+    EngineerFormComponent
   ],
   imports: [
     BrowserModule,
