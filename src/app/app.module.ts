@@ -19,6 +19,7 @@ import { EngineerComponent } from './engineer/engineer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddservicesComponent } from './addservices/addservices.component';
 import { EngineerFormComponent } from './engineer-form/engineer-form.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EngineerFormComponent } from './engineer-form/engineer-form.component';
     EngineerComponent,
     DashboardComponent,
     AddservicesComponent,
-    EngineerFormComponent
+    EngineerFormComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

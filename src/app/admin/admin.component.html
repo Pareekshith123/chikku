@@ -4,9 +4,9 @@
 
    <app-sidebar></app-sidebar>
    <div class="board">
-      <div class="component ">
+      <div class="component m-3 p-4 ">
          <div class="container max-w-160">
-            <div class="row">
+            <div class="row ">
                <div class="col-md-4 col-sm-6 h-50 p-2 ">
                   <div class="text-bg-primary p-4 component rounded-2 Larger-shadow scale-effect">
                      Total orders
@@ -44,7 +44,7 @@
       </div>
       <div class="d-flex ml-auto justify-content-md-evenly">
          <div
-            class="d-flex flex-column justify-content-center justify-content-between justify-content-md-evenly  p-2 flex-md-row">
+            class="d-flex flex-column justify-content-between justify-content-md-evenly  p-4 flex-md-row">
             <div class="notifications-container m-3">
                <h2>Trending Services and more</h2>
                <ul class="services-list">
@@ -54,20 +54,12 @@
                   <li>Printers</li>
                </ul>
             </div>
-            <div class="ml-auto p-3">
-               <canvas class="border p-2 w-570 w-md-35 h-70 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
+            <div class="ml-auto p-4">
+               <canvas class="border p-4 w-570 w-md-35 h-90 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
                   height="300"></canvas>
 
             </div>
-            <div class="notifications-container m-3 ">
-               <h2>Notifiactions and Orders</h2>
-               <ul class="services-list">
-                  <li>Orders</li>
-                  <li>Ratings and Reviews</li>
-                  <li>Engineers </li>
-                  <li>Customer support</li>
-               </ul>
-            </div>
+            <app-chart></app-chart>
          </div>
 
       </div>
@@ -76,11 +68,14 @@
 </div>
 
 <div class="d-md-flex flex-column flex-md-row justify-content-md-evenly -mt-40 ">
-   <div class="border">
-      <div class="border rounded-2 text-bg-warning shadow">
-         <h2 class="">List of Categories</h2>
-         <button class="  btn btn-primary" routerLink="/categorylist">Add category</button>
-      </div>
+   <div class="">
+      <div class="container my-4">
+         <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
+             <h2 class="text-center mb-4">List of Categories</h2>
+             <button class="btn btn-danger w-100 mb-3" routerLink="/subcategory">Add Categories</button>
+         </div>
+     </div>
+     
       <div class="notifications-container ">
         
          <ul class="services-list">
@@ -92,11 +87,17 @@
          </ul>
       </div>
    </div>
-   <div class="border">
-      <div class="border rounded-2 text-bg-secondary shadow ">
-         <h2>List of Subcategories</h2>
-         <button class="btn btn-danger " routerLink="/subcategory"> subcategory </button>
-      </div>
+   <div class="">
+      <div class="container my-4">
+         <div class="container my-4">
+            <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
+                <h2 class="text-center mb-4">List of Subcategories</h2>
+                <button class="btn btn-info w-100 mb-3" routerLink="/subcategory">Add Subcategories</button>
+            </div>
+        </div>
+        
+     </div>
+     
      
       <div class="notifications-container ">
   
@@ -121,11 +122,14 @@
          </ul>
       </div>
    </div>
-   <div class="border" >
-      <div class="border rounded-2 text-bg-info shadow ">
-         <h2> List of services</h2>
-      <button class="btn btn-success" routerLink="/addservices"> services</button>
-      </div>
+   <div class="" >
+      <div class="container my-4">
+         <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
+             <h2 class="text-center mb-4">List of Services</h2>
+             <button class="btn btn-warning w-100 mb-3" routerLink="/subcategory">ADD Services</button>
+         </div>
+     </div>
+     
       <div class="notifications-container ">
    
          <ul class="services-list">

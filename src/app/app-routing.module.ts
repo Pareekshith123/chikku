@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddservicesComponent } from './addservices/addservices.component';
 import { EngineerFormComponent } from './engineer-form/engineer-form.component';
 import { EngineerComponent } from './engineer/engineer.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path:'orderallot',
     component: EngineerComponent
+  },
+  {
+    path:"chart",
+    component:ChartComponent
   }
 ];
 

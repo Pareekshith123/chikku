@@ -53,14 +53,20 @@ export class AdminComponent implements OnInit,AfterViewInit {
   createChart() {
     const ctx = document.getElementById('ordersChart') as HTMLCanvasElement;
     const ordersChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'polarArea',
       data: {
         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [
           {
             label: 'Total Orders',
             data: [30, 45, 60, 23, 78, 56, 40], 
-            backgroundColor: 'rgba(54, 162, 235, 0.5)', 
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 205, 86)',
+              'rgb(201, 203, 207)',
+              'rgb(54, 162, 235)'
+            ],
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 2,
           },

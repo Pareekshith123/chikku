@@ -1,4 +1,5 @@
 .sidebar-1 {
+
   width: fit-content;
   min-height: 650px;
   background-color: #333;
@@ -23,7 +24,7 @@
 /* Media query for smaller screens (e.g., mobile) */
 @media (max-width: 720px) {
   .sidebar-1 {
-    width: 80%; /* Full width on mobile */
+ /* Full width on mobile */
     box-shadow: none; /* Remove box shadow on mobile for a flatter look */
     padding: 10px; /* Adjusted padding for better spacing on mobile */
   }
