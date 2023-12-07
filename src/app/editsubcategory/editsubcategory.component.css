@@ -1,0 +1,210 @@
+/* category.component.css */
+
+.contains {
+    display: flex;
+  
+   
+    
+  }
+  
+  .category-container {
+    margin-left: 90px;
+    margin-top: 60px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .category-selection {
+    width: 100%;
+    margin-bottom: 20px;
+ 
+  }
+  
+  .subcategories-list {
+    margin-left: 2%;
+    border: 2px solid #ddd; /* Border color */
+    width: 48%;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff; /* White background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+  
+  .add-section {
+    display: flex;
+    width: 78vw;
+  }
+  
+  .add-category {
+    width: 48%;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-subcategory {
+    border: 2px solid #ddd;
+    width: 48%;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  select,
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  /* admin-subcategory.component.css */
+
+
+  
+  .subcategory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .delete-button {
+    background-color: #ff6961;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #e74c3c;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    .contains {
+        display: flex;
+        max-width: 85vw;
+      
+      }
+      
+      .category-container {
+        margin-left: 55px;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .category-selection {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      .subcategories-list {
+        margin-left: 2%;
+        border: 2px solid #ddd;
+        width: 100%; /* Updated width for mobile */
+        margin-top: 20px; /* Added margin to separate from the section above */
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .add-section {
+        display: flex;
+        flex-wrap: wrap; 
+        width: 75vw;
+       /* Added flex-wrap for better responsiveness */
+      }
+      
+      .add-category {
+        width: 48%;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .add-subcategory {
+        border: 2px solid #ddd;
+        width: 100%; /* Updated width for mobile */
+        margin-top: 20px; /* Added margin to separate from the section above */
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      
+      select,
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #45a049;
+      }
+    .add-category,
+    .add-subcategory {
+      width: 100%;
+    }
+    .category-container{
+        flex:col;
+    }
+  }
+  

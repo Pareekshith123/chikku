@@ -62,8 +62,13 @@ export class AdminServiceService {
   updateServices(serviceForm:any){
     return this.http.put(`https://staging.chikku4u.com/chikku/api/service/updateService`,serviceForm);
   }
+  updateSubcategory(newCategory:any){
+    return this.http.put(`https://staging.chikku4u.com/chikku/api/subCategory/updateSubCategory`,newCategory);
+  }
+  updateCategory(newCategory:any){
+    return this.http.put(`https://staging.chikku4u.com/chikku/api/category/updateCategory`,newCategory);
+  }
   deleteServicebyId(id:any){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/deleteService?serviceId=${id}`);
-
+    return this.http.delete(`https://staging.chikku4u.com/chikku/api/service/deleteService?serviceId=${id}`);
   }
 }

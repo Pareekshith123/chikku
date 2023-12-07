@@ -3,3 +3,12 @@
     margin-top: 40px;
     margin-left: 20px;
 }
+.subcategories-list {
+    margin-left: 2%;
+    border: 2px solid #ddd; /* Border color */
+    width: 48%;
+    padding: 15px;
+    border-radius: 8px;
+ 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }

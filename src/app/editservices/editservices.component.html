@@ -4,7 +4,7 @@
 <div class="container d-flex justify-content-between">
     <div class="container mt-4">
         <div class="row">
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6 mb-4 solbeto d-flex flex-md-colomn flex-column">
             <div class="bg-light rounded-2 border p-4">
               <h1 class="text-center bg-white font-italic p-2 rounded-md mb-4 hover-text-blue-400">
                 Select a Category
@@ -32,20 +32,23 @@
               </div>
             </div>
             
-          </div>
-          <!-- <div class=" p-2 bg-light">
-            <ul class="list-group list-group-horizontal-md w-100">
-              <li *ngFor="let service of getServicesbyIdList" class="list-group-item border rounded mx-2 mb-2">
-                <div class="d-flex align-items-center">
-                  <img src="{{service.imageUrl}}" alt="{{service.serviceName}}" class="img-fluid rounded" style="max-width: 100px; max-height: 100px;" />
-                  <div class="ml-3">
-                    <h5 class="mb-0">{{service.serviceName}}</h5>
-                    <button class="btn btn-danger mt-2" (click)="deleteService(service.serviceId)">Delete</button>
+
+
+            <div class=" p-2 bg-light .subcategories-list flex-row">
+              <ul class="list-group list-group-vertical-md w-100">
+                <li *ngFor="let service of getServicesbyIdList" class="list-group-item border rounded mx-2 mb-2">
+                  <div class=" align-items-center">
+                    <img src="{{service.imageUrl}}" alt="{{service.serviceName}}" class="img-fluid rounded" style="max-width: 100px; max-height: 100px;" />
+                    <div class="ml-3">
+                      <h5 class="mb-0">{{service.serviceName}}</h5>
+                      <button class="btn btn-danger mt-2" (click)="deleteService(service.serviceId)">Delete</button>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-          </div> -->
+                </li>
+              </ul>
+            </div>
+          </div>
+          
           
 
 

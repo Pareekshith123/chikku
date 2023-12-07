@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="contains">
+    <app-sidebar></app-sidebar>
+    <!-- category.component.html -->
+<div class="category-container">
+    <div class="category-selection">
+      <label for="categoryDropdown">Select Category:</label>
+      <select id="categoryDropdown" [(ngModel)]="selectedCategoryId" (change)="onCategoryChange()">
+        <option value="" disabled>Select a category</option>
+        <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+      </select>
+    </div>
+    <div class="d-flex justify-content-center category-selection p-2 bg-light">
+      <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedSubCategoryId" (change)="onSubcategorychange()">
+        <option value="" disabled>Select a subcategory</option>
+        <option *ngFor="let subcategory of subcategories" [value]="subcategory.subCategoryId">{{subcategory.subCategoryName}}</option>
+      </select>
+    </div>
+  
+    <div class="add-section">
+     
+  
+      <div class="add-subcategory">
+        <h2>Add Subcategory:</h2>
+        <form (ngSubmit)="onSubmit()">
+            <label for="subcategoryName">Name:</label>
+            <input type="text" id="subcategoryName"  name="subCategoryName"  [(ngModel)]="newSubcategory.subCategoryName" name="subcategoryName" required>
+    
+            <label for="subcategoryDescription">Description:</label>
+            <textarea id="subcategoryDescription" name="description" [(ngModel)]="newSubcategory.description" name="subcategoryDescription" required></textarea>
+    
+            <button type="submit">Update Subcategory</button>
+        </form>
+    </div>
+    
+      <!-- admin-subcategory.component.html -->
+
+<div class="subcategories-list" *ngIf="selectedCategoryId">
+    <h2>Subcategories:</h2>
+    <ul>
+      <li *ngFor="let subcategory of subcategories" class="subcategory-item">
+        <span>{{ subcategory.subCategoryName }}</span>
+        <button (click)="onDeleteSubcategory(subcategory.subCategoryId)" class="delete-button">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
+    </div>
+  
+   
+  </div>
+  
+
+
+</div>

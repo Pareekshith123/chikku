@@ -157,7 +157,9 @@ export class EditservicesComponent {
     
   // }
   deleteService(id:any){
-   this.adminServiceService
+   this.adminServiceService.deleteServicebyId(id).subscribe(()=>{
+    this.getServicesById();
+   })
   }
   serviceSubmit1(): void {
     if (this.encodeDocument) {
@@ -201,17 +203,17 @@ export class EditservicesComponent {
     };
   
     if (this.selectedCategoryId && this.newSubcategory.subCategoryName && this.newSubcategory.description) {
-      this.adminServiceService.addSubcategory(this.selectedCategoryId, this.subcategoryData).subscribe(
-        () => {
-          console.log('Subcategory added successfully');
-          this.subcategoryData = {};
-          this.newSubcategory = {}; 
-          this.onCategoryChange(); 
-        },
-        (error) => {
-          console.error('Error adding subcategory:', error);
-        }
-      );
+      // this.adminServiceService.addSubcategory(this.selectedCategoryId, this.subcategoryData).subscribe(
+      //   () => {
+      //     console.log('Subcategory added successfully');
+      //     this.subcategoryData = {};
+      //     this.newSubcategory = {}; 
+      //     this.onCategoryChange(); 
+      //   },
+      //   (error) => {
+      //     console.error('Error adding subcategory:', error);
+      //   }
+      // );
     } else {
       console.error('Please fill in all the required fields');
       // You might want to show a user-friendly error message here

@@ -20,6 +20,8 @@ import { AddservicesComponent } from './addservices/addservices.component';
 import { EngineerFormComponent } from './engineer-form/engineer-form.component';
 import { ChartComponent } from './chart/chart.component';
 import { EditservicesComponent } from './editservices/editservices.component';
+import { EditsubcategoryComponent } from './editsubcategory/editsubcategory.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { EditservicesComponent } from './editservices/editservices.component';
     AddservicesComponent,
     EngineerFormComponent,
     ChartComponent,
-    EditservicesComponent
+    EditservicesComponent,
+    EditsubcategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

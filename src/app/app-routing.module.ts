@@ -12,6 +12,8 @@ import { EngineerFormComponent } from './engineer-form/engineer-form.component';
 import { EngineerComponent } from './engineer/engineer.component';
 import { ChartComponent } from './chart/chart.component';
 import { EditservicesComponent } from './editservices/editservices.component';
+import { EditsubcategoryComponent } from './editsubcategory/editsubcategory.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 const routes: Routes = [
   {
@@ -57,7 +59,14 @@ const routes: Routes = [
   {
     path:"editservice",
     component:EditservicesComponent
-  }
+  },
+  {
+    path:"editSubcategory",
+    component: EditsubcategoryComponent
+  },
+  {path:"editCategory",
+  component:EditCategoryComponent
+}
 ];
 
 @NgModule({
