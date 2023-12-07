@@ -18,7 +18,10 @@
     
   }
   .navbar {
+    position: fixed;
+    z-index: 100;
     display: flex;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
     padding: 10px;

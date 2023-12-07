@@ -21,9 +21,34 @@
                     <option *ngFor="let subcategory of subcategories" [value]="subcategory.subCategoryId">{{subcategory.subCategoryName}}</option>
                   </select>
                 </div>
+                <div class="d-flex justify-content-center p-2 bg-light">
+                    <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedServiceId" (change)="getServicesById()">
+                      <option value="" disabled>Select a service</option>
+                      <option *ngFor="let service of getServicesbyIdList" [value]="service.serviceId">{{service.serviceName}}</option>
+                    </select>
+                  </div>
+                  
+                  
               </div>
             </div>
+            
           </div>
+          <!-- <div class=" p-2 bg-light">
+            <ul class="list-group list-group-horizontal-md w-100">
+              <li *ngFor="let service of getServicesbyIdList" class="list-group-item border rounded mx-2 mb-2">
+                <div class="d-flex align-items-center">
+                  <img src="{{service.imageUrl}}" alt="{{service.serviceName}}" class="img-fluid rounded" style="max-width: 100px; max-height: 100px;" />
+                  <div class="ml-3">
+                    <h5 class="mb-0">{{service.serviceName}}</h5>
+                    <button class="btn btn-danger mt-2" (click)="deleteService(service.serviceId)">Delete</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div> -->
+          
+
+
           <div class="col-md-6 mb-4">
             <div class="border-2 bg-white border rounded-2 shadow-md rounded-md p-4">
              
@@ -53,9 +78,9 @@
                     <div class="mb-4">
                         <label for="warrantyDuration" class="form-label text-gray-700 text-sm font-bold mb-2">Warranty
                             Duration</label>
-                        <input type="text" id="warrantyDuration" name="warrantyDuration"
+                        <input type="text" id="warrantyDuration" name="warrentyDuration"
                             class="form-control border rounded w-full py-2 px-3" required="" value=""
-                            [(ngModel)]="serviceForm.warrantyDuration" />
+                            [(ngModel)]="serviceForm.warrentyDuration" />
                     </div>
         
         

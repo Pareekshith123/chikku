@@ -1,12 +1,13 @@
 .sidebar-1 {
-
+  position: fixed;
   width: fit-content;
   min-height: 650px;
   background-color: #333;
   color: white;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for a subtle lift */
-
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Added box shadow for a subtle lift */
+  margin-top: 10px;
   /* Centering content in the sidebar */
   display: flex;
   flex-direction: column;
@@ -24,13 +25,17 @@
 /* Media query for smaller screens (e.g., mobile) */
 @media (max-width: 720px) {
   .sidebar-1 {
- /* Full width on mobile */
-    box-shadow: none; /* Remove box shadow on mobile for a flatter look */
-    padding: 10px; /* Adjusted padding for better spacing on mobile */
+    /* Full width on mobile */
+    box-shadow: none;
+    /* Remove box shadow on mobile for a flatter look */
+    padding: 10px;
+    /* Adjusted padding for better spacing on mobile */
   }
 
   .sidebar-1 h1 {
-    margin-bottom: 10px; /* Added margin between icons on mobile */
-    font-size: 1.2rem; /* Adjusted font size for better readability on mobile */
+    margin-bottom: 10px;
+    /* Added margin between icons on mobile */
+    font-size: 1.2rem;
+    /* Adjusted font size for better readability on mobile */
   }
 }

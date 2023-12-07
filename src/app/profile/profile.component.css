@@ -29,7 +29,10 @@
     width: 100%;
     margin-left: .01%;
   }
-  
+  .container{
+    margin-top: 70px;
+    margin-left: 70px;
+  }
   
   
   .link {

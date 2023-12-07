@@ -4,11 +4,12 @@
     display: flex;
   
    
-    margin-top: 20px;
+    
   }
   
   .category-container {
-    margin-left: 30px;
+    margin-left: 90px;
+    margin-top: 60px;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -115,11 +116,12 @@
     .contains {
         display: flex;
         max-width: 85vw;
-        margin-top: 20px;
+      
       }
       
       .category-container {
-        margin-left: 5px;
+        margin-left: 55px;
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

@@ -48,7 +48,22 @@ export class AdminServiceService {
     return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getAllServices`);
 
   }
+  getAllServicesBySubCategoryId(id: number){
+    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getServicesBySubCategory?subCategoryId=${id}`);
+
+  }
+  getAllServicesByServiceId(id: number){
+    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getServiceById?serviceId=${id}`);
+
+  }
   createEngineer(engineer:any){
     return this.http.post(`https://staging.chikku4u.com/chikku/api/engineer/createEngineer`,engineer);
+  }
+  updateServices(serviceForm:any){
+    return this.http.put(`https://staging.chikku4u.com/chikku/api/service/updateService`,serviceForm);
+  }
+  deleteServicebyId(id:any){
+    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/deleteService?serviceId=${id}`);
+
   }
 }

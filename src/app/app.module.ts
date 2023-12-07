@@ -8,7 +8,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminSubcategoryComponent } from './admin-subcategory/admin-subcategory.component';
-import { ServiceListComponent } from './service-list/service-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -20,6 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddservicesComponent } from './addservices/addservices.component';
 import { EngineerFormComponent } from './engineer-form/engineer-form.component';
 import { ChartComponent } from './chart/chart.component';
+import { EditservicesComponent } from './editservices/editservices.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { ChartComponent } from './chart/chart.component';
     ProfileComponent,
     ChangePasswordComponent,
     AdminSubcategoryComponent,
-    ServiceListComponent,
     CategoryListComponent,
     NavbarComponent,
     SidebarComponent,
@@ -36,7 +35,8 @@ import { ChartComponent } from './chart/chart.component';
     DashboardComponent,
     AddservicesComponent,
     EngineerFormComponent,
-    ChartComponent
+    ChartComponent,
+    EditservicesComponent
   ],
   imports: [
     BrowserModule,

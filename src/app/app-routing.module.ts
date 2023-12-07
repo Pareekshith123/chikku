@@ -4,7 +4,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
-import { ServiceListComponent } from './service-list/service-list.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { AdminSubcategoryComponent } from './admin-subcategory/admin-subcategory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,6 +11,7 @@ import { AddservicesComponent } from './addservices/addservices.component';
 import { EngineerFormComponent } from './engineer-form/engineer-form.component';
 import { EngineerComponent } from './engineer/engineer.component';
 import { ChartComponent } from './chart/chart.component';
+import { EditservicesComponent } from './editservices/editservices.component';
 
 const routes: Routes = [
   {
@@ -34,10 +34,7 @@ const routes: Routes = [
     path: 'dash',
     component: DashboardComponent,
   },
-  {
-    path: 'servicelist',
-    component: ServiceListComponent
-  },
+  
   {
     path: 'categorylist',
     component: CategoryListComponent
@@ -56,6 +53,10 @@ const routes: Routes = [
   {
     path:"chart",
     component:ChartComponent
+  },
+  {
+    path:"editservice",
+    component:EditservicesComponent
   }
 ];
 

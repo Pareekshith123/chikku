@@ -5,9 +5,11 @@
 }
 .board{
   width: 90vw;
+  margin-top: 15px; margin-left: 20px;
 }
 .dash {
   display: flex;
+ 
 }
 
 .container.wide {
@@ -58,6 +60,8 @@
   }
   .dash {
     display: flex;
+
+ 
   }
 
   .box {
@@ -120,5 +124,5 @@ body {
 }
 .scale-effect:hover {
   transition-duration: 0s;
-  transform: scale(1.09); /* Adjust the scale factor as needed */
+  transform: scale(1.02); /* Adjust the scale factor as needed */
 }
