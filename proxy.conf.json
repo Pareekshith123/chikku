@@ -2,6 +2,7 @@
 {
   "/api": {
     "target": "https://staging.chikku4u.com/api",
-    "secure": true
+    "secure": true,
+    "changeOrigin": true
   }
 }

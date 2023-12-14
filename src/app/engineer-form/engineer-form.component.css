@@ -1,6 +1,62 @@
-.container-1{
-    margin-top:90px;
+.container-1 {
+    margin-top: 90px;
     margin-left: 90px;
+    width: 40vw;
+    padding: 10px; /* Add padding for better spacing */
+    background-color: #f8f9fa; /* Light gray background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle shadow effect */
+    border-radius: 25px;
+}
+.Engineers{
+    display:flex;
+}
+/* Adjust the form styling */
+.container-1 form {
+    border: 1px solid #343a40; /* Dark border for the form */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+}
+.engList {
+margin-top: 90px;
+    margin-left: 20px;
     width: 50vw;
-    height: 30vh;
+    padding: 10px; 
+    list-style-type: none;
+   
+    background-color: #f8f9fa;; /* White background for the list */
+    border: 1px solid #dee2e6; /* Light border color */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container-1 {
+        width: 60vw; /* Adjust width for smaller screens */
+        margin-left: 100px; /* Adjust margin for smaller screens */
+    }
+    .Engineers{
+        display:block;
+    }
+    .engList {
+        margin-top: 2rem;
+        margin-left: 100px;
+        width: 60vw;
+        
+        padding: 20px;
+    }
+
+    .engList h3 {
+        font-size: 1.5rem;
+    }
+
+    .engList ul {
+        padding: 5px;
+    }
+
+   
+  
+
+
+
 }

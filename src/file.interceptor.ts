@@ -30,7 +30,7 @@ export class FileInterceptor implements HttpInterceptor {
       console.log('Interceptor is handling request with Authorization header');
       console.log('Headers:', request.headers.keys());
 
-      const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjM2NTUyNH0.ZJP0FJJC5_vKbgzzthSEFhFk_mzkUFbd63FwJFM8bZ0';
+      const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
       const headers = request.headers.set('Authorization', `Bearer ${token}`);
       const clonedRequest = request.clone({ headers });

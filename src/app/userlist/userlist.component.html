@@ -5,10 +5,10 @@
     
 <app-sidebar></app-sidebar>
 
-    <div class="container-fluid userlist">
+    <div class=" userlist">
         <ul class="list-group" >
             <li *ngFor="let user of getAllUsers" class="list-group-item">
-                <div class="row">
+                <div class="column">
                     <div class="col-md-3">
                         <p><strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}</p>
                     </div>

@@ -1,1 +1,27 @@
-<p>orders works!</p>
+<!-- orders.component.html -->
+<app-navbar></app-navbar>
+<div class="orderbody">
+    <app-sidebar></app-sidebar>
+<div class="orders-container">
+    <h2>All Orders</h2>
+  
+    <div *ngIf="orders.length > 0; else noOrders">
+      <div class="order-item" *ngFor="let order of orders">
+        <div class="order-details">
+          <p><strong>Order ID:</strong> {{ order.orderId }}</p>
+          <p><strong>User Name:</strong> {{ order.userName }}</p>
+          <p><strong>Email:</strong> {{ order.emailId }}</p>
+          <p><strong>Total Price:</strong> {{ order.totalPrice }}</p>
+          <p><strong>Order Status:</strong> {{ order.orderStatus }}</p>
+          <p><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
+          <p><strong>Date Slot:</strong> {{ order.dateSlot }}</p>
+          <p><strong>Time Slot:</strong> {{ order.timeSlot }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noOrders>
+      <p>No orders available.</p>
+    </ng-template>
+  </div>
+</div>

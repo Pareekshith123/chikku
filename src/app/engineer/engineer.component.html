@@ -35,53 +35,33 @@
             </ul>
         </div>
         <div class="container border rounded-2 mt-4 p-6 m-3">
-            <h1>Alloted Engineer</h1>
-            <button class="btn btn-success" (click)="assign()" >Assign</button>
+            <h1>Allotted Engineer</h1>
+            <button class="btn btn-success" (click)="assign()">Assign</button>
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <input type="checkbox">
-                    <span>Engineer 1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <input type="checkbox">
-                    <span>Engineer 2</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <input type="checkbox">
-                    <span>Engineer 3</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <input type="checkbox">
-                    <span>Engineer 3</span>
+                <li class="list-group-item" *ngFor="let engineer of allEngineers">
+                    <label class="d-flex justify-content-between align-items-center">
+                        <input type="radio" name="selectedEngineer" [(ngModel)]="selectedEngineerId" [value]="engineer.engineerId">
+                        <span>{{ engineer.engineerName }}</span>
+                    </label>
                 </li>
             </ul>
-           
         </div>
+        
+        
         <div class="container border rounded-2 mt-4 p-6 m-3">
-            <h1>order status table</h1>
-            <table class="table table-bordered table-sm table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">SL</th>
-                        <th scope="col">Orders</th>
-                        <th scope="col">Alloted Engineer</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Cancel</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Order 1</td>
-                        <td>Engineer 1</td>
-                        <td>Active</td>
-                        <td><button class="btn btn-primary">Edit</button></td>
-                        <td><button class="btn btn-danger">Cancel</button></td>
-                    </tr>
-                </tbody>
-            </table> 
-        </div>
+    <h1> Assigned  Order Status List</h1>
+    <ul class="">
+        <li class="Orderasign">
+            <span>Order 1</span>
+            <span>Engineer 1</span>
+         
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Cancel</button>
+        </li>
+        <!-- Add more list items as needed -->
+    </ul>
+</div>
+
     </div>
    
 </div>

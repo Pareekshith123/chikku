@@ -1,14 +1,39 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-engineer',
   templateUrl: './engineer.component.html',
   styleUrls: ['./engineer.component.css']
 })
-export class EngineerComponent {
+export class EngineerComponent  {
+  
+  constructor(private adminServiceService:AdminServiceService){}
+  allEngineers:any=[];
+  selectedEngineerId: number=0;
+  // engineer = {
+  //   engineerId: 0,
+  //   engineerName: '',
+  //   mobileNumber: '',
+  //   expertise: '',
+  //   experience: null,
+  //   bio: ''
+  // };
+  ngOnInit(){
+    this.getAllEngineers();
+  
+      }
+  getAllEngineers(){
+    this.adminServiceService.getAllEngineers().subscribe((data)=>{
+      this.allEngineers=data;
+      console.log('Enineers',this.allEngineers)
+    
+    })
+    }
+
   assign(){
   
-
+    console.log("selectedengineerId",this.selectedEngineerId)
     Swal.fire('Success!', 'Engineer assigned', 'success');
 
   }

@@ -1,9 +1,42 @@
-
-.userlist{
-    margin-left: 100px;
-    margin-top: 70px;
+.userlist {
+    margin: 70px auto;
     padding: 20px;
     border-radius: 10px;
-    background-color: #fff; /* Set a background color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow to the userlist container */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 800px; /* Set a maximum width for larger screens */
+}
+
+/* Responsive styles */
+.list-group-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd; /* Add a subtle border to each item */
+    border-radius: 8px;
+}
+
+/* Flexbox layout for larger screens */
+@media  (max-width: 768px) {
+    .userlist{
+        width: 300px;
+
+    }
+    .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .col-md-3 {
+        width: 20%; /* Divide the columns equally */
+    }
+}
+
+/* Additional styling */
+.col-md-3 {
+    margin-right: 1px; /* Add spacing between columns */
+}
+
+.col-md-3 p {
+    margin: 0;
 }
