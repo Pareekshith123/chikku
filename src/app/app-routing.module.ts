@@ -14,6 +14,9 @@ import { ChartComponent } from './chart/chart.component';
 import { EditservicesComponent } from './editservices/editservices.component';
 import { EditsubcategoryComponent } from './editsubcategory/editsubcategory.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   {
@@ -66,6 +69,18 @@ const routes: Routes = [
   },
   {path:"editCategory",
   component:EditCategoryComponent
+},
+{
+  path:'user',
+  component:UserlistComponent
+},
+{
+  path:'invoices',
+  component:PaymentinvoiceComponent
+},
+{
+  path:'oders',
+  component:OrdersComponent
 }
 ];
 

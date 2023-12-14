@@ -1,0 +1,9 @@
+
+.userlist{
+    margin-left: 100px;
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff; /* Set a background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow to the userlist container */
+}

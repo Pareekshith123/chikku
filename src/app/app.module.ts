@@ -22,6 +22,10 @@ import { ChartComponent } from './chart/chart.component';
 import { EditservicesComponent } from './editservices/editservices.component';
 import { EditsubcategoryComponent } from './editsubcategory/editsubcategory.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { BarchartComponent } from './barchart/barchart.component';
+import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     ChartComponent,
     EditservicesComponent,
     EditsubcategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    UserlistComponent,
+    BarchartComponent,
+    PaymentinvoiceComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FileInterceptor,
+   
       multi: true,
     },
   ],

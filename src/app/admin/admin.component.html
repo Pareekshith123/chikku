@@ -1,10 +1,69 @@
 <app-navbar></app-navbar>
 
 <div class="dash">
-
    <app-sidebar></app-sidebar>
+
    <div class="board">
-      <div class="component m-3 p-4 ">
+      <div class="brisk">
+         <div class="dashbox text-bg-danger scale-effect" routerLink="/invoices">
+            <p class="text-center p-3">Total orders</p>
+         </div>
+         <div class="dashbox text-bg-primary scale-effect" routerLink="/oders">
+            <p class="text-center p-3"> Pending Orders</p>
+         </div>
+         <div class="dashbox text-bg-info scale-effect">
+            <p class="text-center p-3">Paylater Orders</p>
+         </div>
+         <div class="dashbox text-bg-success scale-effect">
+            <p class="text-center p-3"> Completed orders</p>
+         </div>
+      </div>
+      <div class=" marg ml-4">
+         <div class="dashbox border   scale-effect" routerLink="/invoices">
+            <p class="text-center p-1 ">Laptops</p>
+
+            <div class="d-flex m-3">
+            <button class="btn btn-warning buttonn ">Total orders</button>
+            <button class="btn btn-primary buttonn ">pending orders</button>
+            <button class="btn btn-success buttonn ">Completed orders</button>
+          
+            </div>
+         </div>
+         <div class="dashbox border  scale-effect" routerLink="/oders">
+            <p class="text-center p-1 "> Printers</p>
+            <div class="d-flex m-3">
+               <button class="btn btn-warning buttonn ">Total orders</button>
+               <button class="btn btn-primary buttonn ">pending orders</button>
+               <button class="btn btn-success buttonn ">Completed orders</button>
+             
+               </div>
+         </div>
+         <div class="dashbox border  scale-effect">
+            <p class="text-center p-1 ">Networking</p>
+            <div class="d-flex m-3 ">
+               <button class="btn btn-warning buttonn ">Total orders</button>
+               <button class="btn btn-primary buttonn ">pending orders</button>
+               <button class="btn btn-success buttonn ">Completed orders</button>
+             
+               </div>
+         </div>
+         <div class="dashbox border  scale-effect">
+            <p class="text-center p-1 ">Server</p>
+            <div class="d-flex m-3">
+               <button class="btn btn-warning  buttonn ">Total orders</button>
+               <button class="btn btn-primary buttonn ">pending orders</button>
+               <button class="btn btn-success buttonn ">Completed orders</button>
+             
+               </div>
+         </div>
+      </div>
+
+
+
+
+
+
+      <!-- <div class="component m-3 p-4 ">
          <div class="container max-w-160">
             <div class="row ">
                <div class="col-md-4 col-sm-6 h-50 p-2 ">
@@ -41,20 +100,11 @@
          </div>
 
 
-      </div>
+      </div> -->
       <div class="d-flex ml-auto justify-content-md-evenly">
-         <div
-            class="d-flex flex-column justify-content-between justify-content-md-evenly  p-4 flex-md-row">
-            <div class="notifications-container m-3">
-               <h2>Trending Services and more</h2>
-               <ul class="services-list">
-                  <li>LapTops</li>
-                  <li>Networking</li>
-                  <li>Servers</li>
-                  <li>Printers</li>
-               </ul>
-            </div>
-            <div class="ml-auto p-4">
+         <div class="d-flex flex-column justify-content-between justify-content-md-evenly  p-4 flex-md-row">
+           <app-barchart></app-barchart>
+            <div class="ml-auto p-3">
                <canvas class="border p-4 w-570 w-md-35 h-90 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
                   height="300"></canvas>
 
@@ -67,21 +117,21 @@
    </div>
 </div>
 
-<div class="d-md-flex flex-column flex-md-row justify-content-md-evenly -mt-40 ">
-   <div class="">
-      <div class="container my-4">
+<div class="d-md-flex flex-column flex-md-row justify-content-md-evenly -mt-30 ">
+   <div class="showpieace">
+      <div class="container w-150 h-150 my-2">
          <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
-             <h2 class="text-center mb-4">List of Categories</h2>
+            <h2 class="text-center mb-4">List of Categories</h2>
             <div class="d-flex ">
-               <button class="btn btn-danger w-40 mb-3" routerLink="/categorylist">Add Categories</button>
+               <button class="btn btn-danger w-40 mb-3" routerLink="/categorylist">Add Category</button>
                <button class="btn btn-primary w-40 mb-3" routerLink="/editCategory">Edit Category</button>
-  
+
             </div>
-            </div>
-     </div>
-     
+         </div>
+      </div>
+
       <div class="notifications-container ">
-        
+
          <ul class="services-list">
             <li *ngFor="let category of categories" class="list-group-item">
                <img [src]="category.imageUrl" alt="{{ category.categoryName }}" class="img-fluid"
@@ -91,24 +141,24 @@
          </ul>
       </div>
    </div>
-   <div class="">
-      <div class="container my-4">
-         <div class="container my-4">
+   <div class="showpieace">
+      <div class="container my-2">
+         <div class="container w-150 h-150 my-2">
             <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
-                <h2 class="text-center ">List of Subcategories</h2>
-                <div class="d-flex">
-                  <button class="btn btn-info w-40 mb-3" routerLink="/subcategory">Add Subcategories</button>
+               <h2 class="text-center mb-4">List of Subcategories</h2>
+               <div class="d-flex">
+                  <button class="btn btn-info w-40 mb-3" routerLink="/subcategory">Add Subcategory</button>
                   <button class="btn btn-primary w-40 mb-3" routerLink="/editSubcategory">Edit Subcategory</button>
-                 
-                </div>
+
                </div>
-        </div>
-        
-     </div>
-     
-     
+            </div>
+         </div>
+
+      </div>
+
+
       <div class="notifications-container ">
-  
+
 
          <ul class="services-list">
             <li *ngFor="let subcategory of subCategories" class="list-group-item subcategory-item">
@@ -130,17 +180,19 @@
          </ul>
       </div>
    </div>
-   <div class="" >
-      <div class="container my-4">
+   <div class="showpieace">
+      <div class="container w-150 h-150 my-2">
          <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
-             <h2 class="text-center mb-4">List of Services</h2>
-             <div class="d-flex"><button class="btn btn-warning w-40 mb-3" routerLink="/addservices">ADD Services</button>
-               <button class="btn btn-primary w-40 mb-3" routerLink="/editservice">Edit Services</button></div>
+            <h2 class="text-center mb-4">List of Services</h2>
+            <div class="d-flex"><button class="btn btn-warning w-40 mb-3" routerLink="/addservices">Add
+                  Service</button>
+               <button class="btn btn-primary w-40 mb-3" routerLink="/editservice">Edit Service</button>
+            </div>
          </div>
-     </div>
-     
+      </div>
+
       <div class="notifications-container ">
-   
+
          <ul class="services-list">
             <li *ngFor="let category of services" class="list-group-item">
                <img [src]="category.imageUrl" alt="{{ category.imageUrl }}" class="img-fluid" style="max-width: 50px;">

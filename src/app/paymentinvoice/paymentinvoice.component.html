@@ -1,0 +1,32 @@
+<!-- paymentinvoice.component.html -->
+<app-navbar></app-navbar>
+
+<div class="d-flex">
+    <app-sidebar></app-sidebar>
+    <div class="call container mt-4">
+        <div *ngIf="loading" class="alert alert-info">Loading...</div>
+
+        <div *ngIf="error" class="alert alert-danger">
+            <p>Error: {{ error }}</p>
+        </div>
+
+        <div *ngIf="!loading && !error" class="custom-container">
+            <!-- Display your invoices here -->
+            <ul class="list-group custom-list-group">
+                <li *ngFor="let invoice of invoices"
+                    class="list-group-item d-flex justify-content-between align-items-center custom-list-item">
+                    <div class="custom-item-content">
+                        <p><strong>Customer Name:</strong> {{ invoice.customer_details.customer_name}}</p>
+                        <p><strong>Email:</strong> {{ invoice.customer_details.customer_email}}</p>
+                        <p><strong>Contact:</strong> {{ invoice.customer_details.customer_contact}}</p>
+                        <p><strong>Amount:</strong> {{ invoice.amount}}</p>
+                        <p><strong>Order ID:</strong> {{ invoice.order_id }}</p>
+                        <p><strong>Email Status:</strong> {{ invoice.email_status }}</p>
+                        <p><strong>SMS Status:</strong> {{ invoice.sms_status }}</p>
+                        <p><strong>Invoice:</strong> <a href="{{ invoice.short_url }}" target="_blank" class="btn btn-success">Download Invoice</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

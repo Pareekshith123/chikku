@@ -1,0 +1,31 @@
+<!-- Assuming this is your Angular component template -->
+<app-navbar></app-navbar>
+
+<div class="d-flex">
+    
+<app-sidebar></app-sidebar>
+
+    <div class="container-fluid userlist">
+        <ul class="list-group" >
+            <li *ngFor="let user of getAllUsers" class="list-group-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <p><strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><strong>Email:</strong> {{ user.emailId }}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><strong>Mobile:</strong> {{ user.mobileNumber }}</p>
+                    </div>
+                    <!-- <div class="col-md-3">
+                        <p><strong>Password:</strong> {{ user.password }}</p>
+                    </div> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+
+    
+</div>

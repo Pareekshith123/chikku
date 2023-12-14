@@ -4,14 +4,34 @@
   display: flex;
 }
 .board{
-  width: 90vw;
-  margin-top: 15px; margin-left: 20px;
+  width: 100vw;
+  margin-top: 15px; margin-left: 19px;
 }
 .dash {
   display: flex;
- 
-}
 
+}
+.brisk{
+  margin-left: 20px;
+  display: flex;
+}
+.marg{
+  display: flex; 
+  margin-left: 15px;
+}
+.dashbox{
+  margin-top: 50px;
+  margin-left: 20px;
+ 
+ width:306px;
+ height: 100px;
+ background-color:#f8f9fa;
+
+ border-radius: 10px;
+}
+.showpieace{
+  max-width: 400px;
+}
 .container.wide {
   width: 100%;
   max-width: 2000vw;
@@ -27,7 +47,14 @@
 .component {
   display: flex;
 }
+.buttonn{
+  width: 100px;
+  height: 60px;
+  padding: 5px;
+  margin-left: 9px;
+  margin-top: 15px;
 
+}
 .box {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
@@ -63,7 +90,16 @@
 
  
   }
-
+  .marg{
+    display: block; }
+  .showpieace{
+    max-width: 400px;
+    margin-left: 50px;
+  }
+  .brisk{
+    margin-left: 30px;
+    display: block;
+  }
   .box {
     flex: 1;
     margin: 0 0 10px 0;

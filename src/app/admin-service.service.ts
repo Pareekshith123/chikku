@@ -48,6 +48,10 @@ export class AdminServiceService {
     return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getAllServices`);
 
   }
+  getAllUsers(){
+    return this.http.get(`https://staging.chikku4u.com/chikku/api/user/getAllUsers`);
+
+  }
   getAllServicesBySubCategoryId(id: number){
     return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getServicesBySubCategory?subCategoryId=${id}`);
 
@@ -56,7 +60,15 @@ export class AdminServiceService {
     return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getServiceById?serviceId=${id}`);
 
   }
-  createEngineer(engineer:any){
+  getAllOrders() {
+   
+    return this.http.get('https://staging.chikku4u.com/chikku/api/order/getAllOrders');
+  }
+  getAllInvoices(){
+    return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
+
+  }
+  createEngineer(engineer:any): Observable<any>{
     return this.http.post(`https://staging.chikku4u.com/chikku/api/engineer/createEngineer`,engineer);
   }
   updateServices(serviceForm:any){
