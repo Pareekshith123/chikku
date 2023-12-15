@@ -42,13 +42,13 @@
   <div class="order-item" *ngFor="let order of orders | slice: (page-1)*pageSize : page*pageSize">
     <div class="order-details   page-item">
       <!-- <p><strong>Order ID:</strong> {{ order.orderId }}</p> -->
-      <p ><strong>User Name:</strong> {{ order.userName }}</p>
-      <p><strong>Email:</strong> {{ order.emailId }}</p>
-      <p><strong>Total Price:</strong> {{ order.totalPrice }}</p>
-      <p><strong>Order Status:</strong> {{ order.orderStatus }}</p>
-      <p><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
-      <p><strong>Date Slot:</strong> {{ order.dateSlot }}</p>
-      <p><strong>Time Slot:</strong> {{ order.timeSlot }}</p>
+      <p class="p-3"><strong>User Name:</strong> {{ order.userName }}</p>
+      <p class="p-3"><strong>Email:</strong> {{ order.emailId }}</p>
+      <p class="p-3"><strong>Total Price:</strong> {{ order.totalPrice }}</p>
+      <p class="p-3"><strong>Order Status:</strong> {{ order.orderStatus }}</p>
+      <p class="p-3"><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
+      <p class="p-3"><strong>Date Slot:</strong> {{ (order.dateSlot | date:'yyyy-MM-dd') || order.dateSlot }}</p>
+      <p class="p-3"><strong>Time Slot:</strong> {{ order.timeSlot }}</p>
     </div>
   </div>
   

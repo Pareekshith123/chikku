@@ -20,7 +20,7 @@ export class OrdersComponent implements OnInit {
   orders: Order[] = [];
   page = 1; 
   pageSize = 5;
-  maxPages = 10;
+  maxPages = 8;
   constructor(private adminservice: AdminServiceService) {}
 
   getOrders() {

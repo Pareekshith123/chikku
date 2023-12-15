@@ -2,27 +2,31 @@
     margin-top: 90px;
     margin-left: 90px;
     width: 40vw;
-    padding: 10px; /* Add padding for better spacing */
+    height: 100vh;
+    padding: 5px; /* Add padding for better spacing */
     background-color: #f8f9fa; /* Light gray background color */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle shadow effect */
     border-radius: 25px;
 }
 .Engineers{
     display:flex;
+   
 }
 /* Adjust the form styling */
 .container-1 form {
     border: 1px solid #343a40; /* Dark border for the form */
     border-radius: 8px; /* Rounded corners */
-    padding: 20px;
+    padding: 15px;
+    height: 100vh;
 }
 .engList {
 margin-top: 90px;
     margin-left: 20px;
     width: 50vw;
+    height: 100vh;
     padding: 10px; 
     list-style-type: none;
-   
+   overflow-y: auto;
     background-color: #f8f9fa;; /* White background for the list */
     border: 1px solid #dee2e6; /* Light border color */
     border-radius: 8px;
@@ -32,17 +36,20 @@ margin-top: 90px;
 /* Responsive styles */
 @media (max-width: 768px) {
     .container-1 {
-        width: 60vw; /* Adjust width for smaller screens */
+        width: 60vw;
+        height: 130vh; /* Adjust width for smaller screens */
         margin-left: 100px; /* Adjust margin for smaller screens */
     }
     .Engineers{
         display:block;
+        height: 130vh;
+        padding: 5px;
     }
     .engList {
         margin-top: 2rem;
         margin-left: 100px;
         width: 60vw;
-        
+        height: 100vh;
         padding: 20px;
     }
 

@@ -5,31 +5,31 @@
     <div class="container-1" *ngIf="isUpdateTrue">
 
       <form (ngSubmit)="onUpdate()" class="border border-dark rounded-2 ">
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="engineerName" class="form-label ">Engineer Name</label>
           <input type="text" class="form-control" id="engineerName" [(ngModel)]="engineer.engineerName"
             name="engineerName" required>
         </div>
 
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="mobileNumber" class="form-label">Mobile Number</label>
           <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="engineer.mobileNumber"
             name="mobileNumber" required>
         </div>
 
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="expertise" class="form-label">Expertise</label>
           <input type="text" class="form-control" id="expertise" [(ngModel)]="engineer.expertise" name="expertise"
             required>
         </div>
 
-        <div class="  p-3">
+        <div class="  p-1">
           <label for="experience" class="form-label">Experience(In Years):</label>
           <input type="number" class="form-control" id="experience" [(ngModel)]="engineer.experience" name="experience"
             required>
         </div>
 
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="bio" class="form-label">Bio</label>
           <textarea class="form-control" id="bio" [(ngModel)]="engineer.bio" name="bio" rows="3" required></textarea>
         </div>
@@ -41,31 +41,31 @@
     <div class="container-1" *ngIf="!isUpdateTrue">
 
       <form (ngSubmit)="onSubmit()" class="border border-dark rounded-2 ">
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="engineerName" class="form-label ">Engineer Name</label>
           <input type="text" class="form-control" id="engineerName" [(ngModel)]="engineer.engineerName"
             name="engineerName" required>
         </div>
 
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="mobileNumber" class="form-label">Mobile Number</label>
           <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="engineer.mobileNumber"
             name="mobileNumber" required>
         </div>
 
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="expertise" class="form-label">Expertise</label>
           <input type="text" class="form-control" id="expertise" [(ngModel)]="engineer.expertise" name="expertise"
             required>
         </div>
 
-        <div class="  p-3">
+        <div class="  p-1">
           <label for="experience" class="form-label">Experience(In Years):</label>
           <input type="number" class="form-control" id="experience" [(ngModel)]="engineer.experience" name="experience"
             required>
         </div>
 
-        <div class=" p-3">
+        <div class=" p-1">
           <label for="bio" class="form-label">Bio</label>
           <textarea class="form-control" id="bio" [(ngModel)]="engineer.bio" name="bio" rows="3" required></textarea>
         </div>

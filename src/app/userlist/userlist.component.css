@@ -4,7 +4,24 @@
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 800px; /* Set a maximum width for larger screens */
+    width: 70vw; /* Set a maximum width for larger screens */
+}
+.ite{
+    margin-left: 40px;
+ 
+ 
+}
+.users{
+    display: flex;
+    padding: 10px;
+ 
+  flex-direction: row;
+  justify-content: space-between;
+    background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Responsive styles */
@@ -18,10 +35,13 @@
 /* Flexbox layout for larger screens */
 @media  (max-width: 768px) {
     .userlist{
-        margin:0;
+        margin: 70px;;
         padding: 20px;
-        width: 300px;
+        width: 70vw;
 
+    }
+    .users{
+        display: block;
     }
     .list-group-item {
         display: flex;
@@ -38,7 +58,9 @@
 .col-md-3 {
     margin-right: 1px; /* Add spacing between columns */
 }
-
+.Page{
+    width: 70vh;
+}
 .col-md-3 p {
     margin: 0;
 }
