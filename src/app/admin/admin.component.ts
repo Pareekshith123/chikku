@@ -11,6 +11,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent implements OnInit,AfterViewInit {
+  PaylaterOrders:any=[];
+  PendingOrders:any=[];
+  CompletedOrders:any=[];
+  orders: any = [];
   categories: any[] = [];
   selectedCategoryId: number = 0;
   subcategories: any[] = [];
@@ -30,6 +34,10 @@ export class AdminComponent implements OnInit,AfterViewInit {
     this.getSubCategories();
     this.getServies();
     Swal.fire("welcome");
+    this. getOrders();
+    this. getPendingOrders();
+    this.  getCompletedOrders();
+    this.getPaylaterOrders();
   }
   getCategories(): void {
     this.categoryService.getCategories().subscribe((data: any) => {
@@ -99,4 +107,60 @@ export class AdminComponent implements OnInit,AfterViewInit {
       }
     );
   }
+  getOrders() {
+    this.categoryService.getAllOrders().subscribe(
+      (data) => {
+        this.orders = data;
+        console.log("All Orders:", this.orders);
+      },
+      (error) => {
+        console.error("Error fetching orders:", error);
+        // You can add further error handling logic here
+      }
+    );
+    
+  }
+  getPendingOrders() {
+    this.categoryService.getAllPendingOrders().subscribe(
+      (data) => {
+        this.PendingOrders = data;
+        console.log("pending Orders:",this.PendingOrders);
+      },
+      (error) => {
+        console.error("Error fetching orders:", error);
+        // You can add further error handling logic here
+      }
+    );
+    
+  }
+  getCompletedOrders() {
+    this.categoryService.getAllCompletedOrders().subscribe(
+      (data) => {
+        this.CompletedOrders = data;
+        console.log("CompletedOrders Orders:",this.CompletedOrders);
+      },
+      (error) => {
+        console.error("Error fetching orders:", error);
+        // You can add further error handling logic here
+      }
+    );
+    
+  }
+  getPaylaterOrders(): void {
+    this.categoryService.getAllPaylaterOrders().subscribe(
+        (data: any) => {
+            if (data) {
+                this.PaylaterOrders = data;
+                console.log("PaylaterOrders Orders:", this.PaylaterOrders);
+            } else {
+                console.error("Received null or undefined data.");
+            }
+        },
+        (error) => {
+            console.error("Error fetching orders:", error);
+            // You can add further error handling logic here
+        }
+    );
+}
+
 }

@@ -7,17 +7,25 @@
       <div class="brisk">
          <div class="dashbox text-bg-danger scale-effect" routerLink="/invoices">
             <p class="text-center p-3">Total orders</p>
+            <p class="text-center ">{{orders.length }}</p>
+
+
          </div>
          <div class="dashbox text-bg-primary scale-effect" routerLink="/oders">
             <p class="text-center p-3"> Pending Orders</p>
+            <p class="text-center ">{{PendingOrders.length}}</p>
          </div>
          <div class="dashbox text-bg-info scale-effect">
             <p class="text-center p-3">Paylater Orders</p>
+            <p class="text-center ">{{CompletedOrders.length}}</p>
+            
          </div>
          <div class="dashbox text-bg-success scale-effect">
             <p class="text-center p-3"> Completed orders</p>
+            <p class="text-center ">{{CompletedOrders.length}}</p>
          </div>
       </div>
+      
       <div class=" marg ml-4">
          <div class="dashbox border   scale-effect" routerLink="/invoices">
             <p class="text-center p-1 ">Laptops</p>

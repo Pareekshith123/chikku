@@ -18,6 +18,8 @@
 /* Flexbox layout for larger screens */
 @media  (max-width: 768px) {
     .userlist{
+        margin:0;
+        padding: 20px;
         width: 300px;
 
     }

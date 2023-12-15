@@ -12,6 +12,18 @@ body {
     display: flex;
  
 }
+.orderlist {
+    height: 600px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-margin-inline: 10px;
+    /* Other styles for your .orderlist class */
+}
+.notifications-container {
+    max-width: 100%;
+    scroll-behavior: hidden;
+    scroll-margin: 2px;
+  }
+
 .Orderasign{
     display: flex;
     margin-left: 25px;
@@ -89,5 +101,40 @@ input[type="checkbox"] {
     .container{
     
     }
-
+    .notifications-container {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 20px auto;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      
+      .services-list {
+        list-style-type: none;
+        padding: 0;
+        max-height: 350px;
+        scroll-behavior: smooth;
+      }
+      
+      .services-list li {
+        background-color: #fff;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .services-list li:hover {
+        background-color: #e0e0e0;
+      }
+      .scale-effect:hover {
+        transition-duration: 0s;
+        transform: scale(1.02); /* Adjust the scale factor as needed */
+      }
 }

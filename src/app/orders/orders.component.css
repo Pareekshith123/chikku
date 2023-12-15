@@ -1,8 +1,8 @@
 /* orders.component.css */
 
 .orders-container {
-    width: 800px;
-   margin-left: 40px;
+    width: 90vw;
+   margin-left: 60px;
     margin-top: 40px;
     padding: 20px;
     border-radius: 10px;
@@ -20,6 +20,9 @@
   
   .order-details {
     font-size: 16px;
+    padding :10px;
+    display: flex;
+    justify-content: space-evenly;
   }
   
   /* Add responsive styling as needed */

@@ -9,8 +9,10 @@ import Swal from 'sweetalert2';
 export class EngineerComponent  {
   
   constructor(private adminServiceService:AdminServiceService){}
+  PendingOrders:any=[];
   allEngineers:any=[];
   selectedEngineerId: number=0;
+  selectedOrderId:number=0;
   // engineer = {
   //   engineerId: 0,
   //   engineerName: '',
@@ -21,6 +23,7 @@ export class EngineerComponent  {
   // };
   ngOnInit(){
     this.getAllEngineers();
+    this.getPendingOrders();
   
       }
   getAllEngineers(){
@@ -30,12 +33,29 @@ export class EngineerComponent  {
     
     })
     }
-
+    getPendingOrders() {
+      this.adminServiceService.getAllPendingOrders().subscribe(
+        (data) => {
+          this.PendingOrders = data;
+          console.log("pending Orders:",this.PendingOrders);
+        },
+        (error) => {
+          console.error("Error fetching orders:", error);
+          // You can add further error handling logic here
+        }
+      );
+      
+    }
   assign(){
   
     console.log("selectedengineerId",this.selectedEngineerId)
-    Swal.fire('Success!', 'Engineer assigned', 'success');
+    console.log("selectedOrderId",this.selectedOrderId)
 
+    this.adminServiceService.AssignEngineerId(this.selectedOrderId,this.selectedEngineerId).subscribe(()=>{
+      Swal.fire('Success!', 'Engineer assigned', 'success');
+    });
+
+   
   }
 }
 

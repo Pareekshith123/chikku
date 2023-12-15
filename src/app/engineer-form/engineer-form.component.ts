@@ -25,6 +25,7 @@ onUpdate() {
   console.log("up",this.engineer)
   this.engineerService.updateEngineer(this.engineer).subscribe(()=>{
     Swal.fire("Updated Succesfully")
+    this.getAllEngineers();
   },(error)=>{
     console.log(error)
   }

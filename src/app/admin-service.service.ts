@@ -72,6 +72,18 @@ authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsIm
     // Include the headers in the HTTP request
     return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllOrders', { headers });
   }
+  getAllPendingOrders(): Observable<any> {
+    // Get the token from wherever you store it (e.g., local storage, a service, etc.)
+    // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
+
+    // Set the authorization header with the Bearer token
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`
+    });
+
+    // Include the headers in the HTTP request
+    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllPendingOrders', { headers });
+  }
 getAllEngineers(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
@@ -83,6 +95,30 @@ getAllEngineers(): Observable<any> {
 
     // Include the headers in the HTTP request
     return this.http.get('https://staging.chikku4u.com/chikku/api/engineer/getAllEngineers', { headers });
+  }
+getAllCompletedOrders(): Observable<any> {
+    // Get the token from wherever you store it (e.g., local storage, a service, etc.)
+    // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
+
+    // Set the authorization header with the Bearer token
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`
+    });
+
+    // Include the headers in the HTTP request
+    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllCompletedOrders', { headers });
+  }
+getAllPaylaterOrders(): Observable<any> {
+    // Get the token from wherever you store it (e.g., local storage, a service, etc.)
+    // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
+
+    // Set the authorization header with the Bearer token
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`
+    });
+
+    // Include the headers in the HTTP request
+    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllPayLaterOrders', { headers });
   }
 deleteEngineer(id:any): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -107,6 +143,18 @@ GetEngineerByEngineerId(id:any): Observable<any> {
 
     // Include the headers in the HTTP request
     return this.http.get(`https://staging.chikku4u.com/chikku/api/engineer/getEngineerById?engineerId=${id}`, { headers });
+  }
+AssignEngineerId(orderid:any,engineerId:any): Observable<any> {
+    // Get the token from wherever you store it (e.g., local storage, a service, etc.)
+    // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
+
+    // Set the authorization header with the Bearer token
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`
+    });
+
+    // Include the headers in the HTTP request
+    return this.http.post(`https://staging.chikku4u.com/chikku/api/order/assignEngineer?orderId=${orderid}&engineerId=${engineerId}`, { headers });
   }
   getAllInvoices(){
     return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);

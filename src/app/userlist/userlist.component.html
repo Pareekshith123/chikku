@@ -5,26 +5,27 @@
     
 <app-sidebar></app-sidebar>
 
-    <div class=" userlist">
-        <ul class="list-group" >
-            <li *ngFor="let user of getAllUsers" class="list-group-item">
-                <div class="column">
-                    <div class="col-md-3">
-                        <p><strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}</p>
-                    </div>
-                    <div class="col-md-3">
-                        <p><strong>Email:</strong> {{ user.emailId }}</p>
-                    </div>
-                    <div class="col-md-3">
-                        <p><strong>Mobile:</strong> {{ user.mobileNumber }}</p>
-                    </div>
-                    <!-- <div class="col-md-3">
-                        <p><strong>Password:</strong> {{ user.password }}</p>
-                    </div> -->
-                </div>
-            </li>
-        </ul>
-    </div>
+<div class="userlist">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of getAllUsers">
+                <td>{{ user.firstName }} {{ user.lastName }}</td>
+                <td>{{ user.emailId }}</td>
+                <td>{{ user.mobileNumber }}</td>
+              
+            </tr>
+        </tbody>
+    </table>
+</div>
+
     
 
     
