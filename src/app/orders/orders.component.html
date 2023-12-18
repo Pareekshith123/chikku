@@ -3,7 +3,7 @@
 <div class="orderbody">
     <app-sidebar></app-sidebar>
 <div class="orders-container">
-    <h2>All Orders</h2>
+    <h2>Overall  Orders Of Chikku </h2>
   
     <!-- <div *ngIf="orders.length > 0; else noOrders">
       <div class="order-item pagination" *ngFor="let order of orders">
@@ -11,7 +11,7 @@
       </div>
     </div> -->
     <!-- your.component.html -->
-    <nav aria-label="Page navigation">
+    <!-- <nav aria-label="Page navigation">
       <ul class="pagination">
         <li class="page-item" [class.disabled]="page === 1">
           <a class="page-link" (click)="setPage(1)" aria-label="First">
@@ -37,18 +37,18 @@
           </a>
         </li>
       </ul>
-    </nav>
+    </nav> -->
 <div *ngIf="orders.length > 0; else noOrders">
   <div class="order-item" *ngFor="let order of orders | slice: (page-1)*pageSize : page*pageSize">
     <div class="order-details   page-item">
       <!-- <p><strong>Order ID:</strong> {{ order.orderId }}</p> -->
-      <p class="p-3"><strong>User Name:</strong> {{ order.userName }}</p>
+      <p class="p-3 "><strong>User Name:</strong> {{ order.userName }}</p>
       <p class="p-3"><strong>Email:</strong> {{ order.emailId }}</p>
-      <p class="p-3"><strong>Total Price:</strong> {{ order.totalPrice }}</p>
+      <p class="p-3"><strong>Total Price:</strong> <strong>{{ order.totalPrice }}</strong></p>
       <p class="p-3"><strong>Order Status:</strong> {{ order.orderStatus }}</p>
-      <p class="p-3"><strong>Payment Status:</strong> {{ order.paymentStatus }}</p>
-      <p class="p-3"><strong>Date Slot:</strong> {{ (order.dateSlot | date:'yyyy-MM-dd') || order.dateSlot }}</p>
-      <p class="p-3"><strong>Time Slot:</strong> {{ order.timeSlot }}</p>
+      <p class="p-3 "><strong>Payment Status:</strong> <span  class=" ">{{ order.paymentStatus }}</span></p>
+      <p class="p-3 d-flex"><strong>Date Slot:</strong> <span class="text-bg-primary rounded ">{{ (order.dateSlot | date:'yyyy-MM-dd') || order.dateSlot }}</span></p>
+      <p class="p-3 d-flex"><strong>Time Slot:</strong> <span class="text-bg-info rounded">{{ order.timeSlot }}</span></p>
     </div>
   </div>
   

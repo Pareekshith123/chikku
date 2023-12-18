@@ -144,18 +144,24 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     // Include the headers in the HTTP request
     return this.http.get(`https://staging.chikku4u.com/chikku/api/engineer/getEngineerById?engineerId=${id}`, { headers });
   }
-AssignEngineerId(orderid:any,engineerId:any): Observable<any> {
-    // Get the token from wherever you store it (e.g., local storage, a service, etc.)
-    // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
-
+  assignEngineerId(orderId: any, engineerId: any): Observable<any> {
     // Set the authorization header with the Bearer token
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authToken}`
     });
 
-    // Include the headers in the HTTP request
-    return this.http.post(`https://staging.chikku4u.com/chikku/api/order/assignEngineer?orderId=${orderid}&engineerId=${engineerId}`, { headers });
+    // Include the headers in the HTTP request options
+    const options = { headers: headers };
+
+    // Use options to include headers in the HTTP request
+    const body = {
+      orderId: orderId,
+      engineerId: engineerId
+    };
+
+    return this.http.post('https://staging.chikku4u.com/chikku/api/admin/assignEngineer', body, options);
   }
+
   getAllInvoices(){
     return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
 

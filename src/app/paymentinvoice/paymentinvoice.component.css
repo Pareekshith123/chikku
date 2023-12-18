@@ -7,13 +7,14 @@
 .custom-container {
     background-color: #f8f9fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     margin-top: 20px;
 }
 
 .custom-list-group {
-    margin-top: 20px;
+    margin-top: 10px;
+
 }
 
 .custom-list-item {
@@ -21,7 +22,7 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -31,6 +32,11 @@
 
 .custom-item-content {
     width: 100%;
+
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .btn-success {
@@ -48,8 +54,21 @@
     .custom-container {
         padding: 10px;
     }
+    
+.custom-item-content {
+    width: 100%;
+
+    padding: 10px;
+    display: block;
+    justify-content: space-between;
+    
+}
     .call {
         width: 70vw;
         margin-left: 50px;
+    }
+    .custom-list-group {
+        margin-top: 20px;
+        display: block;
     }
 }

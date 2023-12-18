@@ -76,7 +76,38 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.content{
+  margin-left: 115px;
+}
+#subcategory{
+  margin-left: 70px;
+}
+#service{
+  margin-left: 80px;
+}
+.scroll-arrow {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 
+  color: #fff; /* Set the text color */
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style the arrow icon */
+.scroll-arrow i {
+  font-size: 74px;
+}
+.icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+}
 /* Media query for smaller screens (e.g., mobile) */
 @media (max-width: 720px) {
   .container.wide {
@@ -90,6 +121,12 @@
     display: flex;
 
  
+  }
+  #subcategory{
+    margin-left: 40px;
+  }
+  .content{
+    margin-left: 10px;
   }
   .marg{
     display: block; }

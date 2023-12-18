@@ -6,7 +6,9 @@
     <app-sidebar></app-sidebar>
 
     <div class="userlist">
-        <nav aria-label="Page navigation">
+
+        <h1>Overall User list of Chikku</h1>
+        <!-- <nav aria-label="Page navigation">
             <ul class="pagination">
                 <li class="page-item" [class.disabled]="page === 1">
                     <a class="page-link" (click)="setPage(1)" aria-label="First">
@@ -32,7 +34,7 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
         <ul class="user-list">
             <li class="users" *ngFor="let user of users | slice: (page-1)*pageSize : page*pageSize">
                 <p class="p-1 ite box "> <strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}

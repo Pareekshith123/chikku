@@ -110,7 +110,7 @@
 
       </div> -->
       <div class="d-flex ml-auto justify-content-md-evenly">
-         <div class="d-flex flex-column justify-content-between justify-content-md-evenly  p-4 flex-md-row">
+         <div class="d-flex flex-column justify-content-between justify-content-between  p-4 flex-md-row">
            <app-barchart></app-barchart>
             <div class="ml-auto p-3">
                <canvas class="border p-4 w-570 w-md-35 h-90 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
@@ -125,7 +125,7 @@
    </div>
 </div>
 
-<div class="d-md-flex flex-column flex-md-row justify-content-md-evenly -mt-30 ">
+<div class="d-md-flex flex-column flex-md-row content -mt-30 ">
    <div class="showpieace">
       <div class="container w-150 h-150 my-2">
          <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
@@ -149,10 +149,10 @@
          </ul>
       </div>
    </div>
-   <div class="showpieace">
+   <div class="showpieace" id="subcategory">
       <div class="container my-2">
          <div class="container w-150 h-150 my-2">
-            <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
+            <div class="border rounded-2 bg-light shadow d-md-flex flex-column  p-3">
                <h2 class="text-center mb-4">List of Subcategories</h2>
                <div class="d-flex">
                   <button class="btn btn-info w-40 mb-3" routerLink="/subcategory">Add Subcategory</button>
@@ -188,7 +188,7 @@
          </ul>
       </div>
    </div>
-   <div class="showpieace">
+   <div class="showpieace" id="service">
       <div class="container w-150 h-150 my-2">
          <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
             <h2 class="text-center mb-4">List of Services</h2>
@@ -210,3 +210,8 @@
       </div>
    </div>
 </div>
+<!-- Add the arrow button with an image -->
+<button class="scroll-arrow" (click)="scrollToTopOrBottom()">
+   <img class="icon" src="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png" alt="Scroll Arrow">
+ </button>
+ 

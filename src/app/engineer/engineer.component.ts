@@ -51,7 +51,7 @@ export class EngineerComponent  {
     console.log("selectedengineerId",this.selectedEngineerId)
     console.log("selectedOrderId",this.selectedOrderId)
 
-    this.adminServiceService.AssignEngineerId(this.selectedOrderId,this.selectedEngineerId).subscribe(()=>{
+    this.adminServiceService.assignEngineerId(this.selectedOrderId,this.selectedEngineerId).subscribe(()=>{
       Swal.fire('Success!', 'Engineer assigned', 'success');
     });
 

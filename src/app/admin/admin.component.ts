@@ -5,6 +5,7 @@ import Chart from 'chart.js/auto';
 import { AdminServiceService } from '../admin-service.service';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -162,5 +163,18 @@ export class AdminComponent implements OnInit,AfterViewInit {
         }
     );
 }
+scrollToTopOrBottom() {
+  const windowHeight = window.innerHeight;
+  const bodyHeight = document.body.scrollHeight;
+
+  if (window.scrollY + windowHeight === bodyHeight) {
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    // Scroll to bottom
+    window.scrollTo({ top: bodyHeight, behavior: 'smooth' });
+  }
+}
+
 
 }
