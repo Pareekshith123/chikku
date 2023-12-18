@@ -6,58 +6,58 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminServiceService {
-  private baseUrl = 'https://chicoo.in:4582/service/api'; 
-
+  private baseUrl = 'https://staging.chikku4u.com/chikku'; 
+  
   constructor(private http: HttpClient) { }
 authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjUzNzI0Nn0.hhe4JojYX8E6RuCwf0Mzu1jI6HWYbGffAv-Zcb8pkDU';
   getCategories(): Observable<any> {
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/category/getAllCategories`);
+    return this.http.get(`${this.baseUrl}/api/category/getAllCategories`);
   }
 
   addCategory(requestData: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // headers.append('Authorization', 'Bearer ' + yourAccessToken); // If you have an authorization token, you can include it here
 
-    return this.http.post(`https://staging.chikku4u.com/chikku/api/category/createCategory`, requestData, { headers });
+    return this.http.post(`${this.baseUrl}/api/category/createCategory`, requestData, { headers });
   }
    getSubcategories(id:any){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/category/getCategoryById?categoryId=${id}`);
+    return this.http.get(`${this.baseUrl}/api/category/getCategoryById?categoryId=${id}`);
 
    }
    addSubcategory(id:any,newCategory:any){
     const headers = new HttpHeaders();
-    return this.http.post(`https://staging.chikku4u.com/chikku/api/subCategory/createSubCategory`,newCategory,{ headers });
+    return this.http.post(`${this.baseUrl}/api/subCategory/createSubCategory`,newCategory,{ headers });
    
    }
    addService(serviceform:any){
     const headers = new HttpHeaders();
-    return this.http.post(`https://staging.chikku4u.com/chikku/api/service/createService`,serviceform,{ headers });
+    return this.http.post(`${this.baseUrl}/api/service/createService`,serviceform,{ headers });
    
    }
    deleteSubcategory(id:any){
-   return this.http.delete(`https://staging.chikku4u.com/chikku/api/subCategory/deleteSubCategory?subCategoryId=${id}`);
+   return this.http.delete(`${this.baseUrl}/api/subCategory/deleteSubCategory?subCategoryId=${id}`);
    }
   deleteCategory(id: number): Observable<any> {
-    return this.http.delete(`https://staging.chikku4u.com/chikku/api/category/deleteCategory?categoryId=${id}`);
+    return this.http.delete(`${this.baseUrl}/api/category/deleteCategory?categoryId=${id}`);
   }
   getAllSubcategory(){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/subCategory/getAllSubCategories`);
+    return this.http.get(`${this.baseUrl}/api/subCategory/getAllSubCategories`);
 
   }
   getAllServices(){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getAllServices`);
+    return this.http.get(`${this.baseUrl}/api/service/getAllServices`);
 
   }
   getAllUsers(){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/user/getAllUsers`);
+    return this.http.get(`${this.baseUrl}/api/user/getAllUsers`);
 
   }
   getAllServicesBySubCategoryId(id: number){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getServicesBySubCategory?subCategoryId=${id}`);
+    return this.http.get(`${this.baseUrl}/api/service/getServicesBySubCategory?subCategoryId=${id}`);
 
   }
   getAllServicesByServiceId(id: number){
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/service/getServiceById?serviceId=${id}`);
+    return this.http.get(`${this.baseUrl}/api/service/getServiceById?serviceId=${id}`);
 
   }
   getAllOrders(): Observable<any> {
@@ -70,7 +70,7 @@ authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsIm
     });
 
     // Include the headers in the HTTP request
-    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllOrders', { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllOrders`, { headers });
   }
   getAllPendingOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -82,7 +82,7 @@ authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsIm
     });
 
     // Include the headers in the HTTP request
-    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllPendingOrders', { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllPendingOrders`, { headers });
   }
 getAllEngineers(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -94,7 +94,7 @@ getAllEngineers(): Observable<any> {
     });
 
     // Include the headers in the HTTP request
-    return this.http.get('https://staging.chikku4u.com/chikku/api/engineer/getAllEngineers', { headers });
+    return this.http.get(`${this.baseUrl}/api/engineer/getAllEngineers`, { headers });
   }
 getAllCompletedOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -106,7 +106,7 @@ getAllCompletedOrders(): Observable<any> {
     });
 
     // Include the headers in the HTTP request
-    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllCompletedOrders', { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllCompletedOrders`, { headers });
   }
 getAllPaylaterOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -118,7 +118,7 @@ getAllPaylaterOrders(): Observable<any> {
     });
 
     // Include the headers in the HTTP request
-    return this.http.get('https://staging.chikku4u.com/chikku/api/admin/getAllPayLaterOrders', { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllPayLaterOrders`, { headers });
   }
 deleteEngineer(id:any): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -130,7 +130,7 @@ deleteEngineer(id:any): Observable<any> {
     });
 
     // Include the headers in the HTTP request
-    return this.http.delete(`https://staging.chikku4u.com/chikku/api/engineer/deleteEngineer?engineerId=${id}`, { headers });
+    return this.http.delete(`${this.baseUrl}/api/engineer/deleteEngineer?engineerId=${id}`, { headers });
   }
 GetEngineerByEngineerId(id:any): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
@@ -142,7 +142,7 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     });
 
     // Include the headers in the HTTP request
-    return this.http.get(`https://staging.chikku4u.com/chikku/api/engineer/getEngineerById?engineerId=${id}`, { headers });
+    return this.http.get(`${this.baseUrl}/api/engineer/getEngineerById?engineerId=${id}`, { headers });
   }
   assignEngineerId(orderId: any, engineerId: any): Observable<any> {
     // Set the authorization header with the Bearer token
@@ -159,7 +159,7 @@ GetEngineerByEngineerId(id:any): Observable<any> {
       engineerId: engineerId
     };
 
-    return this.http.post('https://staging.chikku4u.com/chikku/api/admin/assignEngineer', body, options);
+    return this.http.post(`${this.baseUrl}/chikku/api/admin/assignEngineer`, body, options);
   }
 
   getAllInvoices(){
@@ -186,7 +186,7 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${authToken}`
     });
-    return this.http.post(`https://staging.chikku4u.com/chikku/api/engineer/createEngineer`,engineer,{headers});
+    return this.http.post(`${this.baseUrl}/api/engineer/createEngineer`,engineer,{headers});
   }
   updateEngineer(engineer:any): Observable<any>{
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
@@ -195,18 +195,18 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authToken}`
     });
-    return this.http.post(`https://staging.chikku4u.com/chikku/api/engineer/updateEngineer`,engineer,{headers});
+    return this.http.post(`${this.baseUrl}/api/engineer/updateEngineer`,engineer,{headers});
   }
   updateServices(serviceForm:any){
-    return this.http.put(`https://staging.chikku4u.com/chikku/api/service/updateService`,serviceForm);
+    return this.http.put(`${this.baseUrl}/api/service/updateService`,serviceForm);
   }
   updateSubcategory(newCategory:any){
-    return this.http.put(`https://staging.chikku4u.com/chikku/api/subCategory/updateSubCategory`,newCategory);
+    return this.http.put(`${this.baseUrl}/api/subCategory/updateSubCategory`,newCategory);
   }
   updateCategory(newCategory:any){
-    return this.http.put(`https://staging.chikku4u.com/chikku/api/category/updateCategory`,newCategory);
+    return this.http.put(`${this.baseUrl}/api/category/updateCategory`,newCategory);
   }
   deleteServicebyId(id:any){
-    return this.http.delete(`https://staging.chikku4u.com/chikku/api/service/deleteService?serviceId=${id}`);
+    return this.http.delete(`${this.baseUrl}/api/service/deleteService?serviceId=${id}`);
   }
 }
