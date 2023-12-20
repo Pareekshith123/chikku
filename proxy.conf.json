@@ -1,7 +1,7 @@
 
 {
   "/api": {
-    "target": "https://staging.chikku4u.com/api",
+    "target": "https://chikku-admin.netlify.app",
     "secure": true,
     "changeOrigin": true
   }

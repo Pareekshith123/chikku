@@ -32,7 +32,7 @@ const routes: Routes = [
     component: AdminSubcategoryComponent,
   },
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
   },
   {

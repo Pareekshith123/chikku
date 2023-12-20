@@ -162,10 +162,10 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     return this.http.post(`${this.baseUrl}/chikku/api/admin/assignEngineer`, body, options);
   }
 
-  getAllInvoices(){
-    return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
+  // getAllInvoices(){
+  //   return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
 
-  }
+  // }
   // getAllInvoices(): Observable<any> {
   //   // Replace 'your-username' and 'your-password' with your actual credentials
   //   const Username = 'rzp_test_E2v6chvoceMDTP';
