@@ -176,8 +176,8 @@
                   </div>
                   <div class="col-6">
 
-                     <span>{{ subcategory.description | slice:0:30 }}{{ subcategory.description.length > 30 ? '...' : ''
-                        }}</span>
+                     <div>{{ subcategory.description | slice:0:12 }}{{ subcategory.description.length > 1 ? '...' : ''
+                        }}</div>
                   </div>
                </div>
 
