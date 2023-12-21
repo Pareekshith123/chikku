@@ -31,18 +31,18 @@ export class PaymentinvoiceComponent implements OnInit {
   constructor(private adminServiceService: AdminServiceService) {}
 
   ngOnInit() {
-    // this.adminServiceService.getAllInvoices().subscribe(
-    //   (response) => {
-    //      this.invoices = response as Invoice[];
-    //     this.loading = false;
-    //     console.log('Invoices:',   this.invoices);
-    //   },
-    //   (error) => {
-    //     this.loading = false;
-    //     this.error = 'Error fetching invoices. Please try again later.';
-    //     console.error('Error fetching invoices:', error);
-    //   }
-    // );
+    this.adminServiceService.getAllInvoices().subscribe(
+      (response) => {
+         this.invoices = response as Invoice[];
+        this.loading = false;
+        console.log('Invoices:',   this.invoices);
+      },
+      (error) => {
+        this.loading = false;
+        this.error = 'Error fetching invoices. Please try again later.';
+        console.error('Error fetching invoices:', error);
+      }
+    );
   }
  
   get totalPages(): number {

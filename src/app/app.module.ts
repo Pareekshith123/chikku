@@ -13,7 +13,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FileInterceptor } from 'src/file.interceptor';
+import { AuthInterceptor } from 'src/file.interceptor';
 import { EngineerComponent } from './engineer/engineer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddservicesComponent } from './addservices/addservices.component';
@@ -26,6 +26,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { BarchartComponent } from './barchart/barchart.component';
 import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.component';
 import { OrdersComponent } from './orders/orders.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { OrdersComponent } from './orders/orders.component';
     UserlistComponent,
     BarchartComponent,
     PaymentinvoiceComponent,
-    OrdersComponent
+    OrdersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,7 @@ import { OrdersComponent } from './orders/orders.component';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: FileInterceptor,
+      useClass: AuthInterceptor,
    
       multi: true,
     },

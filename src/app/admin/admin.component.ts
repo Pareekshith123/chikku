@@ -22,6 +22,7 @@ export class AdminComponent implements OnInit,AfterViewInit {
   subCategories:any[]=[];
   selectedSubCategoryId:any=0;
   services:any[]=[];
+  allEngineers:any=[];
   ngAfterViewInit(): void {
     this.createChart();
   }
@@ -39,6 +40,7 @@ export class AdminComponent implements OnInit,AfterViewInit {
     this. getPendingOrders();
     this.  getCompletedOrders();
     this.getPaylaterOrders();
+    this.getAllEngineers();
   }
   getCategories(): void {
     this.categoryService.getCategories().subscribe((data: any) => {
@@ -58,7 +60,13 @@ export class AdminComponent implements OnInit,AfterViewInit {
       console.log( this.services);
     });
   }
-
+  getAllEngineers(){
+    this.categoryService.getAllEngineers().subscribe((data)=>{
+      this.allEngineers=data;
+      console.log('Enineers',this.allEngineers)
+    
+    })
+    }
   createChart() {
     const ctx = document.getElementById('ordersChart') as HTMLCanvasElement;
     const ordersChart = new Chart(ctx, {

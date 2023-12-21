@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="login">
+<app-sidebar></app-sidebar>
+<div class="login-container">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" [(ngModel)]="email" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" />
+    </div>
+    <button (click)="login()">Login</button>
+  </div>
+</div>

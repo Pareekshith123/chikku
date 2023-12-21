@@ -41,7 +41,7 @@ export class EditservicesComponent {
     if (this.selectedCategoryId) {
       console.log(this.selectedCategoryId);
       this.adminServiceService.getSubcategories(this.selectedCategoryId).subscribe((data: any) => {
-        this.subcategories = data.subCategories;
+        this.subcategories = data;
         console.log(data);
       });
     }
@@ -159,7 +159,10 @@ export class EditservicesComponent {
   deleteService(id:any){
    this.adminServiceService.deleteServicebyId(id).subscribe(()=>{
     this.getServicesById();
+    
    })
+   window.location.reload();
+  
   }
   serviceSubmit1(): void {
     if (this.encodeDocument) {

@@ -26,18 +26,16 @@
          </div>
       </div>
       
-      <div class=" marg ml-4">
-         <div class="dashbox border   scale-effect" routerLink="/invoices">
-            <p class="text-center p-1 ">Laptops</p>
-
+      <div class=" marg  ml-4" *ngFor="let engineer of allEngineers">
+         <div class="dashbox border   scale-effect" >
+            <p class="text-center p-1 ">{{ engineer.engineerName }}</p>
             <div class="d-flex m-3">
             <button class="btn btn-warning buttonn ">Total orders</button>
             <button class="btn btn-primary buttonn ">pending orders</button>
             <button class="btn btn-success buttonn ">Completed orders</button>
-          
             </div>
          </div>
-         <div class="dashbox border  scale-effect" routerLink="/oders">
+         <!-- <div class="dashbox border  scale-effect" routerLink="/oders">
             <p class="text-center p-1 "> Printers</p>
             <div class="d-flex m-3">
                <button class="btn btn-warning buttonn ">Total orders</button>
@@ -63,7 +61,7 @@
                <button class="btn btn-success buttonn ">Completed orders</button>
              
                </div>
-         </div>
+         </div> -->
       </div>
 
 

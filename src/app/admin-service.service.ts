@@ -1,27 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminServiceService {
-  private baseUrl = 'https://staging.chikku4u.com/chikku'; 
+  private baseUrl = 'chikkulive'; 
   
   constructor(private http: HttpClient) { }
-authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjUzNzI0Nn0.hhe4JojYX8E6RuCwf0Mzu1jI6HWYbGffAv-Zcb8pkDU';
-  getCategories(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/category/getAllCategories`);
+// authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA0OTI0OX0.JgLNuFRfO8JB5ff7K7_QQ13UrLKF0VAtT863H7Hnm1g';
+login(email: string, password: string): Observable<any> {
+  const params = new HttpParams()
+    .set('email', email)
+    .set('password', password);
+
+  return this.http.get(this.baseUrl+`/login?emailId=${email}&password=${password}`);
+}  
+
+
+getCategories() {
+    return this.http.get(this.baseUrl+'/api/category/getAllCategories');
   }
 
   addCategory(requestData: any): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    // const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // headers.append('Authorization', 'Bearer ' + yourAccessToken); // If you have an authorization token, you can include it here
 
-    return this.http.post(`${this.baseUrl}/api/category/createCategory`, requestData, { headers });
+    return this.http.post(`${this.baseUrl}/api/category/createCategory`, requestData);
   }
    getSubcategories(id:any){
-    return this.http.get(`${this.baseUrl}/api/category/getCategoryById?categoryId=${id}`);
+    return this.http.get(`${this.baseUrl}/api/subCategory/getSubCategoriesByCategory?categoryId=${id}`);
 
    }
    addSubcategory(id:any,newCategory:any){
@@ -30,8 +39,8 @@ authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsIm
    
    }
    addService(serviceform:any){
-    const headers = new HttpHeaders();
-    return this.http.post(`${this.baseUrl}/api/service/createService`,serviceform,{ headers });
+    // const headers = new HttpHeaders();
+    return this.http.post(`${this.baseUrl}/api/service/createService`,serviceform);
    
    }
    deleteSubcategory(id:any){
@@ -65,93 +74,93 @@ authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsIm
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/admin/getAllOrders`, { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllOrders`,);
   }
   getAllPendingOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/admin/getAllPendingOrders`, { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllPendingOrders`);
   }
 getAllEngineers(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/engineer/getAllEngineers`, { headers });
+    return this.http.get(`${this.baseUrl}/api/engineer/getAllEngineers`);
   }
 getAllCompletedOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/admin/getAllCompletedOrders`, { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllCompletedOrders`);
   }
 getAllPaylaterOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
-    // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // // Set the authorization header with the Bearer token
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/admin/getAllPayLaterOrders`, { headers });
+    return this.http.get(`${this.baseUrl}/api/admin/getAllPayLaterOrders`);
   }
 deleteEngineer(id:any): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.delete(`${this.baseUrl}/api/engineer/deleteEngineer?engineerId=${id}`, { headers });
+    return this.http.delete(`${this.baseUrl}/api/engineer/deleteEngineer?engineerId=${id}`);
   }
 GetEngineerByEngineerId(id:any): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/engineer/getEngineerById?engineerId=${id}`, { headers });
+    return this.http.get(`${this.baseUrl}/api/engineer/getEngineerById?engineerId=${id}`);
   }
   assignEngineerId(orderId: any, engineerId: any): Observable<any> {
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
 
     // Include the headers in the HTTP request options
-    const options = { headers: headers };
+    // const options = { headers: headers };
 
     // Use options to include headers in the HTTP request
     const body = {
@@ -159,13 +168,13 @@ GetEngineerByEngineerId(id:any): Observable<any> {
       engineerId: engineerId
     };
 
-    return this.http.post(`${this.baseUrl}/chikku/api/admin/assignEngineer`, body, options);
+    return this.http.post(`${this.baseUrl}/chikku/api/admin/assignEngineer`, body);
   }
 
-  // getAllInvoices(){
-  //   return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
+  getAllInvoices(): Observable<any>{
+    return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
 
-  // }
+  }
   // getAllInvoices(): Observable<any> {
   //   // Replace 'your-username' and 'your-password' with your actual credentials
   //   const Username = 'rzp_test_E2v6chvoceMDTP';
@@ -180,22 +189,21 @@ GetEngineerByEngineerId(id:any): Observable<any> {
   //   return this.http.get(`https://api.razorpay.com/v1/invoices?type=invoice`, { headers });
   // }
   createEngineer(engineer:any): Observable<any>{
-    const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${authToken}`
-    });
-    return this.http.post(`${this.baseUrl}/api/engineer/createEngineer`,engineer,{headers});
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
+    return this.http.post(`${this.baseUrl}/api/engineer/createEngineer`,engineer);
   }
   updateEngineer(engineer:any): Observable<any>{
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
     // Set the authorization header with the Bearer token
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.authToken}`
-    });
-    return this.http.post(`${this.baseUrl}/api/engineer/updateEngineer`,engineer,{headers});
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
+    return this.http.post(`${this.baseUrl}/api/engineer/updateEngineer`,engineer);
   }
   updateServices(serviceForm:any){
     return this.http.put(`${this.baseUrl}/api/service/updateService`,serviceForm);

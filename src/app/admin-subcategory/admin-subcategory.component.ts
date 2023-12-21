@@ -32,7 +32,7 @@ export class AdminSubcategoryComponent implements OnInit {
     if (this.selectedCategoryId) {
       console.log(this.selectedCategoryId);
       this.adminServiceService.getSubcategories(this.selectedCategoryId).subscribe((data: any) => {
-        this.subcategories = data.subCategories;
+        this.subcategories = data;
         console.log(data);
       });
     }

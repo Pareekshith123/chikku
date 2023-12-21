@@ -33,8 +33,11 @@ export class EditsubcategoryComponent implements OnInit {
     if (this.selectedCategoryId) {
       console.log(this.selectedCategoryId);
       this.adminServiceService.getSubcategories(this.selectedCategoryId).subscribe((data: any) => {
-        this.subcategories = data.subCategories;
+        this.subcategories = data;
+        console.log("sub",this.subcategories)
         console.log(data);
+      },(error) => {
+        console.error('Error getting subcategory:', error);
       });
     }
   }

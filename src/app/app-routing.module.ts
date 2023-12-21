@@ -17,6 +17,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.component';
 import { OrdersComponent } from './orders/orders.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
 {
   path:'user',
   component:UserlistComponent
+},
+{
+  path:"login",
+  component:LoginComponent
 },
 {
   path:'invoices',
