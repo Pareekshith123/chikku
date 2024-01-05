@@ -27,6 +27,7 @@ import { BarchartComponent } from './barchart/barchart.component';
 import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.component';
 import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { LoginComponent } from './login/login.component';
     BarchartComponent,
     PaymentinvoiceComponent,
     OrdersComponent,
-    LoginComponent
+    LoginComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

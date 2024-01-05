@@ -8,6 +8,14 @@ interface CustomerDetails {
   customer_contact: string;
 }
 interface Invoice {
+serviceStarted: any;
+isAssigned: any;
+orderStatus: any;
+orderNumber: any;
+totalPrice: any;
+mobileNumber: any;
+emailId: any;
+userName: any;
   customer_details: CustomerDetails;
   amount: number;
   order_id: string;

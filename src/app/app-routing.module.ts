@@ -18,6 +18,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.component';
 import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,9 @@ const routes: Routes = [
 {
   path:'oders',
   component:OrdersComponent
+},{
+  path:'inpage',
+  component:InvoiceComponent
 }
 ];
 

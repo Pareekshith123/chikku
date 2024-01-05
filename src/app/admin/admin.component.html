@@ -5,28 +5,28 @@
 
    <div class="board">
       <div class="brisk">
-         <div class="dashbox text-bg-danger scale-effect" routerLink="/invoices">
-            <p class="text-center p-3">Total orders</p>
+         <div class="dashbox  text-bg-danger scale-effect" routerLink="/invoices">
+            <p class="text-center p-6">Total orders</p>
             <p class="text-center ">{{orders.length }}</p>
 
 
          </div>
          <div class="dashbox text-bg-primary scale-effect" routerLink="/oders">
-            <p class="text-center p-3"> Pending Orders</p>
+            <p class="text-center p-6"> Pending Orders</p>
             <p class="text-center ">{{PendingOrders.length}}</p>
          </div>
          <div class="dashbox text-bg-info scale-effect">
-            <p class="text-center p-3">Paylater Orders</p>
+            <p class="text-center p-6">Paylater Orders</p>
             <p class="text-center ">{{CompletedOrders.length}}</p>
             
          </div>
          <div class="dashbox text-bg-success scale-effect">
-            <p class="text-center p-3"> Completed orders</p>
+            <p class="text-center p-6"> Completed orders</p>
             <p class="text-center ">{{CompletedOrders.length}}</p>
          </div>
       </div>
       
-      <div class=" marg  ml-4" *ngFor="let engineer of allEngineers">
+      <div class=" marg  " *ngFor="let engineer of allEngineers">
          <div class="dashbox border   scale-effect" >
             <p class="text-center p-1 ">{{ engineer.engineerName }}</p>
             <div class="d-flex m-3">
@@ -155,7 +155,6 @@
                <div class="d-flex">
                   <button class="btn btn-info w-40 mb-3" routerLink="/subcategory">Add Subcategory</button>
                   <button class="btn btn-primary w-40 mb-3" routerLink="/editSubcategory">Edit Subcategory</button>
-
                </div>
             </div>
          </div>

@@ -57,6 +57,10 @@ export class EngineerComponent  {
 
    
   }
+  showOrderDetails(orderId:any){
+   
+
+  }
 }
 
 

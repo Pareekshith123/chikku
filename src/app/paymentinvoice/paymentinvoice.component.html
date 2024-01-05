@@ -16,14 +16,14 @@
                 <li *ngFor="let invoice of invoices | slice: (page-1)*pageSize : page*pageSize"
                     class="list-group-item d-flex justify-content-between align-items-center custom-list-item">
                     <div class="custom-item-content">
-                        <p><strong>Customer Name:</strong> {{ invoice.customer_details.customer_name}}</p>
-                        <p><strong>Email:</strong> {{ invoice.customer_details.customer_email}}</p>
-                        <p><strong>Contact:</strong> {{ invoice.customer_details.customer_contact}}</p>
-                        <p><strong>Amount:</strong> {{ invoice.amount}}</p>
-                        <p><strong>Order ID:</strong> {{ invoice.order_id }}</p>
-                        <p><strong>Email Status:</strong> {{ invoice.email_status }}</p>
-                        <p><strong>SMS Status:</strong> {{ invoice.sms_status }}</p>
-                        <p><strong>Invoice:</strong> <a href="{{ invoice.short_url }}" target="_blank" class="btn btn-success">Download Invoice</a></p>
+                        <p><strong>Customer Name:</strong> {{ invoice.userName}}</p>
+                        <p><strong>Email:</strong> {{ invoice.emailId}}</p>
+                        <p><strong>Contact:</strong> {{ invoice.mobileNumber}}</p>
+                        <p><strong>Amount:</strong> {{ invoice.totalPrice}}</p>
+                        <p><strong>Order number:</strong> {{ invoice.orderNumber }}</p>
+                        <p><strong>Email Status:</strong> {{ invoice.orderStatus}}</p>
+                        <p><strong>Assigned:</strong> {{ invoice.isAssigned}}</p>
+                        <p><strong>serviceStarted:</strong> {{ invoice.serviceStarted }}</p>
                     </div>
                 </li>
             </ul>

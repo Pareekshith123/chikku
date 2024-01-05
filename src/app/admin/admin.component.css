@@ -5,14 +5,14 @@
 }
 .board{
   width: 100vw;
-  margin-top: 15px; margin-left: 19px;
+  margin-top: 15px; margin-left: 24px;
 }
 .dash {
   display: flex;
 
 }
 .brisk{
-  margin-left: 20px;
+  margin-left: 40px;
   display: flex;
 }
 .marg{
@@ -22,7 +22,7 @@
 
 .dashbox{
   margin-top: 50px;
-  margin-left: 20px;
+  margin-left: 10px;
  
  width:306px;
  height: 100px;
@@ -112,7 +112,7 @@
 @media (max-width: 720px) {
   .container.wide {
     flex-direction: column;
-    max-width: 200vw;
+    max-width: 100vw;
   }
   .board{
     width: 30vw;
@@ -129,7 +129,8 @@
     margin-left: 10px;
   }
   .marg{
-    display: block; }
+    display: block;
+   }
   .showpieace{
     max-width: 400px;
     margin-left: 50px;

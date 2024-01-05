@@ -1,0 +1,300 @@
+/* Common styles for larger screens */
+.invoice {
+    width: 70%;
+    height: auto;
+    padding: 5x;
+    margin-top: -35px;
+    position: relative;
+    margin-left: 10%;
+    background: white;
+    border-radius: 5px;
+    border: #dae7e7 2px solid;
+}
+
+.top-section {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.backimage {
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    margin-left: 60px;
+    margin-right: 40px;
+    background-color: #FFFFFF;
+    display: block;
+}
+
+.total {
+    color: black;
+    font-size: 22px;
+    font-family: Nunito Sans;
+    font-weight: 600;
+    margin-left: 65%;
+}
+
+.table {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    font-size: 22px;
+    font-family: Nunito Sans;
+    word-wrap: break-word;
+}
+
+.personalbio {
+    margin-top: 150px;
+    height: 85px;
+    padding: 10px;
+    background-color: #F4F5F5;
+    border-radius: 5px;
+}
+
+.table-head {
+    
+      margin: 20px;
+    font-size: 20px;
+    font-family: Nunito Sans;
+}
+.tabheader{
+    display: flex;
+    justify-content: space-between;
+    background-color: #C6EAFF;
+    width:100%;
+    height:50px;
+    font-size: 20px;
+    font-family: Nunito Sans;
+    font-weight: 400;
+    line-height: 29px;
+    border-radius: 5px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.totsec {
+    margin-top: 100px;
+    margin-left: 70%;
+    width: 300px;
+    align-items: end;
+  
+}
+.tabbody{
+    display: block;
+    justify-content: space-between; 
+    margin: 10px;
+}
+.topback {
+    position: absolute;
+}
+.addressbody{
+    color: black;
+    margin: 10px;
+font-size: 22px;
+font-family: Nunito Sans;
+font-weight: 400;
+line-height: 36px;
+word-wrap: break-word
+}
+.greentotal {
+    margin-right: 10px; 
+    font-size: 22px;
+    font-family: Nunito Sans;
+    font-weight: 600;  
+color: #57B543;
+margin-left: 56%;
+}
+.downbutton{
+    margin-left: 80.5%;
+   margin-top: 0.2%;
+}
+.details {
+    margin: 0px;
+    color: black;
+    font-size: 20px;
+    font-family: Nunito Sans;
+    font-weight: 400;
+    line-height: 29px;
+    border-radius: 5px;
+    /* display: flex; */
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #F4F5F5;
+}
+
+.footer {
+    background-color: #1C49B2;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.body {
+    margin-top: 90px;
+}
+
+.address {
+    padding: 10px;
+    display: flex;
+}
+
+.IN {
+    display: block;
+    color: black;
+}
+
+.text1 {
+    color: #686868;
+}
+
+.amount-due-container {
+    position: relative;
+    margin-top: 40px;
+}
+.unit{
+    margin-left: 310px;
+}
+.tilted-image {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: -48px;
+    margin-left: -32px;
+    left: 0;
+    transform: rotate(-10deg);
+}
+
+.text2 {
+    color: #B31B1B;
+}
+
+.OUT {
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.head {
+    font-size: 19px;
+    font-family: Nunito Sans;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.logo {
+    width: 265px;
+    height: 60px;
+    left: 73px;
+    top: 71px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 760px) {
+    .invoice {
+        width: 93vw;
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+    .tabheader{
+        display: flex;
+      
+        background-color: #C6EAFF;
+        width:100%;
+        height:100px;
+        font-size: 12px;
+        font-family: Nunito Sans;
+        font-weight: 200;
+        line-height: 10px;
+        border-radius: 5px;
+    }
+    .tabbody{
+        display: block;
+        justify-content: space-between; 
+        margin: 10px;
+    }
+    .topback {
+        width: 80%;
+        height: 60%;
+    }
+    .table {
+        display: block;
+        justify-content: space-between;
+        color: black;
+        font-size: 12px;
+        font-family: Nunito Sans;
+        word-wrap: break-word;
+    }
+    .unit{
+        margin-left: 0px;
+    }
+    .personalbio {
+        margin-top: 10px;
+        height: 300px;
+        width: 300px;
+        padding: 10px;
+        background-color: #F4F5F5;
+        border-radius: 5px;
+    }
+    .backimage {
+        width: 80%;
+        height: 20%;
+    }
+    .greentotal {
+        margin-right: 10px; 
+        font-size: 22px;
+        font-family: Nunito Sans;
+        font-weight: 200;  
+    color: #57B543;
+    margin-left: 2.5%;
+    }
+    .total {
+        color: black;
+        font-size: 22px;
+        font-family: Nunito Sans;
+        font-weight: 600;
+        margin-left: 24%;
+    }
+    .totsec {
+        margin-top: 100px;
+        margin-left: 70%;
+        width: 260px;
+        align-items: end;
+    }
+    .downbutton{
+        margin-left: 95%;
+       margin-top: 0%;
+       display: block;
+    }
+    .address {
+        margin-top: 100px;
+        padding: 20px;
+        display: block;
+    }
+    #invoice{
+        position:relative;
+      z-index: 1000;
+    }
+    .table-head {
+        max-width: 100%;
+        height: 50px;
+        padding-left: 2px;
+        font-size: 10px;
+    }
+
+    .details {
+        margin: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 2px;
+    }
+}
+

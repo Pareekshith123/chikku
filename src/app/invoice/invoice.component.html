@@ -1,0 +1,185 @@
+<button class="btn btn-primary downbutton" (click)="downloadAsPdf()">download pdf </button>
+<div class="invoice" id="invoice">
+
+    <div class="topback">
+        <img class="backimage" src="../../assets/Ellipse 24.png" alt="">
+    </div>
+    <div class="background">
+        <div class="body">
+            <img class="logo" src="../../assets/Logo-Final-Chikku-01 1.png" />
+        </div>
+
+        <div class="top-section">
+            <div class="IN">
+                <div><span class="head">GSTIN -</span> <span class="text1">29AAQCS6791M2Z4</span>
+                    <br>
+                    <span class="head">CIN - </span><span class="text1">U72200KA2011PTC061208</span>
+                </div>
+                <br>
+
+                <div> <span class="head">Invoice ID:</span> <span class="text2">{{invoicePdfData.id}}</span>
+                    <br>
+                    <span class="head">Invoice for Order Number</span> <span
+                        class="text2">{{invoicePdfData.description | slice:25:35 }}</span>
+                </div>
+            </div>
+            <div class="OUT">
+              <!-- Assuming you have a Unix timestamp in invoicePdfData.date -->
+<span class="head"> ISSUE DATE <br><span class="text2">{{ (invoicePdfData.date * 1000) | date: 'dd-MM-yyyy' }}</span></span>
+
+                <br>
+                <div class="amount-due-container">
+                    <img src="../../assets/paid.svg" alt="" class="tilted-image">
+                    <span class="head">AMOUNT DUE ₹</span> 0.00
+                </div>
+
+            </div>
+
+        </div>
+        <div class="personalbio">
+            <div class="table">
+
+                <div> <span
+                        style="color: black; font-size: 28px; font-family: Nunito Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">
+                        Name
+                    </span>
+                    <p>{{invoicePdfData.customer_details.name }}</p>
+                </div>
+                <div>
+                    <span
+                        style="color: black; font-size: 28px; font-family: Nunito Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">
+                        Mobile Numer</span>
+                    <p>{{invoicePdfData.customer_details.contact}}</p>
+                </div>
+                <div><span
+                        style="color: black; font-size: 28px; font-family: Nunito Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">
+                        Email</span>
+                    <p>{{invoicePdfData.customer_details.customer_email}}</p>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="address">
+            <div class="shipping">
+                <h1
+                    style="color: black; font-size: 32px; font-family: Nunito Sans; font-weight: 600; line-height: 36px; word-wrap: break-word">
+                    Shipping Address</h1>
+                <p class="addressbody">
+                    Deepika, #8/1, Richmond Rd, opposite to
+                    new Udupi Upahar and besides HDFC
+                    bank, Bengaluru, Karnataka 560025
+                </p>
+            </div>
+            <div>
+                <h1
+                    style="color: black; font-size: 32px; font-family: Nunito Sans; font-weight: 600; line-height: 36px; word-wrap: break-word">
+                    Billing Address</h1>
+                <p class="addressbody">
+                    Deepika, #8/1, Richmond Rd, opposite to
+                    new Udupi Upahar and besides HDFC
+                    bank, Bengaluru, Karnataka 560025
+                </p>
+            </div>
+
+        </div>
+        <div class="details">
+            <div class="tabheader">
+                <h1 class="table-head ">DESCRIPTION</h1>
+                <h1 class="table-head unit">UNIT PRICE</h1>
+                <h1 class="table-head">QTY</h1>
+                <h1 class="table-head">AMOUNT</h1>
+            </div>
+            <div class="tabbody" *ngFor="let orders of invoicePdfData.line_items">
+                <ul type="none" class="content">
+                    <li style="width: 380px;">{{orders.name| slice:0:50 }} {{ orders.name.length >= 1 ? '...' : ''}}</li>
+
+                    <li>₹ {{orders.amount}}</li>
+                    <li>{{orders.quantity}}</li>
+
+                    <li> {{orders.quantity}}* ₹{{orders.amount}}</li>
+
+
+                </ul>
+                <!-- <div>
+                    <ul type="none" class="content">
+                        <li>Operating System and Microsoft Office Installation</li>
+
+                        <li>₹ 240.00</li>
+                        <li>4</li>
+
+                        <li>₹ 960.00</li>
+
+
+                    </ul>
+                </div>
+                <hr>
+                <div>
+                    <ul type="none" class="content">
+                        <li>Deep Cleaning (Fan, Motherboard, Processor, etc.)</li>
+
+                        <li>₹ 240.00</li>
+
+                        <li>2</li>
+                        <li>₹ 480.00</li>
+                    </ul>
+                </div>
+                <hr>
+                <div>
+                    <ul type="none" class="content">
+                        <li>Deep Cleaning (Fan, Motherboard, Processor, etc.)</li>
+                        <li>₹ 240.00</li>
+                        <li>2</li>
+                        <li>₹ 480.00</li>
+
+
+                    </ul>
+                </div> -->
+                <hr>
+            </div>
+            <div class="">
+                <div>
+                    <div class="total">
+                        <span>Total</span> <span class="totamount" style="margin-left: 50px;">₹ 1997.00 </span>
+                    </div>
+                    <div class="total">
+                        <span>GST(18%)</span>
+                        <span class="totamount" style="margin-left: 50px;">₹{{ gst.toString() | slice:0:6}}</span>
+                                            </div>
+                    <p class="greentotal" style="">
+                        <span style="margin-right: 60px;">Amount Paid</span> <span>₹ 2212.00</span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <div class="footer">
+        <div>SUN PLUS SOFTWARE TECHNOLOGIES PRIVATE LIMITED</div>
+        <hr>
+        <div style="display: flex; margin-left: 25%;">
+            <!-- Styling for the phone section -->
+            <div style="display: flex; align-items: center;">
+                <span style="margin-right: 10px;"><img src="../../assets/Phone.png" alt=""></span>
+                <span>9901265454</span>
+            </div>
+
+            <!-- Styling for the email section -->
+            <div style="display: flex; align-items: center;">
+                <span style="margin-left: 10px;"><img src="../../assets/Email.png" alt=""></span>
+                <span>chikku4u@sunplussoftware.com</span>
+            </div>
+
+
+        </div>
+        <p>#8/1, Deepika,Richmond Rd, opposite to new Udupi Upahar and besides HDFC bank,<br />Bengaluru, Karnataka
+            , Bengaluru, Karnataka, India - 560025</p>
+    </div>
+</div>

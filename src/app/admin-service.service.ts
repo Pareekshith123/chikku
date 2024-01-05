@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminServiceService {
-  private baseUrl = 'chikkulive'; 
+  private baseUrl = 'chikku'; 
+  authToken: any;
   
   constructor(private http: HttpClient) { }
 // authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA0OTI0OX0.JgLNuFRfO8JB5ff7K7_QQ13UrLKF0VAtT863H7Hnm1g';
@@ -155,27 +156,31 @@ GetEngineerByEngineerId(id:any): Observable<any> {
   }
   assignEngineerId(orderId: any, engineerId: any): Observable<any> {
     // Set the authorization header with the Bearer token
-    // const headers = new HttpHeaders({
-    //   'Authorization': `Bearer ${this.authToken}`
-    // });
-
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5MTEzOTY0MTUzIiwiaWF0IjoxNzA0NDMyNjQ0fQ.sgFMKPk2NPDWlujfOUl_7p5oXSwMoX4E6LXMaiqkr5Q`
+    });
+  
     // Include the headers in the HTTP request options
-    // const options = { headers: headers };
-
+    const options = { headers: headers };
+  
     // Use options to include headers in the HTTP request
     const body = {
       orderId: orderId,
       engineerId: engineerId
     };
-
-    return this.http.post(`${this.baseUrl}/chikku/api/admin/assignEngineer`, body);
+  
+    return this.http.post(`${this.baseUrl}/api/admin/assignEngineer`, body, options);
   }
-
-  getAllInvoices(): Observable<any>{
-    return this.http.get(`http://localhost:8080/api/Razerpay/fetch-invoices`);
-
-  }
+  
   // getAllInvoices(): Observable<any> {
+    getAllInvoices(): Observable<any>{
+      return this.http.get(`${this.baseUrl}/api/admin/getAllOrders`);
+  
+    }
+    getInvoiceByInvoiceId(): Observable<any>{
+      return this.http.get(`${this.baseUrl}/api/payment/getInvoice?invoiceId=inv_NFGtyik9z4Lr1p`);
+  
+    }
   //   // Replace 'your-username' and 'your-password' with your actual credentials
   //   const Username = 'rzp_test_E2v6chvoceMDTP';
   //   const Password = 'QYiOBJnFr6EvSlxXVATqeL7H';

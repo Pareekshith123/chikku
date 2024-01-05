@@ -62,7 +62,7 @@ import { tap } from 'rxjs/operators'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw"
+  token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5MTEzOTY0MTUzIiwiaWF0IjoxNzA0NDMyNjQ0fQ.sgFMKPk2NPDWlujfOUl_7p5oXSwMoX4E6LXMaiqkr5Q"
   constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
