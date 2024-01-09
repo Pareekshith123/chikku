@@ -28,6 +28,9 @@ import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.compone
 import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { EngineerDashboardComponent } from './engineer-dashboard/engineer-dashboard.component';
+import { PaylaterOrdersComponent } from './paylater-orders/paylater-orders.component';
+import { CompletedOrderComponent } from './completed-order/completed-order.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { InvoiceComponent } from './invoice/invoice.component';
     PaymentinvoiceComponent,
     OrdersComponent,
     LoginComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    EngineerDashboardComponent,
+    PaylaterOrdersComponent,
+    CompletedOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, identity } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -177,9 +177,12 @@ GetEngineerByEngineerId(id:any): Observable<any> {
       return this.http.get(`${this.baseUrl}/api/admin/getAllOrders`);
   
     }
-    getInvoiceByInvoiceId(): Observable<any>{
-      return this.http.get(`${this.baseUrl}/api/payment/getInvoice?invoiceId=inv_NFGtyik9z4Lr1p`);
+    getInvoiceByInvoiceId(id:any): Observable<any>{
+      return this.http.get(`${this.baseUrl}/api/order/getOrderById?orderId=${id}`);
   
+    }
+    getInvoiceOrderById(id:any):Observable<any>{
+      return this.http.get(`${this.baseUrl}/api/order/getOrderDetailsById?orderId=${id}`);
     }
   //   // Replace 'your-username' and 'your-password' with your actual credentials
   //   const Username = 'rzp_test_E2v6chvoceMDTP';
@@ -201,6 +204,7 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     // });
     return this.http.post(`${this.baseUrl}/api/engineer/createEngineer`,engineer);
   }
+
   updateEngineer(engineer:any): Observable<any>{
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
 
@@ -221,5 +225,9 @@ GetEngineerByEngineerId(id:any): Observable<any> {
   }
   deleteServicebyId(id:any){
     return this.http.delete(`${this.baseUrl}/api/service/deleteService?serviceId=${id}`);
+  }
+  getAllAssignedOrders(){
+    return this.http.get(`${this.baseUrl}/api/admin/getAllAssignedOrders`);
+  
   }
 }

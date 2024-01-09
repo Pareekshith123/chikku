@@ -111,11 +111,13 @@
 /* Media query for smaller screens (e.g., mobile) */
 @media (max-width: 720px) {
   .container.wide {
+    
     flex-direction: column;
-    max-width: 100vw;
+    max-width: 90vw;
+    place-items: center;
   }
   .board{
-    width: 30vw;
+    width: 25vw;
   }
   .dash {
     display: flex;

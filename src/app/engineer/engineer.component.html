@@ -4,50 +4,73 @@
     <app-sidebar></app-sidebar>
     <div class="d-flex justify-content-md-evenly flex-column flex-md-row canfy p-6 orderlist">
         <div class="container border rounded-2 mt-4 p-6 m-3">
-            <h1>Orders List</h1>
-            <div class="notifications-container ">
+            <div class="container">
+                
+             <div class="d-flex justify-content-between p-3"><h1>Orders List</h1><div class="textback">  <span class="text-success font-weight-bold">{{ordersLength}}</span></div>
+            </div>
+            </div>
+                    <div class="notifications-container ">
 
-                <ul class="services-list">
-                   <li *ngFor="let order of PendingOrders" class="list-group-item">
-                     <p>{{ order.userName}}</p> 
-                     <p>{{ order.dateSlot | slice:0:10 }}</p>
+                        <ul class="services-list" *ngFor="let order of PendingOrders">
+                            <li class="list-group-item" [class.assigned-order]="order.assigned">
+                            
+                                <p>{{ order.userName }}</p>
+                                <p>{{ order.dateSlot | slice: 0:10 }}</p>
+                        
+                                <input *ngIf="!order.assigned" type="radio" name="selectedOrderId" [(ngModel)]="selectedOrderId" [value]="order.orderId">
+                                <div *ngIf="order.assigned" class="text-bg-warning rounded-2">done</div>
+                                <button class="btn btn-success" (click)="showOrderDetails()">viewOrder</button>
+                            </li>
+                            <!-- <li class="list-group-item"   [class.assigned-order]="order.assigned">
+                             
+                                <p>{{ order.userName }}</p>
+                                <p>{{ order.dateSlot | slice: 0:10 }}</p>
+                        
+                                <input *ngIf="!order.assigned" type="radio" name="selectedOrderId" [(ngModel)]="selectedOrderId" [value]="order.orderId">
+                                <button class="btn btn-success" (click)="showOrderDetails()">viewOrder</button>
+                            </li> -->
+                        </ul>
+                        
+                        >
+            </div>
+        </div>
 
-                      
-                      <input type="radio" name="selectedOrderId" [(ngModel)]="selectedOrderId" [value]="order.orderId">
-                      <button class="btn btn-success" (click)="showOrderDetails(order.orderId)">viewOrder</button>
-                   </li>
-                </ul>
-             </div>
-          </div>
-          
         <div class="container border rounded-2 mt-4 p-6 m-3">
-            <h1>Allotted Engineer</h1>
+            <div class="d-flex">            <h1>Allotted Engineer</h1>  <div  class="textback"><p class="text-primary font-weight-bold"> {{allEngineers.length}}</p></div>
+        </div>
             <button class="btn btn-success" (click)="assign()">Assign</button>
-            <ul class="list-group">
+           
+            <ul class="list-group m-3">
                 <li class="list-group-item" *ngFor="let engineer of allEngineers">
                     <label class="d-flex justify-content-between align-items-center">
-                        <input type="radio" name="selectedEngineer" [(ngModel)]="selectedEngineerId" [value]="engineer.engineerId">
-                        <span>{{ engineer.engineerName }}</span> 
+                        <input type="radio" name="selectedEngineer" [(ngModel)]="selectedEngineerId"
+                            [value]="engineer.engineerId">
+                        <span>{{ engineer.engineerName }}</span>
                     </label>
                 </li>
             </ul>
         </div>
-        
-        
+
         <div class="container border rounded-2 mt-4 p-6 m-3">
-    <h1> Assigned  Order Status List</h1>
-    <ul class="">
-        <li class="Orderasign">
-            <span>Order 1</span>
-            <span>Engineer 1</span>
-         
-            <button class="btn btn-primary">Edit</button>
-            <button class="btn btn-danger">Cancel</button>
-        </li>
-        <!-- Add more list items as needed -->
-    </ul>
-</div>
+            <div class="d-flex">             <h1> Assigned Order </h1> <div  class="textback"> <p class="text-warning font-weight-bold">{{assignedOrders.length}}</p></div>
+        </div>
+            <div  Class="notifications-container ">
+            
+            <ul class="" *ngFor="let con of assignedOrders">
+                <li class="Orderasign">
+                    {{con.engineerDTO.engineerName}} <br>
+                    assigned to :
+                    <br>
+                    {{con.orderDTO.userName}}
+                    Mno:{{con.orderDTO.mobileNumber}} 
+
+                    <button class="btn btn-danger">Cancel</button>
+                </li>
+              <hr>
+            </ul>
+        </div>
+    </div>
 
     </div>
-   
+
 </div>

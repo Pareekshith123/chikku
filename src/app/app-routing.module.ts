@@ -19,6 +19,8 @@ import { PaymentinvoiceComponent } from './paymentinvoice/paymentinvoice.compone
 import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { PaylaterOrdersComponent } from './paylater-orders/paylater-orders.component';
+import { CompletedOrderComponent } from './completed-order/completed-order.component';
 
 const routes: Routes = [
   {
@@ -90,6 +92,13 @@ const routes: Routes = [
 },{
   path:'inpage',
   component:InvoiceComponent
+},{
+  path:'paylater',
+  component:PaylaterOrdersComponent
+}
+,{
+  path:'completed',
+  component:CompletedOrderComponent
 }
 ];
 

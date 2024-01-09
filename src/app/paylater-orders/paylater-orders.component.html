@@ -42,11 +42,11 @@
   <div class="order-item" *ngFor="let order of orders | slice: (page-1)*pageSize : page*pageSize">
     <div class="order-details   page-item">
       <!-- <p><strong>Order ID:</strong> {{ order.orderId }}</p> -->
-      <p class="p-3 "><strong>User Name:</strong> {{ order.userName }}</p>
-      <p class="p-3"><strong>Email:</strong> {{ order.emailId }}</p>
-      <p class="p-3"><strong>Total Price:</strong> <strong>{{ order.totalPrice }}</strong></p>
-      <p class="p-3"><strong>Order Status:</strong> {{ order.orderStatus }}</p>
-      <p class="p-3 "><strong>Payment Status:</strong> <span  class=" ">{{ order.paymentStatus }}</span></p>
+      <p class="p-3 m-3"><strong>User Name:</strong> {{ order.userName }}</p>
+      <p class="p-3 m-3"><strong>Email:</strong> {{ order.emailId }}</p>
+      <p class="p-3  m-3"><strong>Total Price:</strong> <strong>{{ order.totalPrice }}</strong></p>
+      <p class="p-3  m-3"><strong>Order Status:</strong> {{ order.orderStatus }}</p>
+      <p class="p-3  m-3"><strong>Payment Status:</strong> <span  class=" ">{{ order.paymentStatus }}</span></p>
       <p class="p-3 d-flex"><strong>Date Slot:</strong> <span class="text-bg-primary rounded ">{{ (order.dateSlot | date:'yyyy-MM-dd') || order.dateSlot }}</span></p>
       <p class="p-3 d-flex"><strong>Time Slot:</strong> <span class="text-bg-info rounded">{{ order.timeSlot }}</span></p>
     </div>

@@ -1,10 +1,10 @@
 .userlist {
-    margin: 70px auto;
-    padding: 20px;
+    margin: 60px auto;
+    padding: 10px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 70vw; /* Set a maximum width for larger screens */
+    width: 80vw; /* Set a maximum width for larger screens */
 }
 .ite{
     margin-left: 40px;

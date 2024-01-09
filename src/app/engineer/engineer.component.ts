@@ -11,6 +11,8 @@ export class EngineerComponent  {
   constructor(private adminServiceService:AdminServiceService){}
   PendingOrders:any=[];
   allEngineers:any=[];
+  assignedOrders:any={};
+    ordersLength:number=0;
   selectedEngineerId: number=0;
   selectedOrderId:number=0;
   // engineer = {
@@ -24,6 +26,7 @@ export class EngineerComponent  {
   ngOnInit(){
     this.getAllEngineers();
     this.getPendingOrders();
+    this.allAssignedOrders();
   
       }
   getAllEngineers(){
@@ -37,6 +40,7 @@ export class EngineerComponent  {
       this.adminServiceService.getAllPendingOrders().subscribe(
         (data) => {
           this.PendingOrders = data;
+          this.ordersLength=this.PendingOrders.length
           console.log("pending Orders:",this.PendingOrders);
         },
         (error) => {
@@ -46,6 +50,7 @@ export class EngineerComponent  {
       );
       
     }
+
   assign(){
   
     console.log("selectedengineerId",this.selectedEngineerId)
@@ -53,12 +58,17 @@ export class EngineerComponent  {
 
     this.adminServiceService.assignEngineerId(this.selectedOrderId,this.selectedEngineerId).subscribe(()=>{
       Swal.fire('Success!', 'Engineer assigned', 'success');
+      window.location.reload();
     });
 
    
   }
-  showOrderDetails(orderId:any){
-   
+  showOrderDetails(){}
+  allAssignedOrders(){
+   this.adminServiceService.getAllAssignedOrders().subscribe((res)=>{
+     this.assignedOrders=res
+     console.log("assigned",this.assignedOrders)
+   })
 
   }
 }

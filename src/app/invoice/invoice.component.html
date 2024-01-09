@@ -17,15 +17,16 @@
                 </div>
                 <br>
 
-                <div> <span class="head">Invoice ID:</span> <span class="text2">{{invoicePdfData.id}}</span>
+                <div> <span class="head">Invoice ID:</span> <span class="text2">{{invoicePdfData.orderId}}</span>
                     <br>
-                    <span class="head">Invoice for Order Number</span> <span
-                        class="text2">{{invoicePdfData.description | slice:25:35 }}</span>
+                    <span class="head">Invoice for Order Number:</span> <span class="text2">{{invoicePdfData.orderNumber
+                        }}</span>
                 </div>
             </div>
             <div class="OUT">
-              <!-- Assuming you have a Unix timestamp in invoicePdfData.date -->
-<span class="head"> ISSUE DATE <br><span class="text2">{{ (invoicePdfData.date * 1000) | date: 'dd-MM-yyyy' }}</span></span>
+                <!-- Assuming you have a Unix timestamp in invoicePdfData.date -->
+                <span class="head"> ISSUE DATE <br><span class="text2">{{ (invoicePdfData.createdDate) | date:
+                        'dd-MM-yyyy' }}</span></span>
 
                 <br>
                 <div class="amount-due-container">
@@ -43,18 +44,19 @@
                         style="color: black; font-size: 28px; font-family: Nunito Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">
                         Name
                     </span>
-                    <p>{{invoicePdfData.customer_details.name }}</p>
+                    <p>{{invoicePdfData.userName }}</p>
                 </div>
                 <div>
                     <span
                         style="color: black; font-size: 28px; font-family: Nunito Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">
                         Mobile Numer</span>
-                    <p>{{invoicePdfData.customer_details.contact}}</p>
+                    <p>{{invoicePdfData.mobileNumber}}</p>
+
                 </div>
                 <div><span
                         style="color: black; font-size: 28px; font-family: Nunito Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">
                         Email</span>
-                    <p>{{invoicePdfData.customer_details.customer_email}}</p>
+                    <p>{{invoicePdfData.emailId}}</p>
                 </div>
 
 
@@ -66,9 +68,9 @@
                     style="color: black; font-size: 32px; font-family: Nunito Sans; font-weight: 600; line-height: 36px; word-wrap: break-word">
                     Shipping Address</h1>
                 <p class="addressbody">
-                    Deepika, #8/1, Richmond Rd, opposite to
-                    new Udupi Upahar and besides HDFC
-                    bank, Bengaluru, Karnataka 560025
+                    {{address.address1}}, {{address.address2}}, {{address.landmark}},{{address.state}},
+                    pincode:{{address.pincode}}
+
                 </p>
             </div>
             <div>
@@ -76,9 +78,12 @@
                     style="color: black; font-size: 32px; font-family: Nunito Sans; font-weight: 600; line-height: 36px; word-wrap: break-word">
                     Billing Address</h1>
                 <p class="addressbody">
-                    Deepika, #8/1, Richmond Rd, opposite to
+                    {{address.address1}}, {{address.address2}}, {{address.landmark}},{{address.state}},
+                    pincode:{{address.pincode}}
+
+                    <!-- Deepika, #8/1, Richmond Rd, opposite to
                     new Udupi Upahar and besides HDFC
-                    bank, Bengaluru, Karnataka 560025
+                    bank, Bengaluru, Karnataka 560025 -->
                 </p>
             </div>
 
@@ -90,64 +95,33 @@
                 <h1 class="table-head">QTY</h1>
                 <h1 class="table-head">AMOUNT</h1>
             </div>
-            <div class="tabbody" *ngFor="let orders of invoicePdfData.line_items">
+            <div class="tabbody" *ngFor="let orders of orders" let i of index>
                 <ul type="none" class="content">
-                    <li style="width: 380px;">{{orders.name| slice:0:50 }} {{ orders.name.length >= 1 ? '...' : ''}}</li>
+                    <li style="width: 380px;">{{orders.serviceName| slice:0:50 }} {{ orders.serviceName.length >= 1 ?
+                        '...' : ''}}</li>
 
-                    <li>₹ {{orders.amount}}</li>
+                    <li>₹ {{orders.price}}</li>
                     <li>{{orders.quantity}}</li>
 
-                    <li> {{orders.quantity}}* ₹{{orders.amount}}</li>
+                    <li> {{orders.quantity}}* ₹{{orders.price}}</li>
 
 
                 </ul>
-                <!-- <div>
-                    <ul type="none" class="content">
-                        <li>Operating System and Microsoft Office Installation</li>
-
-                        <li>₹ 240.00</li>
-                        <li>4</li>
-
-                        <li>₹ 960.00</li>
-
-
-                    </ul>
-                </div>
-                <hr>
-                <div>
-                    <ul type="none" class="content">
-                        <li>Deep Cleaning (Fan, Motherboard, Processor, etc.)</li>
-
-                        <li>₹ 240.00</li>
-
-                        <li>2</li>
-                        <li>₹ 480.00</li>
-                    </ul>
-                </div>
-                <hr>
-                <div>
-                    <ul type="none" class="content">
-                        <li>Deep Cleaning (Fan, Motherboard, Processor, etc.)</li>
-                        <li>₹ 240.00</li>
-                        <li>2</li>
-                        <li>₹ 480.00</li>
-
-
-                    </ul>
-                </div> -->
+                
                 <hr>
             </div>
             <div class="">
                 <div>
                     <div class="total">
-                        <span>Total</span> <span class="totamount" style="margin-left: 50px;">₹ 1997.00 </span>
+                        <span>Total:</span> <span class="totamount"
+                            style="margin-left: 110px;">₹{{sumOfProducts}} </span>
                     </div>
                     <div class="total">
-                        <span>GST(18%)</span>
-                        <span class="totamount" style="margin-left: 50px;">₹{{ gst.toString() | slice:0:6}}</span>
-                                            </div>
+                        <span >GST:</span>
+                        <span class="totamount" style="margin-left: 115px;">₹{{ gst.toString()}}</span>
+                    </div>
                     <p class="greentotal" style="">
-                        <span style="margin-right: 60px;">Amount Paid</span> <span>₹ 2212.00</span>
+                        <span style="margin-right: 110px;">Amount Paid:</span> <span>₹ {{invoicePdfData.totalPrice}}</span>
                     </p>
 
                 </div>
