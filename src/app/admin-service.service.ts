@@ -118,6 +118,12 @@ getAllCompletedOrders(): Observable<any> {
     // Include the headers in the HTTP request
     return this.http.get(`${this.baseUrl}/api/admin/getAllCompletedOrders`);
   }
+  getOtp(mobileNumber:string){
+  return this.http.get(`${this.baseUrl}/login?mobileNumber=${mobileNumber}`)
+  }
+  getAuthenticateUser(mobileNumber:string,otp:string){
+    return this.http.get(`${this.baseUrl}/authenticateUser?mobileNumber=${mobileNumber}&otp=${otp}`)
+  }
 getAllPaylaterOrders(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)
     // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';

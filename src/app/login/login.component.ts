@@ -9,26 +9,39 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email = '';
-  password = '';
+  mobileNumber: string = '';
+  otp: string = '';
+  token:any={};
+
  
 
   constructor(private authService: AdminServiceService,private router: Router) {}
+  
+  sendOtp() {
+this.authService.getOtp(this.mobileNumber).subscribe(()=>{
+  Swal.fire(`OTP sent to ${this.mobileNumber}`);
+});
+    
+  }
+
+  loginWithOtp() {
+    this.authService.getAuthenticateUser(this.mobileNumber,this.otp).subscribe((res)=>{
+       this.token=res;
+    console.log("token",this.token)
+    localStorage.setItem('token', JSON.stringify(this.token.accessToken));
+      Swal.fire(`Loggin successfull`);
+      this.router.navigate(['/']);
+    })
+   
+  }
 
   login(): void {
-    this.authService.login(this.email, this.password).subscribe((response) => {
-      // Assuming the API returns a token in the response
-      const token = response.accessToken;
-      console.log("token",token)
-      // Store the token in local storage
-      localStorage.setItem('token', token);
+   
+   
     
     
       Swal.fire("successfully logged in",'success')
-      this.email = '';
-      this.password = '';
-      this.router.navigate(['/']);
-      // Do something with the token, like redirecting to another page
-    });
-  }
-}
+   
+  
+  
+}}
