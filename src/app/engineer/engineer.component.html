@@ -19,7 +19,7 @@
                         
                                 <input *ngIf="!order.assigned" type="radio" name="selectedOrderId" [(ngModel)]="selectedOrderId" [value]="order.orderId">
                                 <div *ngIf="order.assigned" class="text-bg-warning rounded-2">done</div>
-                                <button class="btn btn-success" (click)="showOrderDetails()">viewOrder</button>
+                                <!-- <button class="btn btn-success" (click)="showOrderDetails()">viewOrder</button> -->
                             </li>
                             <!-- <li class="list-group-item"   [class.assigned-order]="order.assigned">
                              

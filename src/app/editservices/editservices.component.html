@@ -5,8 +5,9 @@
     <div class="container mt-4">
         <div class="row">
           <div class="col-md-6 mb-4 solbeto d-flex flex-md-colomn flex-column">
+         
             <div class="bg-light rounded-2 border p-4">
-              <h1 class="text-center bg-white font-italic p-2 rounded-md mb-4 hover-text-blue-400">
+              <h1 class="text-center small">
                 Select a Category
               </h1>
               <div class="d-flex flex-column">
@@ -15,13 +16,21 @@
                     <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
                   </select>
                 </div>
+                <h1 class="text-center small">
+                  Select a SubCategory
+                </h1>
                 <div class="d-flex justify-content-center p-2 bg-light">
+                 
                   <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedSubCategoryId" (change)="onSubcategorychange()">
                     <option value="" disabled>Select a subcategory</option>
                     <option *ngFor="let subcategory of subcategories" [value]="subcategory.subCategoryId">{{subcategory.subCategoryName}}</option>
                   </select>
                 </div>
+                <h1 class="text-center small">
+                  Select a Service to be Edited
+                </h1>
                 <div class="d-flex justify-content-center p-2 bg-light">
+                 
                     <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedServiceId" (change)="getServicesById()">
                       <option value="" disabled>Select a service</option>
                       <option *ngFor="let service of getServicesbyIdList" [value]="service.serviceId">{{service.serviceName}}</option>

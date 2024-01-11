@@ -41,6 +41,7 @@ export class AdminComponent implements OnInit,AfterViewInit {
     this.  getCompletedOrders();
     this.getPaylaterOrders();
     this.getAllEngineers();
+    console.log("token present",localStorage.getItem('token'))
   }
   getCategories(): void {
     this.categoryService.getCategories().subscribe((data: any) => {

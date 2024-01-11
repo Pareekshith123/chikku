@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addservices',
@@ -85,9 +86,10 @@ export class AddservicesComponent {
           (res:any) => {
          console.log(res)
             this.serviceForm={};
+            Swal.fire("service added successfully")
           },
           (error) => {
-            console.error('Error adding category:', error);
+            console.error('Error adding service:', error);
           }
         );
       };

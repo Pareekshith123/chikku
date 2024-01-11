@@ -43,13 +43,15 @@ export class AdminSubcategoryComponent implements OnInit {
       this.adminServiceService.deleteSubcategory(id).subscribe(
         () => {
           console.log('Subcategory deleted successfully');
-          this.onCategoryChange(); // Refresh the subcategories list
+          this.onCategoryChange();
+           // Refresh the subcategories list
         },
         (error) => {
           console.error('Error deleting subcategory:', error);
         }
       );
     }
+    window.location.reload();
   }
   
   onSubmit(): void {

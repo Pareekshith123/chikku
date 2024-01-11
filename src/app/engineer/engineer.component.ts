@@ -37,7 +37,7 @@ export class EngineerComponent  {
     })
     }
     getPendingOrders() {
-      this.adminServiceService.getAllPendingOrders().subscribe(
+      this.adminServiceService.getAllOrders().subscribe(
         (data) => {
           this.PendingOrders = data;
           this.ordersLength=this.PendingOrders.length

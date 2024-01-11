@@ -24,7 +24,7 @@ export class OrdersComponent implements OnInit {
   constructor(private adminservice: AdminServiceService) {}
 
   getOrders() {
-    this.adminservice.getAllOrders().subscribe(
+    this.adminservice.getAllPendingOrders().subscribe(
       (data) => {
         this.orders = data;
         console.log("All Orders:", this.orders);

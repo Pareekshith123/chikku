@@ -186,6 +186,7 @@ export class EditservicesComponent {
           (res: any) => {
             console.log(res);
             this.serviceForm = {};
+            window.location.reload();
           },
           (error) => {
             console.error('Error updating service:', error);

@@ -28,7 +28,7 @@ this.authService.getOtp(this.mobileNumber).subscribe(()=>{
     this.authService.getAuthenticateUser(this.mobileNumber,this.otp).subscribe((res)=>{
        this.token=res;
     console.log("token",this.token)
-    localStorage.setItem('token', JSON.stringify(this.token.accessToken));
+    localStorage.setItem('token', this.token.accessToken);
       Swal.fire(`Loggin successfull`);
       this.router.navigate(['/']);
     })

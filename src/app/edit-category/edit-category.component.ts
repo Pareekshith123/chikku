@@ -19,6 +19,7 @@ export class EditCategoryComponent  {
       this.categoryService.deleteCategory(categoryId).subscribe(
         () => {
           this.getCategories();
+          window.location.reload();
         },
         (error) => {
           console.error('Error deleting category:', error);
@@ -69,6 +70,7 @@ export class EditCategoryComponent  {
             this.getCategories();
             this.categoryName = '';
             this.encodeDocument = null;
+            window.location.reload();
             console.log("the Category is Updated successfully and see home page ")
             console.log(requestData)
           },

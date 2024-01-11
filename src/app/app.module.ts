@@ -58,13 +58,14 @@ import { CompletedOrderComponent } from './completed-order/completed-order.compo
     InvoiceComponent,
     EngineerDashboardComponent,
     PaylaterOrdersComponent,
-    CompletedOrderComponent
+    CompletedOrderComponent,
+  
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
- 
+  
     ReactiveFormsModule,
     AppRoutingModule
   ],
@@ -72,7 +73,6 @@ import { CompletedOrderComponent } from './completed-order/completed-order.compo
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-   
       multi: true,
     },
   ],

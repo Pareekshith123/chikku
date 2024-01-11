@@ -52,7 +52,8 @@ export class EditsubcategoryComponent implements OnInit {
       this.adminServiceService.deleteSubcategory(id).subscribe(
         () => {
           console.log('Subcategory deleted successfully');
-          this.onCategoryChange(); // Refresh the subcategories list
+          this.onCategoryChange();
+          window.location.reload(); // Refresh the subcategories list
         },
         (error) => {
           console.error('Error deleting subcategory:', error);
@@ -78,6 +79,7 @@ export class EditsubcategoryComponent implements OnInit {
           this.subcategoryData = {};
           this.newSubcategory = {}; 
           this.onCategoryChange(); 
+          window.location.reload();
         },
         (error) => {
           console.error('Error adding subcategory:', error);

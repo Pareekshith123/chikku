@@ -26,6 +26,7 @@
   }
   .pagination{
     width: 800px;
+    cursor: pointer;
   }
   /* Add responsive styling as needed */
   @media (max-width: 768px) {

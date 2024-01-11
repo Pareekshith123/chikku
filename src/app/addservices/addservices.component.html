@@ -6,16 +6,18 @@
         <div class="row">
           <div class="col-md-6 mb-4">
             <div class="bg-light rounded-2 border p-4">
-              <h1 class="text-center bg-white font-italic p-2 rounded-md mb-4 hover-text-blue-400">
-                Select a Category
-              </h1>
               <div class="d-flex flex-column">
+                <p class="small ">Select a Category</p>
+
                 <div class="d-flex justify-content-center align-items-center p-2 bg-light mb-3">
+                  
                   <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedCategoryId" (change)="onCategoryChange()">
                     <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
                   </select>
                 </div>
+                <p class="small ">Select a subcategory</p>
                 <div class="d-flex justify-content-center p-2 bg-light">
+              
                   <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedSubCategoryId" (change)="onSubcategorychange()">
                     <option value="" disabled>Select a subcategory</option>
                     <option *ngFor="let subcategory of subcategories" [value]="subcategory.subCategoryId">{{subcategory.subCategoryName}}</option>

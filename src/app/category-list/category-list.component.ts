@@ -21,13 +21,14 @@ export class CategoryListComponent {
     if (confirm('Are you sure you want to delete this category?')) {
       this.categoryService.deleteCategory(categoryId).subscribe(
         () => {
-          this.getCategories();
+          
         },
         (error) => {
           console.error('Error deleting category:', error);
         }
       );
     }
+    window.location.reload();
   }
 
   ngOnInit(): void {
@@ -63,6 +64,7 @@ export class CategoryListComponent {
         this.categoryService.addCategory(requestData).subscribe(
           () => {
             this.getCategories();
+            window.location.reload();
             this.categoryName = '';
             this.encodeDocument = null;
           },

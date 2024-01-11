@@ -92,7 +92,7 @@ getCategories() {
     // });
 
     // Include the headers in the HTTP request
-    return this.http.get(`${this.baseUrl}/api/admin/getAllPendingOrders`);
+    return this.http.get(`${this.baseUrl}/api/admin/getAllPlacedOrders`);
   }
 getAllEngineers(): Observable<any> {
     // Get the token from wherever you store it (e.g., local storage, a service, etc.)

@@ -16,7 +16,9 @@
     margin-top: 10px;
 
 }
-
+.pagination{
+    cursor: pointer;
+}
 .custom-list-item {
     margin-bottom: 15px;
     background-color: #fff;

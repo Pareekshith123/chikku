@@ -67,6 +67,7 @@ this.getAllEngineers();
         };
         Swal.fire("created successfully successfully")
         this.getAllEngineers();
+        window.location.reload();
       },
       (error) => {
         console.error('Error adding engineer:', error);
@@ -96,6 +97,7 @@ this.getAllEngineers();
       Swal.fire("deleted successfully")
       console.log("deleted succesfully")
       this.getAllEngineers();
+      window.location.reload();
     });
   }
 }

@@ -21,8 +21,29 @@ import { LoginComponent } from './login/login.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PaylaterOrdersComponent } from './paylater-orders/paylater-orders.component';
 import { CompletedOrderComponent } from './completed-order/completed-order.component';
+import { AuthGuard } from 'src/AuthGuard';
 
 const routes: Routes = [
+  {
+    path:"login",
+    component:LoginComponent
+  },
+  
+     
+  
+  {
+    path: '',
+    component: AdminComponent,
+    canActivate: [AuthGuard], 
+    children:[
+      {
+        path: '',
+        component: AdminComponent,
+      },
+      
+ 
+    ]
+  },
   {
     path: 'profile',
     component: ProfileComponent,
@@ -34,17 +55,8 @@ const routes: Routes = [
   {
     path: 'subcategory',
     component: AdminSubcategoryComponent,
-  },
-  {
-    path: '',
-    component: AdminComponent,
-  },
-  {
-    path: 'dash',
-    component: DashboardComponent,
-  },
-  
-  {
+    
+  },{
     path: 'categorylist',
     component: CategoryListComponent
   },
@@ -78,16 +90,13 @@ const routes: Routes = [
   path:'user',
   component:UserlistComponent
 },
+
 {
-  path:"login",
-  component:LoginComponent
-},
-{
-  path:'invoices',
+  path:'allorders',
   component:PaymentinvoiceComponent
 },
 {
-  path:'oders',
+  path:'placedOrders',
   component:OrdersComponent
 },{
   path:'inpage',
@@ -100,6 +109,7 @@ const routes: Routes = [
   path:'completed',
   component:CompletedOrderComponent
 }
+  
 ];
 
 @NgModule({
