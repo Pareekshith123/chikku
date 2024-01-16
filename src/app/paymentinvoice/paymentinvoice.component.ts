@@ -2,6 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
+import { Router } from '@angular/router';
 interface CustomerDetails {
   customer_name: string;
   customer_email: string;
@@ -29,6 +30,8 @@ userName: any;
   styleUrls: ['./paymentinvoice.component.css']
 })
 export class PaymentinvoiceComponent implements OnInit {
+  navigate: any;
+
   invoices: Invoice[] = [];
   loading: boolean = true;
   error: string | null = null;
@@ -36,8 +39,11 @@ export class PaymentinvoiceComponent implements OnInit {
   pageSize = 4;
   maxPages = 8;
 
-  constructor(private adminServiceService: AdminServiceService) {}
-
+  constructor(private adminServiceService: AdminServiceService,private router: Router) {}
+  back() {
+    this.router.navigate(['/']);
+  throw new Error('Method not implemented.');
+  }
   ngOnInit() {
     this.adminServiceService.getAllInvoices().subscribe(
       (response) => {

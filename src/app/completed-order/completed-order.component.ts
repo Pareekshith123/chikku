@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
+import {Router} from '@angular/router'
 interface Order {
   orderId: number;
   userName: string;
@@ -17,24 +18,29 @@ interface Order {
 })
 export class CompletedOrderComponent {
   orders: Order[] = [];
+  loading: boolean = true;
   page = 1; 
   pageSize = 5;
   maxPages = 8;
-  constructor(private adminservice: AdminServiceService) {}
+  constructor(private adminservice: AdminServiceService,private router:Router) {}
 
   getOrders() {
     this.adminservice.getAllCompletedOrders().subscribe(
       (data) => {
         this.orders = data;
+        this.loading = false;
         console.log("All Orders:", this.orders);
       },
       (error) => {
+        this.loading = false;
         console.error("Error fetching orders:", error);
         // You can add further error handling logic here
       }
     );
   }
-
+back(){
+  this.router.navigate(['/']);
+}
   ngOnInit() {
     this.getOrders();
   }

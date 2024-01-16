@@ -92,7 +92,8 @@
       max-width: 100%; /* Full width on mobile */
       /* Add some margin for better spacing */
     }
-    .navbar {
+    .navbar {   
+      
       display:inline-flex;
       justify-content: space-between; /* Separate logo and dropdown */
       padding: 10px; /* Add padding for better spacing */

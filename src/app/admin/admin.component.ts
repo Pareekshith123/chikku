@@ -35,7 +35,16 @@ export class AdminComponent implements OnInit,AfterViewInit {
     this.getCategories();
     this.getSubCategories();
     this.getServies();
-    Swal.fire("welcome");
+    // Swal.fire({
+    //   title: 'Welcome',
+    //   timer: 1000, // Set the duration in milliseconds
+    //   showConfirmButton: false, // Hide the "OK" button
+    // }).then((result) => {
+    //   // This block is optional and will be executed after the alert is closed
+    //   if (result.dismiss === Swal.DismissReason.timer) {
+    //     console.log('Alert was closed by the timer');
+    //   }
+    // });
     this. getOrders();
     this. getPendingOrders();
     this.  getCompletedOrders();
@@ -173,17 +182,18 @@ export class AdminComponent implements OnInit,AfterViewInit {
     );
 }
 scrollToTopOrBottom() {
-  const windowHeight = window.innerHeight;
-  const bodyHeight = document.body.scrollHeight;
-
-  if (window.scrollY + windowHeight === bodyHeight) {
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else {
-    // Scroll to bottom
-    window.scrollTo({ top: bodyHeight, behavior: 'smooth' });
+ 
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.scrollHeight;
+  
+    // Check if the user is already at the bottom of the page
+    if (window.scrollY + windowHeight >= bodyHeight) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: bodyHeight, behavior: 'smooth' });
+    }
   }
-}
+  
 
 
 }

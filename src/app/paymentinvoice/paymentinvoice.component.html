@@ -4,20 +4,23 @@
 <div class="d-flex">
     <app-sidebar></app-sidebar>
     <div class="call container mt-4">
-        <div *ngIf="loading" class="alert alert-info">Loading...</div>
-
+<!-- HTML -->
+<div *ngIf="loading" class="loader-overlay">
+    <div class="loader"></div>
+  </div>
+  
         <div *ngIf="error" class="alert alert-danger">
             <p>Error: {{ error }}</p>
         </div>
 
         <div *ngIf="!loading && !error" class="custom-container">
-            <!-- Display your invoices here -->
+          <button class="btn btn-warning" (click)="back()">back</button>
             <ul class="list-group custom-list-group">
                 <li *ngFor="let invoice of invoices | slice: (page-1)*pageSize : page*pageSize"
                     class="list-group-item d-flex justify-content-between align-items-center custom-list-item">
                     <div class="custom-item-content">
                         <p><strong>Customer Name:</strong> {{ invoice.userName}}</p>
-                        <p><strong>Email:</strong> {{ invoice.emailId}}</p>
+                        <p><strong>Email:</strong> <br>{{ invoice.emailId}}</p>
                         <p class="m-3"><strong>Contact:</strong> {{ invoice.mobileNumber}}</p>
                         <p><strong>Amount:</strong> {{ invoice.totalPrice}}</p>
                         <p><strong>Order number:</strong> {{ invoice.orderNumber }}</p>

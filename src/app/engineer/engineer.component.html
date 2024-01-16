@@ -3,7 +3,7 @@
 <div class="d-flex">
     <app-sidebar></app-sidebar>
     <div class="d-flex justify-content-md-evenly flex-column flex-md-row canfy p-6 orderlist">
-        <div class="container border rounded-2 mt-1 p-6 m-3">
+        <div class="container-1 border rounded-2  p-6 m-3">
             <div class="container">
                 
              <div class="d-flex justify-content-between p-2"><h1>Orders List</h1><div class="textback">  <span class="text-success font-weight-bold">{{ordersLength}}</span></div>
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="container border rounded-2 mt-1 p-6 m-3">
+        <div class="container-1 border rounded-2 mt-1 p-6 m-3">
             <div class="d-flex">            <h1>Allotted Engineer</h1>  <div  class="textback"><p class="text-primary font-weight-bold"> {{allEngineers.length}}</p></div>
         </div>
             <button class="btn btn-success" (click)="assign()">Assign</button>
@@ -51,7 +51,7 @@
             </ul>
         </div>
 
-        <div class="container border rounded-2 mt-1 p-6 m-2">
+        <div class="container-1 border rounded-2 mt-1 p-6 m-2">
             <div class="d-flex">             <h1> Assigned Order </h1> <div  class="textback"> <p class="text-warning font-weight-bold">{{assignedOrders.length}}</p></div>
         </div>
             <div  Class="notifications-container ">

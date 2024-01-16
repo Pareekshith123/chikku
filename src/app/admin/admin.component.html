@@ -4,64 +4,45 @@
    <app-sidebar></app-sidebar>
 
    <div class="board">
-      <div class="brisk">
-         <div class="dashbox  text-bg-danger scale-effect" routerLink="/allorders">
+      <div class="brisk m-3">
+         <div class="dashbox curser  text-bg-danger scale-effect" routerLink="/allorders">
             <p class="text-center p-6">Total orders</p>
             <p class="text-center ">{{orders.length }}</p>
 
 
          </div>
-         <div class="dashbox text-bg-primary scale-effect" routerLink="/placedOrders">
+         <div class="p-1"></div>
+    
+         <div class="dashbox curser text-bg-primary scale-effect" routerLink="/placedOrders">
             <p class="text-center p-6"> Placed Orders</p>
             <p class="text-center ">{{PendingOrders.length}}</p>
          </div>
-         <div class="dashbox text-bg-info scale-effect" routerLink="/paylater">
+         <div class="p-1"></div>
+
+         
+      
+         <div class="dashbox curser text-bg-info scale-effect" routerLink="/paylater">
             <p class="text-center p-6">Paylater Orders</p>
             <p class="text-center ">{{PaylaterOrders.length}}</p>
             
          </div>
-         <div class="dashbox text-bg-success scale-effect" routerLink="/completed">
+         <div class="p-1"></div>
+         <div class="dashbox curser text-bg-success scale-effect" routerLink="/completed">
             <p class="text-center p-6"> Completed orders</p>
             <p class="text-center ">{{CompletedOrders.length}}</p>
          </div>
       </div>
-      
+      <div class="brisk">
       <div class=" marg  " *ngFor="let engineer of allEngineers">
          <div class="dashbox border   scale-effect" >
-            <p class="text-center p-1 ">{{ engineer.engineerName }}</p>
-            <div class="d-flex m-3">
-            <button class="btn btn-warning buttonn ">Total orders</button>
-            <button class="btn btn-primary buttonn ">pending orders</button>
-            <button class="btn btn-success buttonn ">Completed orders</button>
+            <p class="text-center curser ">{{ engineer.engineerName }}</p>
+            <div class="d-flex ">
+            <button class="btn btn-warning buttonn ">Total <br> orders</button>
+            <button class="btn btn-primary buttonn ">pending <br>orders</button>
+            <button class="btn btn-success buttonn ">Completed <br>orders</button>
             </div>
          </div>
-         <!-- <div class="dashbox border  scale-effect" routerLink="/oders">
-            <p class="text-center p-1 "> Printers</p>
-            <div class="d-flex m-3">
-               <button class="btn btn-warning buttonn ">Total orders</button>
-               <button class="btn btn-primary buttonn ">pending orders</button>
-               <button class="btn btn-success buttonn ">Completed orders</button>
-             
-               </div>
-         </div>
-         <div class="dashbox border  scale-effect">
-            <p class="text-center p-1 ">Networking</p>
-            <div class="d-flex m-3 ">
-               <button class="btn btn-warning buttonn ">Total orders</button>
-               <button class="btn btn-primary buttonn ">pending orders</button>
-               <button class="btn btn-success buttonn ">Completed orders</button>
-             
-               </div>
-         </div>
-         <div class="dashbox border  scale-effect">
-            <p class="text-center p-1 ">Server</p>
-            <div class="d-flex m-3">
-               <button class="btn btn-warning  buttonn ">Total orders</button>
-               <button class="btn btn-primary buttonn ">pending orders</button>
-               <button class="btn btn-success buttonn ">Completed orders</button>
-             
-               </div>
-         </div> -->
+      </div>
       </div>
 
 
@@ -69,48 +50,11 @@
 
 
 
-      <!-- <div class="component m-3 p-4 ">
-         <div class="container max-w-160">
-            <div class="row ">
-               <div class="col-md-4 col-sm-6 h-50 p-2 ">
-                  <div class="text-bg-primary p-4 component rounded-2 Larger-shadow scale-effect">
-                     Total orders
-                  </div>
-               </div>
-               <div class="col-md-4 h-50 col-sm-6 h-50 p-2">
-                  <div class="text-bg-secondary p-4 rounded-2 Larger shadow scale-effect">
-                     Completed today
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 h-50 p-2">
-                  <div class="text-bg-success p-4 rounded-2 Larger shadow scale-effect">
-                     Pending Orders
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 h-50 p-2">
-                  <div class="text-bg-warning rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
-                     Canceled Orders
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 h-50 p-2">
-                  <div class="text-bg-info rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
-                     Alloted Orders
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 h-50 p-2">
-                  <div class="text-bg-danger rounded-2 g-col-6 p-4 Larger shadow scale-effect p-3">
-                     Paylater Orders
-                  </div>
-               </div>
-            </div>
-         </div>
-
-
-      </div> -->
-      <div class="d-flex ml-auto justify-content-md-evenly">
+      
+      <div class="d-flex ml-auto justify-content-md-evenly p-3 charts">
          <div class="d-flex flex-column justify-content-between justify-content-between  p-4 flex-md-row">
            <app-barchart></app-barchart>
-            <div class="ml-auto p-3">
+            <div class="ml-auto charts">
                <canvas class="border p-4 w-570 w-md-35 h-90 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
                   height="300"></canvas>
 

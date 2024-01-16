@@ -36,20 +36,20 @@ margin-top: 90px;
 /* Responsive styles */
 @media (max-width: 768px) {
     .container-1 {
-        width: 60vw;
+        width: 70vw;
         height: 130vh; /* Adjust width for smaller screens */
-        margin-left: 100px; /* Adjust margin for smaller screens */
+        margin-left: 60px; /* Adjust margin for smaller screens */
     }
     .Engineers{
         display:block;
-        height: 130vh;
-        padding: 5px;
+        height: 150vh;
+        padding: 15px;
     }
     .engList {
-        margin-top: 2rem;
-        margin-left: 100px;
-        width: 60vw;
-        height: 100vh;
+        margin-top: 1.5rem;
+        margin-left: 60px;
+        width: 70vw;
+        height: 130vh;
         padding: 20px;
     }
 

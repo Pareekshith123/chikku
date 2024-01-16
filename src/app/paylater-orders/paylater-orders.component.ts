@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
+import {Router} from'@angular/router'
 interface Order {
   orderId: number;
   userName: string;
@@ -20,8 +21,10 @@ export class PaylaterOrdersComponent {
   page = 1; 
   pageSize = 5;
   maxPages = 8;
-  constructor(private adminservice: AdminServiceService) {}
-
+  constructor(private adminservice: AdminServiceService,private router:Router) {}
+back(){
+  this.router.navigate(['/']);
+}
   getOrders() {
     this.adminservice.getAllPaylaterOrders().subscribe(
       (data) => {

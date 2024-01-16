@@ -1,13 +1,13 @@
 .sidebar-1 {
   position: fixed;
   width: fit-content;
-  min-height: 650px;
+  min-height: 600px;
   background-color: #333;
   color: white;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* Added box shadow for a subtle lift */
-  margin-top: 8px;
+  margin-top: 0px;
   /* Centering content in the sidebar */
   display: flex;
   flex-direction: column;
@@ -15,7 +15,9 @@
   justify-content: space-around;
   float: inline-start;
 }
-
+.curser{
+  cursor: pointer;
+}
 /* Adding styles for the SVG icons */
 .sidebar-1 h1 svg {
   fill: white;

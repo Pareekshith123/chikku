@@ -5,20 +5,26 @@
 }
 .board{
   width: 100vw;
-  margin-top: 15px; margin-left: 24px;
+  margin-top: 15px; margin-left: 30px;
+ 
+}
+.curser{
   cursor: pointer;
 }
 .dash {
   display: flex;
 
 }
-.brisk{
-  margin-left: 40px;
+.brisk{ 
+  margin-left:15px;
   display: flex;
 }
 .marg{
+  max-width:90vw ;
   display: inline-block; 
-  margin-left: 15px;
+  margin-left: 8px;
+  
+ 
 }
 
 .dashbox{
@@ -32,7 +38,8 @@
  border-radius: 10px;
 }
 .showpieace{
-  max-width: 400px;
+  max-width: 250px;
+  max-height: 300px;
 }
 .container.wide {
   width: 100%;
@@ -118,12 +125,19 @@
     place-items: center;
   }
   .board{
-    width: 25vw;
+    width: 15vw;
   }
   .dash {
     display: flex;
 
  
+  }
+  .dashbox{
+    max-width: 230px;
+  }
+  .buttonn{
+    width: 70px;
+     margin: 3px;
   }
   #subcategory{
     margin-left: 40px;
@@ -131,8 +145,12 @@
   .content{
     margin-left: 10px;
   }
+  .charts{
+    max-width: 200px;
+  }
   .marg{
     display: block;
+    margin-left: 0px;
    }
   .showpieace{
     max-width: 400px;
@@ -175,7 +193,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 300px;
-  margin: 20px auto;
+  margin: 15px auto;
   max-height: 400px;
   overflow-y: auto;
 }
@@ -189,8 +207,8 @@ body {
 
 .services-list li {
   background-color: #fff;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 5px ;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -203,4 +221,14 @@ body {
 .scale-effect:hover {
   transition-duration: 0s;
   transform: scale(1.02); /* Adjust the scale factor as needed */
+}
+.charts{
+  padding: 12px;
+}
+@media screen and (max-width:760px){
+  .charts{
+      padding: 12px;
+      max-width: 250px;
+  }
+ 
 }

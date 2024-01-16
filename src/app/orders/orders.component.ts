@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
+import {Router} from '@angular/router'
 interface Order {
   orderId: number;
   userName: string;
@@ -21,7 +22,7 @@ export class OrdersComponent implements OnInit {
   page = 1; 
   pageSize = 5;
   maxPages = 8;
-  constructor(private adminservice: AdminServiceService) {}
+  constructor(private adminservice: AdminServiceService,private router:Router) {}
 
   getOrders() {
     this.adminservice.getAllPendingOrders().subscribe(
@@ -35,7 +36,10 @@ export class OrdersComponent implements OnInit {
       }
     );
   }
-
+  back() {
+    this.router.navigate(['/']);
+  throw new Error('Method not implemented.');
+  }
   ngOnInit() {
     this.getOrders();
   }

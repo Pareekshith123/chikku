@@ -1,0 +1,10 @@
+.charts{
+    padding: 12px;
+}
+@media screen and (max-width:760px){
+    .charts{
+        padding: 12px;
+        max-width: 250px;
+    }
+   
+}
