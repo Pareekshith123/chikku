@@ -17,6 +17,9 @@
    
     
   }
+  .profile{
+    margin-left:1100px;
+  }
   .navbar {
     position: fixed;
     z-index: 100;
