@@ -14,7 +14,13 @@
         </ng-template>
     
 <div *ngIf="orders.length > 0; else noOrders">
-  <button class="btn btn-warning" (click)="back()">Back</button>
+  <div class="container mt-3 searchback">
+    <button class="btn btn-warning" (click)="back()">back</button>
+    <form class="form-inline d-flex">
+        <input type="search" class="form-control mr-sm-2" placeholder="Search..." aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
 
   <div class="order-item" *ngFor="let order of orders | slice: (page-1)*pageSize : page*pageSize">
     <div class="order-details   page-item">
@@ -23,7 +29,7 @@
       <p class="p-3 m-3"><strong>Email:</strong> {{ order.emailId }}</p>
       <p class="p-3  m-3"><strong>Total Price:</strong> <strong>{{ order.totalPrice }}</strong></p>
       <p class="p-3  m-3"><strong>Order Status:</strong> {{ order.orderStatus }}</p>
-      <p class="p-3  m-3"><strong>Payment Status:</strong> <span  class=" ">{{ order.paymentStatus }}</span></p>
+      <p class="p-3  m-3"><strong>Payment Status:</strong> <span  class=" ">{{ order.paymentStatus}}</span></p>
       <p class="p-3 d-flex"><strong>Date Slot:</strong> <span class="text-bg-primary rounded ">{{ (order.dateSlot | date:'yyyy-MM-dd') || order.dateSlot }}</span></p>
       <p class="p-3 d-flex"><strong>Time Slot:</strong> <span class="text-bg-info rounded">{{ order.timeSlot }}</span></p>
     </div>

@@ -11,11 +11,13 @@
             name="engineerName" required>
         </div>
 
-        <div class=" p-1">
+        <div class="p-1">
           <label for="mobileNumber" class="form-label">Mobile Number</label>
           <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="engineer.mobileNumber"
-            name="mobileNumber" required>
+                 name="mobileNumber" pattern="[0-9]+" title="Please enter only numbers" maxlength="10" required>
         </div>
+        
+        
 
         <div class=" p-1">
           <label for="expertise" class="form-label">Expertise</label>
@@ -47,11 +49,12 @@
             name="engineerName" required>
         </div>
 
-        <div class=" p-1">
+        <div class="p-1">
           <label for="mobileNumber" class="form-label">Mobile Number</label>
           <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="engineer.mobileNumber"
-            name="mobileNumber" required>
+                 name="mobileNumber" pattern="[0-9]+" title="Please enter only numbers" maxlength="10" required>
         </div>
+        
 
         <div class=" p-1">
           <label for="expertise" class="form-label">Expertise</label>

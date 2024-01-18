@@ -16,17 +16,20 @@
 
 }
 .brisk{ 
-  margin-left:15px;
+  margin-left:11px;
   display: flex;
+ margin-top: -40px;
 }
 .marg{
   max-width:90vw ;
   display: inline-block; 
-  margin-left: 8px;
+  margin-left: 6px;
   
  
 }
-
+#service{
+  margin-right: 70px;
+}
 .dashbox{
   margin-top: 50px;
   margin-left: 10px;
@@ -38,7 +41,8 @@
  border-radius: 10px;
 }
 .showpieace{
-  max-width: 400px;
+  max-width: 400px; 
+  margin-left: 35px;
 }
 .container.wide {
   width: 100%;
@@ -87,11 +91,9 @@
   margin-left: 115px;
 }
 #subcategory{
-  margin-left: 70px;
+  margin-left: 40px;
 }
-#service{
-  margin-left: 80px;
-}
+
 .scroll-arrow {
   width: 50px;
   height: 50px;
@@ -108,7 +110,7 @@
 
 /* Style the arrow icon */
 .scroll-arrow i {
-  font-size: 74px;
+  font-size: 54px;
 }
 .icon{
   width: 50px;
@@ -147,6 +149,7 @@
   .charts{
     max-width: 200px;
   }
+
   .marg{
     display: block;
     margin-left: 0px;
@@ -163,6 +166,7 @@
     flex: 1;
     margin: 0 0 10px 0;
   }
+  
 .component{
 
 }
@@ -210,7 +214,7 @@ body {
   margin: 5px ;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  
   transition: background-color 0.3s ease;
 }
 

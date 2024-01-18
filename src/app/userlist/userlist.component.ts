@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
-
+import { Router } from '@angular/router';
 interface Users {
   firstName: string;
   lastName: string;
@@ -19,7 +19,7 @@ export class UserlistComponent implements OnInit {
   pageSize = 7;
   maxPages = 8;
 
-  constructor(private adminservice: AdminServiceService) {}
+  constructor(private adminservice: AdminServiceService,private router:Router) {}
 
   getAllUsers() {
     this.adminservice.getAllUsers().subscribe((data) => {
@@ -35,7 +35,9 @@ export class UserlistComponent implements OnInit {
   get totalPages(): number {
     return Math.ceil(this.users.length / this.pageSize);
   }
-
+  back(){
+    this.router.navigate(['/']);
+  }
   get pages(): number[] {
     const total = this.totalPages;
     const currentPage = this.page;

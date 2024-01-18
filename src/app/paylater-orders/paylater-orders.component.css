@@ -39,7 +39,12 @@
     justify-content: center;
     z-index: 9999;
   }
-  
+  .searchback{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 10px;
+}
   .loader {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;

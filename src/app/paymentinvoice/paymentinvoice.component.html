@@ -4,17 +4,27 @@
 <div class="d-flex">
     <app-sidebar></app-sidebar>
     <div class="call container mt-4">
-<!-- HTML -->
-<div *ngIf="loading" class="loader-overlay">
-    <div class="loader"></div>
-  </div>
-  
+        <!-- HTML -->
+        <div *ngIf="loading" class="loader-overlay">
+            <div class="loader"></div>
+        </div>
+
         <div *ngIf="error" class="alert alert-danger">
             <p>Error: {{ error }}</p>
         </div>
 
         <div *ngIf="!loading && !error" class="custom-container">
-          <button class="btn btn-warning" (click)="back()">back</button>
+            <h1>Total Orders List</h1>
+
+            <div class="container mt-3 searchback">
+                <button class="btn btn-warning" (click)="back()">back</button>
+                <form class="form-inline d-flex">
+                    <input type="search" class="form-control mr-sm-2" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+
+
             <ul class="list-group custom-list-group">
                 <li *ngFor="let invoice of invoices | slice: (page-1)*pageSize : page*pageSize"
                     class="list-group-item d-flex justify-content-between align-items-center custom-list-item">
@@ -24,9 +34,9 @@
                         <p class="m-3"><strong>Contact:</strong> {{ invoice.mobileNumber}}</p>
                         <p><strong>Amount:</strong> {{ invoice.totalPrice}}</p>
                         <p><strong>Order number:</strong> {{ invoice.orderNumber }}</p>
-                        <p><strong>Email Status:</strong> {{ invoice.orderStatus}}</p>
-                        <p><strong>Assigned:</strong> {{ invoice.isAssigned}}</p>
-                        <p><strong>serviceStarted:</strong> {{ invoice.serviceStarted }}</p>
+                        <p><strong>Email Status:</strong> {{ invoice.orderStatus==true? 'Yes' : 'No'}}</p>
+                        <p><strong>Assigned:</strong> {{ invoice.isAssigned==true? 'Yes' : 'No'}}</p>
+                        <p><strong>serviceStarted:</strong> {{ invoice.serviceStarted==true? 'Yes' : 'No' }}</p>
                     </div>
                 </li>
             </ul>
@@ -58,6 +68,6 @@
                 </ul>
             </nav>
         </div>
-        
+
     </div>
 </div>

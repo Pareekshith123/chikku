@@ -3,7 +3,12 @@
 .call {
     width: 100%;
 }
-
+.searchback{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 10px;
+}
 .custom-container {
     background-color: #f8f9fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

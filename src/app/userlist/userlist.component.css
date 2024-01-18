@@ -11,6 +11,12 @@
  
  
 }
+.searchback{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 10px;
+}
 .users{
     display: flex;
     padding: 10px;
