@@ -67,8 +67,8 @@
 
     <!-- Order Number Column -->
     <ng-container matColumnDef="orderNumber">
-      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Order Number </mat-header-cell>
-      <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderNumber }} </mat-cell>
+      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef>  Time </mat-header-cell>
+      <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.timeSlot }} </mat-cell>
     </ng-container>
 
     <!-- Email Status Column -->
@@ -76,6 +76,12 @@
       <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Date </mat-header-cell>
       <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ (invoice.dateSlot | date:'yyyy-MM-dd') || invoice.dateSlot }}</mat-cell>
     </ng-container>
+
+    <!-- time Status Column -->
+    <!-- <ng-container matColumnDef="TimeStatus">
+      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Time </mat-header-cell>
+      <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.timeSlot }}</mat-cell>
+    </ng-container> -->
 
     <!-- Assigned Column -->
     <ng-container matColumnDef="isAssigned">

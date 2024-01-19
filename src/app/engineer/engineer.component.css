@@ -57,7 +57,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    width: 100%; /* Full width on small screens */
+    width: 100%;
+    margin-top: 10px; /* Full width on small screens */
 }
 
 .border {

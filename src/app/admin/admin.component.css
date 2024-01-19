@@ -119,8 +119,8 @@ scroll-snap-type: proximity;
 }
 
 .scroll-arrow {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -134,7 +134,7 @@ scroll-snap-type: proximity;
 
 /* Style the arrow icon */
 .scroll-arrow i {
-  font-size: 54px;
+  font-size: 44px;
 }
 .icon{
   width: 50px;
