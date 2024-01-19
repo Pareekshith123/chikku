@@ -31,6 +31,11 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { EngineerDashboardComponent } from './engineer-dashboard/engineer-dashboard.component';
 import { PaylaterOrdersComponent } from './paylater-orders/paylater-orders.component';
 import { CompletedOrderComponent } from './completed-order/completed-order.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -59,15 +64,21 @@ import { CompletedOrderComponent } from './completed-order/completed-order.compo
     EngineerDashboardComponent,
     PaylaterOrdersComponent,
     CompletedOrderComponent,
+    
   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-  
+    MatTableModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIconModule
   ],
   providers: [
     {

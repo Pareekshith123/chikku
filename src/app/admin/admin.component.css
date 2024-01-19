@@ -5,15 +5,36 @@
 }
 .board{
   width: 100vw;
-  margin-top: 15px; margin-left: 30px;
+  margin-top: 10px; margin-left: 30px;
  
+}
+.font-bold{
+  font-size: large;
+  color: black;
+}
+.cattille{
+  align-items: center;
+  width: 330px;
+  height: 140px;margin: 5px;
+  background-color:rgb(236, 232, 225) ;
+  border-radius: 20px;
 }
 .curser{
   cursor: pointer;
+  font-size: larger;
 }
 .dash {
   display: flex;
 
+}
+.listtille{margin-left: 50px;
+  width: 300px;
+  height: 40px;
+}
+.butserve{
+  margin-left: 10px;
+  width: 120px;
+  height: 60px;
 }
 .brisk{ 
   margin-left:11px;
@@ -28,7 +49,7 @@
  
 }
 #service{
-  margin-right: 70px;
+  margin-right: 100px;
 }
 .dashbox{
   margin-top: 50px;
@@ -42,7 +63,7 @@
 }
 .showpieace{
   max-width: 400px; 
-  margin-left: 35px;
+  margin-left: 21px;
 }
 .container.wide {
   width: 100%;
@@ -52,9 +73,12 @@
   margin-right: 20px;
 }
 .notifications-container {
-  max-width: 100%;
-  scroll-behavior: hidden;
+   width: 400px;
+scroll-snap-type: proximity;
   scroll-margin: 2px;
+  scroll-padding-block-start: initial;
+  scrollbar-width: 2px;
+
 }
 .component {
   display: flex;
@@ -157,6 +181,7 @@
   .showpieace{
     max-width: 400px;
     margin-left: 50px;
+    scroll-snap-type: proximity;
   }
   .brisk{
     margin-left: 30px;
@@ -171,9 +196,28 @@
 
 }
   .notifications-container {
-    max-width: 100%;
+    width: 220px;
     scroll-behavior: hidden;
-    scroll-margin: 6px;
+    scroll-margin: 2px;
+  }
+  .cattille{
+    width: 200px;
+    margin-left: 0px;
+    height: 190px;margin: 10px;
+    background-color:rgb(236, 232, 225) ;
+    border-radius: 20px;
+    scroll-padding-inline-start: initial;
+  }
+  .listtille{margin-left: 15px;
+    width: 180px;
+    font-size: medium;
+    height: 80px;
+  }
+  .butserve{
+    font-size: small;
+    margin: 0px;
+    width: 90px;
+    height: 60px;
   }
 }
 
@@ -189,24 +233,52 @@ body {
 }
 
 /* Your CSS Style */
+/* Your existing styles for .notifications-container */
+/* Your existing styles for .notifications-container */
 .notifications-container {
   background-color: #f0f0f0;
   padding: 20px;
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
+  width: 330px;
   margin: 15px auto;
-  max-height: 400px;
+  height: 400px;
   overflow-y: auto;
+  scroll-snap-type: end;
+  scroll-behavior: hidden;
+  scroll-margin: 2px;
 }
 
-.services-list {
-  list-style-type: none;
-  padding: 0;
-  max-height: 350px;
-  scroll-behavior: smooth;
+
+
+/* Adjust the scrollbar height */
+.notifications-container::-webkit-scrollbar {
+  width: 8px; 
+  /* You can adjust this value to decrease the scrollbar width */
 }
+
+/* Styles for the scrollbar thumb and track */
+.notifications-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* You can set the color of the scrollbar thumb */
+  border-radius: 5px;
+  height: 40px; /* You can adjust the border radius for rounded corners */
+}
+
+.notifications-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0; 
+  height: 40px;/* You can set the color of the scrollbar track */
+}
+
+/* Your existing styles for .services-list */
+.services-list {
+  padding: 0;
+  height: 350px;
+  scroll-padding-block: initial;
+  scroll-behavior: smooth;
+  scroll-padding: 10px;
+}
+
 
 .services-list li {
   background-color: #fff;
@@ -232,6 +304,17 @@ body {
   .charts{
       padding: 12px;
       max-width: 250px;
+  }
+  .notifications-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    margin: 15px auto;
+    max-height: 400px;
+    overflow-y: auto;
   }
  
 }

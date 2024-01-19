@@ -53,13 +53,14 @@ export class EditsubcategoryComponent implements OnInit {
         () => {
           console.log('Subcategory deleted successfully');
           this.onCategoryChange();
-          window.location.reload(); // Refresh the subcategories list
+          // Refresh the subcategories list
         },
         (error) => {
           console.error('Error deleting subcategory:', error);
         }
       );
     }
+    window.location.reload();
   }
   
   onSubmit(): void {
@@ -79,7 +80,7 @@ export class EditsubcategoryComponent implements OnInit {
           this.subcategoryData = {};
           this.newSubcategory = {}; 
           this.onCategoryChange(); 
-          window.location.reload();
+        
         },
         (error) => {
           console.error('Error adding subcategory:', error);
@@ -89,6 +90,7 @@ export class EditsubcategoryComponent implements OnInit {
       console.error('Please fill in all the required fields');
       // You might want to show a user-friendly error message here
     }
+    window.location.reload();
   }
   
 }

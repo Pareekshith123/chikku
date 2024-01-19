@@ -17,6 +17,10 @@
 }
 .curser{
   cursor: pointer;
+
+}
+.adjust{
+  margin-top: -45px;
 }
 /* Adding styles for the SVG icons */
 .sidebar-1 h1 svg {

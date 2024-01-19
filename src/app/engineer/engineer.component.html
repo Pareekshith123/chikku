@@ -38,7 +38,6 @@
         <div class="container-1 border rounded-2 mt-1 p-6 m-3">
             <div class="d-flex">            <h1>Allotted Engineer</h1>  <div  class="textback"><p class="text-primary font-weight-bold"> {{allEngineers.length}}</p></div>
         </div>
-            <button class="btn btn-success" (click)="assign()">Assign</button>
            
             <ul class="list-group m-3">
                 <li class="list-group-item" *ngFor="let engineer of allEngineers">
@@ -49,6 +48,8 @@
                     </label>
                 </li>
             </ul>
+            <button class="btn btn-success" (click)="assign()">Assign</button>
+
         </div>
 
         <div class="container-1 border rounded-2 mt-1 p-6 m-2">

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { PageEvent } from '@angular/material/paginator';
 interface Order {
   orderId: number;
   userName: string;
@@ -22,12 +24,15 @@ export class OrdersComponent implements OnInit {
   page = 1; 
   pageSize = 5;
   maxPages = 8;
+  displayedColumns: string[] = ['userName', 'emailId', 'mobileNumber', 'totalPrice', 'orderNumber', 'orderStatus', 'isAssigned', 'serviceStarted'];
+  dataSource = new MatTableDataSource<Order>([]);
   constructor(private adminservice: AdminServiceService,private router:Router) {}
 
   getOrders() {
     this.adminservice.getAllPendingOrders().subscribe(
       (data) => {
         this.orders = data;
+        this.dataSource = new MatTableDataSource<Order>(this.orders);
         console.log("All Orders:", this.orders);
       },
       (error) => {
@@ -63,9 +68,9 @@ export class OrdersComponent implements OnInit {
     }
   }
 
-  setPage(newPage: number): void {
-    if (newPage >= 1 && newPage <= this.totalPages) {
-      this.page = newPage;
+  setPage(event: PageEvent): void {
+    if (event.pageIndex !== undefined) {
+      this.page = event.pageIndex + 1;
     }
   }
 }

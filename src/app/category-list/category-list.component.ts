@@ -64,9 +64,9 @@ export class CategoryListComponent {
         this.categoryService.addCategory(requestData).subscribe(
           () => {
             this.getCategories();
-            window.location.reload();
             this.categoryName = '';
             this.encodeDocument = null;
+            window.location.reload();
           },
           (error) => {
             console.error('Error adding category:', error);
@@ -78,5 +78,6 @@ export class CategoryListComponent {
     } else {
       console.error('No file selected');
     }
+   
   }
 }

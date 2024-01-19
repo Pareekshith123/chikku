@@ -1,22 +1,24 @@
-// paymentinvoice.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 interface CustomerDetails {
   customer_name: string;
   customer_email: string;
   customer_contact: string;
 }
+
 interface Invoice {
-serviceStarted: any;
-isAssigned: any;
-orderStatus: any;
-orderNumber: any;
-totalPrice: any;
-mobileNumber: any;
-emailId: any;
-userName: any;
+  serviceStarted: any;
+  isAssigned: any;
+  orderStatus: any;
+  orderNumber: any;
+  totalPrice: any;
+  mobileNumber: any;
+  emailId: any;
+  userName: any;
   customer_details: CustomerDetails;
   amount: number;
   order_id: string;
@@ -24,32 +26,36 @@ userName: any;
   sms_status: string;
   short_url: string;
 }
+
 @Component({
   selector: 'app-paymentinvoice',
   templateUrl: './paymentinvoice.component.html',
   styleUrls: ['./paymentinvoice.component.css']
 })
 export class PaymentinvoiceComponent implements OnInit {
-  navigate: any;
-
   invoices: Invoice[] = [];
   loading: boolean = true;
   error: string | null = null;
   page = 1;
-  pageSize = 4;
+  pageSize = 6;
   maxPages = 8;
+  displayedColumns: string[] = ['userName', 'emailId', 'mobileNumber', 'totalPrice', 'orderNumber', 'orderStatus', 'isAssigned', 'serviceStarted'];
+  dataSource = new MatTableDataSource<Invoice>([]); // Initialize with an empty array
 
-  constructor(private adminServiceService: AdminServiceService,private router: Router) {}
+  constructor(private adminServiceService: AdminServiceService, private router: Router) {}
+
   back() {
     this.router.navigate(['/']);
-  throw new Error('Method not implemented.');
   }
+
   ngOnInit() {
     this.adminServiceService.getAllInvoices().subscribe(
       (response) => {
-         this.invoices = response as Invoice[];
+        this.invoices = response as Invoice[];
+        this.dataSource = new MatTableDataSource<Invoice>(this.invoices);
+        
         this.loading = false;
-        console.log('Invoices:',   this.invoices);
+        console.log('Invoices:', this.invoices);
       },
       (error) => {
         this.loading = false;
@@ -58,9 +64,10 @@ export class PaymentinvoiceComponent implements OnInit {
       }
     );
   }
- 
+  
+
   get totalPages(): number {
-    return Math.ceil(this.invoices.length / this.pageSize);
+    return Math.ceil(this.dataSource.data.length / this.pageSize);
   }
 
   get pages(): number[] {
@@ -79,13 +86,10 @@ export class PaymentinvoiceComponent implements OnInit {
     }
   }
 
-  setPage(newPage: number): void {
-    if (newPage >= 1 && newPage <= this.totalPages) {
-      this.page = newPage;
+  setPage(event: PageEvent): void {
+    if (event.pageIndex !== undefined) {
+      this.page = event.pageIndex + 1;
     }
   }
-
-
-
   
 }

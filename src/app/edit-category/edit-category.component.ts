@@ -19,13 +19,14 @@ export class EditCategoryComponent  {
       this.categoryService.deleteCategory(categoryId).subscribe(
         () => {
           this.getCategories();
-          window.location.reload();
+        
         },
         (error) => {
           console.error('Error deleting category:', error);
         }
       );
     }
+    window.location.reload();
   }
 
   ngOnInit(): void {
@@ -67,12 +68,14 @@ export class EditCategoryComponent  {
  
         this.categoryService.updateCategory(requestData).subscribe(
           () => {
-            this.getCategories();
+           
             this.categoryName = '';
             this.encodeDocument = null;
-            window.location.reload();
+           
             console.log("the Category is Updated successfully and see home page ")
             console.log(requestData)
+            window.location.reload();
+            
           },
           (error) => {
             console.error('Error adding category:', error);
@@ -84,5 +87,6 @@ export class EditCategoryComponent  {
     } else {
       console.error('No file selected');
     }
+ 
   }
 }

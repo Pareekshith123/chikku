@@ -9,6 +9,9 @@
     height: 50px;
     margin-bottom: 10px;
 }
+.demo-table{
+    background-color: white;
+  }
 .custom-container {
     background-color: #f8f9fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -23,6 +26,7 @@
 }
 .pagination{
     cursor: pointer;
+    margin-left:50%;
 }
 .custom-list-item {
     margin-bottom: 15px;
@@ -38,13 +42,14 @@
 }
 
 .custom-item-content {
-    width: 100%;
-
-    padding: 10px;
     display: flex;
-    justify-content: space-between;
-    
+    flex-direction: row;
+    align-items: start;
+    margin: 9px 3px;
+    margin-inline: 2px;
 }
+
+
 
 .btn-success {
     background-color: #28a745;
@@ -90,6 +95,10 @@
         padding: 10px;
     }
     
+    .demo-table{
+        background-color: white;
+        max-width:50% ;
+      }
 .custom-item-content {
     width: 50%;
 
@@ -97,6 +106,10 @@
     display: block;
     justify-content: space-between;
     
+}
+.search-image{
+    width: 20px;
+    height: 20px;
 }
     .call {
         margin-top: 40px;
@@ -113,5 +126,11 @@
     }
     .Page{
         width: 200px;
+    }
+    .searchback{
+        display:inline-block;
+        justify-content: space-between;
+        height: 50px;
+        margin-bottom: 10px;
     }
 }

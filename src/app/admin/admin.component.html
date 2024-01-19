@@ -6,43 +6,51 @@
    <div class="board">
       <div class="brisk m-3">
          <div class="dashbox curser  text-bg-danger scale-effect" routerLink="/allorders">
-            <p class="text-center p-6">Total orders</p>
-            <p class="text-center ">{{orders.length }}</p>
+            <div style="margin-top: 20px;">
+               <p class="text-center p-6">Total Orders</p>
+               <p class="text-center ">{{orders.length }}</p>
+            </div>
 
 
          </div>
          <div class="p-1"></div>
-    
+
          <div class="dashbox curser text-bg-primary scale-effect" routerLink="/placedOrders">
-            <p class="text-center p-6"> Placed Orders</p>
-            <p class="text-center ">{{PendingOrders.length}}</p>
+            <div style="margin-top: 20px;">
+               <p class="text-center p-6"> Placed Orders</p>
+               <p class="text-center ">{{PendingOrders.length}}</p>
+            </div>
          </div>
          <div class="p-1"></div>
 
-         
-      
+
+
          <div class="dashbox curser text-bg-info scale-effect" routerLink="/paylater">
-            <p class="text-center p-6">Paylater Orders</p>
-            <p class="text-center ">{{PaylaterOrders.length}}</p>
-            
+            <div style="margin-top: 20px;">
+               <p class="text-center p-6">Pay later Orders</p>
+               <p class="text-center ">{{PaylaterOrders.length}}</p>
+            </div>
+
          </div>
          <div class="p-1"></div>
          <div class="dashbox curser text-bg-success scale-effect" routerLink="/completed">
-            <p class="text-center p-6"> Completed orders</p>
-            <p class="text-center ">{{CompletedOrders.length}}</p>
-         </div>
-      </div>
-      <div class="brisk">
-      <div class=" marg" *ngFor="let engineer of allEngineers">
-         <div class="dashbox border   scale-effect" >
-            <p class="text-center curser ">{{ engineer.engineerName }}</p>
-            <div class="d-flex ">
-            <button class="btn btn-warning buttonn ">Total <br> orders</button>
-            <button class="btn btn-primary buttonn ">pending <br>orders</button>
-            <button class="btn btn-success buttonn ">Completed <br>orders</button>
+            <div style="margin-top: 20px;">
+               <p class="text-center p-6"> Completed Orders</p>
+               <p class="text-center ">{{CompletedOrders.length}}</p>
             </div>
          </div>
       </div>
+      <div class="brisk">
+         <div class=" marg" *ngFor="let engineer of allEngineers">
+            <div class="dashbox border   scale-effect">
+               <p class="text-center curser ">{{ engineer.engineerName }}</p>
+               <div class="d-flex ">
+                  <button class="btn btn-warning buttonn ">Total <br> Orders</button>
+                  <button class="btn btn-primary buttonn ">Pending <br>Orders</button>
+                  <button class="btn btn-success buttonn ">Completed <br>Orders</button>
+               </div>
+            </div>
+         </div>
       </div>
 
 
@@ -50,10 +58,10 @@
 
 
 
-      
+
       <div class="d-flex ml-auto justify-content-md-evenly p-3 charts">
          <div class="d-flex flex-column justify-content-between justify-content-between  p-4 flex-md-row">
-           <app-barchart></app-barchart>
+            <app-barchart></app-barchart>
             <div class="ml-auto charts">
                <canvas class="border p-4 w-570 w-md-35 h-90 h-md-20 h-md-35 rounded-2" id="ordersChart" width="300"
                   height="300"></canvas>
@@ -69,7 +77,7 @@
 
 <div class="d-md-flex flex-column flex-md-row content -mt-40 ">
    <div class="showpieace">
-      <div class="container w-150 h-150 my-2">
+      <!-- <div class="container w-150 h-150 my-2">
          <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
             <h2 class="text-center mb-4">List of Categories</h2>
             <div class="d-flex ">
@@ -77,6 +85,16 @@
                <button class="btn btn-primary w-40 mb-3" routerLink="/editCategory">Edit Category</button>
 
             </div>
+         </div>
+      </div> -->
+      <div>
+         <div class="cattille">
+            <h1 class="listtille">List of Categories</h1>
+            <div class="d-flex justify-content-center"><button class="btn btn-info butserve "
+                  routerLink="/categorylist">Add Category</button>
+               <button class="btn btn-primary butserve " routerLink="/editCategory">Edit Category</button>
+            </div>
+
          </div>
       </div>
 
@@ -92,7 +110,7 @@
       </div>
    </div>
    <div class="showpieace" id="subcategory">
-      <div class="container my-2">
+      <!-- <div class="container my-2">
          <div class="container w-150 h-150 my-2">
             <div class="border rounded-2 bg-light shadow d-md-flex flex-column  p-3">
                <h2 class="text-center mb-4">List of Subcategories</h2>
@@ -103,6 +121,17 @@
             </div>
          </div>
 
+      </div> -->
+      <div>
+         <div class="cattille">
+            <h1 class="listtille">List of Subcategories</h1>
+            <div class="d-flex justify-content-center">
+               <button class="btn btn-info butserve" routerLink="/subcategory">Add Subcategory</button>
+               <button class="btn btn-primary butserve" routerLink="/editSubcategory">Edit Subcategory</button>
+
+            </div>
+
+         </div>
       </div>
 
 
@@ -115,12 +144,12 @@
 
                <div class="flex-column">
                   <div class="col-6">
-                     <span>{{ subcategory.subCategoryName }}</span>
+                     <p class="font-bold">{{ subcategory.subCategoryName }}</p>
                   </div>
                   <div class="col-6">
 
-                     <div>{{ subcategory.description | slice:0:12 }}{{ subcategory.description.length > 1 ? '...' : ''
-                        }}</div>
+                     <p>{{ subcategory.description | slice:0:30 }}{{ subcategory.description.length > 1 ? '...' : ''
+                        }}</p>
                   </div>
                </div>
 
@@ -130,13 +159,25 @@
       </div>
    </div>
    <div class="showpieace" id="service">
-      <div class="container w-150 h-150 my-2">
+      <!-- <div class="container w-150 h-150 my-2">
          <div class="border rounded-2 bg-light shadow d-md-flex flex-column justify-content-center p-3">
             <h2 class="text-center mb-4">List of Services</h2>
             <div class="d-flex"><button class="btn btn-warning w-40 mb-3" routerLink="/addservices">Add
                   Service</button>
                <button class="btn btn-primary w-40 mb-3" routerLink="/editservice">Edit Service</button>
             </div>
+         </div>
+      </div> -->
+      <div>
+         <div class="cattille">
+            <h1 class="listtille">List of Services</h1>
+            <div class="d-flex justify-content-center">
+               <button class="btn btn-info butserve" routerLink="/addservices">Add
+                  Service</button>
+               <button class="btn btn-primary butserve" routerLink="/editservice">Edit Service</button>
+
+            </div>
+
          </div>
       </div>
 
@@ -154,5 +195,4 @@
 <!-- Add the arrow button with an image -->
 <button class="scroll-arrow" (click)="scrollToTopOrBottom()">
    <img class="icon" src="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png" alt="Scroll Arrow">
- </button>
- 
+</button>

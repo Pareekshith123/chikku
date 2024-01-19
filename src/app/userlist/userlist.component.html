@@ -7,23 +7,67 @@
 
     <div class="userlist">
 
-        <h1>Overall User list of Chikku</h1>
         <div class="container mt-3 searchback">
-            <button class="btn btn-warning" (click)="back()">back</button>
+            <button class="btn " (click)="back()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path
+                        d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z" />
+                    <path d="M13.293 7.293 8.586 12l4.707 4.707 1.414-1.414L11.414 12l3.293-3.293-1.414-1.414z" />
+                </svg></button>
+
+            <h1>Overall User list of Chikku</h1>
             <form class="form-inline d-flex">
                 <input type="search" class="form-control mr-sm-2" placeholder="Search..." aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <svg class="feather feather-search" fill="none" height="54" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 22 22" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" x2="16.65" y1="21" y2="16.65" />
+                </svg>
             </form>
         </div>
-        <ul class="user-list">
+        <!-- <ul class="user-list">
             <li class="users" *ngFor="let user of users | slice: (page-1)*pageSize : page*pageSize">
                 <p class="p-1 ite box "> <strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}
                 </p>
                 <p class="p-1 ite box "><strong>Email:</strong> {{ user.emailId }}<br></p>
                <p class="p-1 ite text-bg-success"><strong>Mobile:</strong> {{ user.mobileNumber }}</p>
             </li>
-        </ul>
-        <nav aria-label="Page navigation">
+        </ul> -->
+        <mat-table [dataSource]="users | slice: (page-1)*pageSize : page*pageSize" matSort matPaginator
+            class="mat-elevation-z8 demo-table ">
+
+            <!-- Customer Name Column -->
+            <ng-container matColumnDef="userName">
+                <mat-header-cell class="text-primary"style="background-color:lavender;" style="background-color:lavender;" *matHeaderCellDef mat-sort-header> Customer Name
+                </mat-header-cell>
+                <mat-cell class="text-secondary"  *matCellDef="let user"> {{ user.firstName }} {{ user.lastName
+                    }}</mat-cell>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="emailId">
+                <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell class="text-secondary" *matCellDef="let user"> {{ user.emailId }} </mat-cell>
+            </ng-container>
+
+            <!-- Contact Column -->
+            <ng-container matColumnDef="mobileNumber">
+                <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Contact </mat-header-cell>
+                <mat-cell class="text-secondary" *matCellDef="let user"> {{ user.mobileNumber }} </mat-cell>
+            </ng-container>
+
+
+
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator showFirstLastButtons [length]="dataSource.data.length" [pageSize]="pageSize"
+            (page)="setPage($event)">
+        </mat-paginator>
+        <!-- <nav aria-label="Page navigation">
             <ul class="pagination">
                 <li class="page-item" [class.disabled]="page === 1">
                     <a class="page-link" (click)="setPage(1)" aria-label="First">
@@ -49,7 +93,7 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
     </div>
 
 

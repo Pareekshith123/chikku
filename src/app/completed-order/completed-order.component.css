@@ -10,6 +10,9 @@
   .orderbody{
     display: flex;
   }
+  .demo-table{
+    background-color: white;
+  }
   .order-item {
     border: 1px solid #ccc;
     ;   
@@ -26,6 +29,7 @@
   }
   .pagination{
     width: 800px;
+    margin-left:50%;
   }
   .loader-overlay {
     position: fixed;
@@ -80,6 +84,23 @@
       }
       .pagination{
         width: 300px;
-      }   
+        
+      } 
+      .searchback{
+        display: block;
+        justify-content: space-between;
+        height: 50px;
+        margin-bottom: 10px;
+    }  
+    .searchback{
+      display:inline-block;
+      justify-content: space-between;
+      height: 50px;
+      margin-bottom: 10px;
+  }
+  .demo-table{
+    background-color: white;
+    max-width:50% ;
+  }
   }
   

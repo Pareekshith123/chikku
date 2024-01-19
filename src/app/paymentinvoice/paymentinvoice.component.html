@@ -1,73 +1,102 @@
-<!-- paymentinvoice.component.html -->
 <app-navbar></app-navbar>
 
 <div class="d-flex">
-    <app-sidebar></app-sidebar>
-    <div class="call container mt-4">
-        <!-- HTML -->
-        <div *ngIf="loading" class="loader-overlay">
-            <div class="loader"></div>
-        </div>
+  <app-sidebar></app-sidebar>
+  <div class="call container mt-4">
+    <!-- HTML -->
+    <div *ngIf="loading" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
 
-        <div *ngIf="error" class="alert alert-danger">
-            <p>Error: {{ error }}</p>
-        </div>
+    <div *ngIf="error" class="alert alert-danger">
+      <p>Error: {{ error }}</p>
+    </div>
 
-        <div *ngIf="!loading && !error" class="custom-container">
-            <h1>Total Orders List</h1>
+    <div *ngIf="!loading && !error" class="custom-container">
+      <div class="container mt-3 searchback">
+        <button class="btn" (click)="back()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z" />
+            <path d="M13.293 7.293 8.586 12l4.707 4.707 1.414-1.414L11.414 12l3.293-3.293-1.414-1.414z" />
+          </svg>
+        </button>
+        <h1>Total Orders List</h1>
+        <form class="form-inline d-flex">
+          <input type="search" class="form-control mr-sm-2" placeholder="Search..." aria-label="Search">
 
-            <div class="container mt-3 searchback">
-                <button class="btn btn-warning" (click)="back()">back</button>
-                <form class="form-inline d-flex">
-                    <input type="search" class="form-control mr-sm-2" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
+          <svg class="feather feather-search" fill="none" height="54" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 22 22" width="24"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" x2="16.65" y1="21" y2="16.65" />
+        </svg>
+        </form>
+      </div>
+
+      <!-- Import MatTableModule, MatSortModule, MatPaginatorModule in your module -->
+      <mat-table [dataSource]="invoices | slice: (page-1)*pageSize : page*pageSize" matSort matPaginator
+        class="mat-elevation-z8 demo-table ">
+
+        <!-- Customer Name Column -->
+        <ng-container matColumnDef="userName">
+          <mat-header-cell style="background-color:lavender;" class="text-primary" *matHeaderCellDef mat-sort-header> Customer Name </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.userName }} </mat-cell>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="emailId">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.emailId }} </mat-cell>
+        </ng-container>
+
+        <!-- Contact Column -->
+        <ng-container matColumnDef="mobileNumber">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Contact </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.mobileNumber }} </mat-cell>
+        </ng-container>
+
+        <!-- Amount Column -->
+        <ng-container matColumnDef="totalPrice">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Amount </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> ₹{{ invoice.totalPrice }} </mat-cell>
+        </ng-container>
+
+        <!-- Order Number Column -->
+        <ng-container matColumnDef="orderNumber">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Order Number </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderNumber }} </mat-cell>
+        </ng-container>
+
+        <!-- Email Status Column -->
+        <ng-container matColumnDef="orderStatus">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email Status </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderStatus ? 'Yes' : 'No' }}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Assigned Column -->
+        <ng-container matColumnDef="isAssigned">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Assigned </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.isAssigned ? 'Yes' : 'No' }}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Service Started Column -->
+        <ng-container matColumnDef="serviceStarted">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Service Started </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.serviceStarted ? 'Yes' : 'No' }}
+          </mat-cell>
+        </ng-container>
 
 
-            <ul class="list-group custom-list-group">
-                <li *ngFor="let invoice of invoices | slice: (page-1)*pageSize : page*pageSize"
-                    class="list-group-item d-flex justify-content-between align-items-center custom-list-item">
-                    <div class="custom-item-content">
-                        <p><strong>Customer Name:</strong> {{ invoice.userName}}</p>
-                        <p><strong>Email:</strong> <br>{{ invoice.emailId}}</p>
-                        <p class="m-3"><strong>Contact:</strong> {{ invoice.mobileNumber}}</p>
-                        <p><strong>Amount:</strong> {{ invoice.totalPrice}}</p>
-                        <p><strong>Order number:</strong> {{ invoice.orderNumber }}</p>
-                        <p><strong>Email Status:</strong> {{ invoice.orderStatus==true? 'Yes' : 'No'}}</p>
-                        <p><strong>Assigned:</strong> {{ invoice.isAssigned==true? 'Yes' : 'No'}}</p>
-                        <p><strong>serviceStarted:</strong> {{ invoice.serviceStarted==true? 'Yes' : 'No' }}</p>
-                    </div>
-                </li>
-            </ul>
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li class="page-item" [class.disabled]="page === 1">
-                        <a class="page-link" (click)="setPage(1)" aria-label="First">
-                            <span aria-hidden="true">&laquo;&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item" [class.disabled]="page === 1">
-                        <a class="page-link" (click)="setPage(page - 1)" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item" *ngFor="let pageNumber of pages" [class.active]="pageNumber === page">
-                        <a class="page-link" (click)="setPage(pageNumber)">{{ pageNumber }}</a>
-                    </li>
-                    <li class="page-item" [class.disabled]="page === totalPages">
-                        <a class="page-link" (click)="setPage(page + 1)" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item" [class.disabled]="page === totalPages">
-                        <a class="page-link" (click)="setPage(totalPages)" aria-label="Last">
-                            <span aria-hidden="true">&raquo;&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator showFirstLastButtons [length]="dataSource.data.length" [pageSize]="pageSize"
+        (page)="setPage($event)">
+      </mat-paginator>
+      <!-- [pageSizeOptions]="[5, 10, 25, 100]" -->
 
     </div>
+  </div>
 </div>

@@ -20,8 +20,8 @@
             </svg>
             <div class="drop" *ngIf="profiledown">
                 <a class="item" (click)="closeprofile()" routerLink="/login">{{ UserName }}</a>
-                <a class="item"  routerLink="/profile">Profile</a>
-                <a class="item" routerLink="/changePassword">Change Password</a>
+             
+
                 <a class="item text-danger" routerLink="/login" >Logout</a>
             </div>
         </div>
@@ -30,8 +30,7 @@
      
         <div class="dropdown " style="display: block;" *ngIf="isDropdownVisible">
             <a class="dropdown-item" routerLink="/login">{{ UserName }}</a>
-            <a class="dropdown-item" routerLink="/profile">Profile</a>
-            <a class="dropdown-item" routerLink="/changePassword">Change Password</a>
+        
             <a class="dropdown-item text-danger" routerLink="/login">Logout</a>
         </div>
     </div>

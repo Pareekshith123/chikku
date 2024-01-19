@@ -11,6 +11,13 @@
  
  
 }
+.demo-table{
+    background-color: white;
+
+  }
+.pagination{
+    margin-left: 50%;
+}
 .searchback{
     display: flex;
     justify-content: space-between;
@@ -46,6 +53,10 @@
         width: 70vw;
 
     }
+    .demo-table{
+        background-color: white;
+        max-width:50% ;
+      }
     .users{
         display: block;
     }

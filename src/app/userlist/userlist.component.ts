@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { PageEvent } from '@angular/material/paginator';
 interface Users {
   firstName: string;
   lastName: string;
@@ -18,12 +20,15 @@ export class UserlistComponent implements OnInit {
   page = 1;
   pageSize = 7;
   maxPages = 8;
+  displayedColumns: string[] = ['userName', 'emailId', 'mobileNumber'];
+  dataSource = new MatTableDataSource<Users>([]); // Initialize with an empty array
 
   constructor(private adminservice: AdminServiceService,private router:Router) {}
 
   getAllUsers() {
     this.adminservice.getAllUsers().subscribe((data) => {
       this.users = data as Users[]; 
+      this.dataSource = new MatTableDataSource<Users>(this.users);
       console.log("users", this.users);
     });
   }
@@ -54,9 +59,10 @@ export class UserlistComponent implements OnInit {
     }
   }
 
-  setPage(newPage: number): void {
-    if (newPage >= 1 && newPage <= this.totalPages) {
-      this.page = newPage;
+  setPage(event: PageEvent): void {
+    if (event.pageIndex !== undefined) {
+      this.page = event.pageIndex + 1;
     }
   }
+  
 }

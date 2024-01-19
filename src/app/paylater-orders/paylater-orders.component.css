@@ -17,7 +17,9 @@
     padding: 15px;
     border-radius: 10px;
   }
-  
+  .demo-table{
+    background-color: white;
+  }
   .order-details {
     font-size: 16px;
     padding :5px;
@@ -26,6 +28,7 @@
   }
   .pagination{
     width: 800px;
+    margin-left:50%;
   }
   .loader-overlay {
     position: fixed;
@@ -67,6 +70,10 @@
       margin-top: 0px;
       margin-left: 50px;
     }
+    .demo-table{
+      background-color: white;
+      max-width:50% ;
+    }
     .order-details {
       font-size: 16px;
       padding :10px;
@@ -80,5 +87,11 @@
       .pagination{
         width: 300px;
       }   
+      .searchback{
+        display:inline-block;
+        justify-content: space-between;
+        height: 50px;
+        margin-bottom: 10px;
+    }
   }
   
