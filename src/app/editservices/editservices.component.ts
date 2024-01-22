@@ -100,6 +100,7 @@ export class EditservicesComponent {
            serviceName: this.serviceForm.serviceName, // Corrected property name
            description: this.serviceForm.description,
            price:this.serviceForm.price,
+           bannerUrl:this.serviceForm.bannerUrl,
            warrentyDuration:this.serviceForm.warrentyDuration,
            encodeDocument:base64String
          };
@@ -111,6 +112,7 @@ export class EditservicesComponent {
           (res:any) => {
          console.log("updated succesfully",res)
             this.serviceForm={};
+            window.location.reload();
           },
           (error) => {
             console.error('Error adding category:', error);
@@ -122,6 +124,7 @@ export class EditservicesComponent {
     } else {
       console.error('No file selected');
     }
+    // window.location.reload();
   }
   // serviceSubmit1(){
   //   if (this.encodeDocument) {

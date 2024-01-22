@@ -85,14 +85,14 @@
 
     <!-- Assigned Column -->
     <ng-container matColumnDef="isAssigned">
-      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Assigned </mat-header-cell>
-      <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.isAssigned ? 'Yes' : 'No' }} </mat-cell>
+      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Payment status </mat-header-cell>
+      <mat-cell class="text-secondary" *matCellDef="let invoice">{{invoice.paymentStatus}}  </mat-cell>
     </ng-container>
-
+    <!-- {{ invoice.isAssigned ? 'Yes' : 'No' }} -->
     <!-- Service Started Column -->
     <ng-container matColumnDef="serviceStarted">
-      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Service Started </mat-header-cell>
-      <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.serviceStarted ? 'Yes' : 'No' }} </mat-cell>
+      <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef>Order Status </mat-header-cell>
+      <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderStatus }} </mat-cell>
     </ng-container>
     
 

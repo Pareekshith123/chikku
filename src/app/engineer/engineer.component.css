@@ -21,7 +21,7 @@ body {
 }
 
 .notifications-container {
-    max-width: 100%;
+    width: 400px;
     scroll-behavior: hidden;
     scroll-margin: 2px;
 }
@@ -108,6 +108,7 @@ input[type="checkbox"] {
     }
 
     .notifications-container {
+      
         margin-top: 10%;
     }
 .container-1{

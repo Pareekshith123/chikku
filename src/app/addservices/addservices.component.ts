@@ -74,9 +74,12 @@ export class AddservicesComponent {
         this.serviceForm = {
           subCategoryId: this.selectedSubCategoryId,
           serviceId:this.selectedServiceId,
-           serviceName: this.serviceForm.serviceName, // Corrected property name
+           serviceName: this.serviceForm.serviceName,
+          
            description: this.serviceForm.description,
+          bannerUrl:this.serviceForm.bannerUrl,
            price:this.serviceForm.price,
+
            warrentyDuration:this.serviceForm.warrentyDuration,
            encodeDocument:base64String
          };
@@ -87,6 +90,7 @@ export class AddservicesComponent {
          console.log(res)
             this.serviceForm={};
             Swal.fire("service added successfully")
+            window.location.reload();
           },
           (error) => {
             console.error('Error adding service:', error);
