@@ -63,11 +63,11 @@
 }
 .showpieace{
   max-width: 400px; 
-  margin-left: 21px;
+  margin-left: 30px;
 }
 .container.wide {
   width: 100%;
-  max-width: 2000vw;
+  max-width: 200vw;
   margin: 0 auto;
   padding: 10px;
   margin-right: 20px;
@@ -200,6 +200,10 @@ scroll-snap-type: proximity;
     scroll-behavior: hidden;
     scroll-margin: 2px;
   }
+  .showpieace{
+    max-width: 400px; 
+    margin-left: 45px;
+  }
   .cattille{
     width: 200px;
     margin-left: 0px;
@@ -208,7 +212,8 @@ scroll-snap-type: proximity;
     border-radius: 20px;
     scroll-padding-inline-start: initial;
   }
-  .listtille{margin-left: 15px;
+  .listtille{
+    margin-left: 0px;
     width: 180px;
     font-size: medium;
     height: 80px;
