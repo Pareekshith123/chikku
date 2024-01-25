@@ -1,4 +1,4 @@
-/* Default styles for larger screens */
+
 
 .flex-container {
   display: flex;
@@ -73,8 +73,8 @@
   margin-right: 20px;
 }
 .notifications-container {
-   width: 400px;
-scroll-snap-type: proximity;
+  width: 380px;
+  scroll-snap-type: proximity;
   scroll-margin: 2px;
   scroll-padding-block-start: initial;
   scrollbar-width: 2px;
@@ -99,7 +99,7 @@ scroll-snap-type: proximity;
   margin-bottom: 20px;
 }
 .subcategory-item {
-  background-color: #f8f9fa; /* Your desired background color */
+  background-color: #f8f9fa; 
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -125,14 +125,14 @@ scroll-snap-type: proximity;
   bottom: 20px;
   right: 20px;
 
-  color: #fff; /* Set the text color */
+  color: #fff; 
   border: none;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 
-/* Style the arrow icon */
+
 .scroll-arrow i {
   font-size: 44px;
 }
@@ -141,7 +141,7 @@ scroll-snap-type: proximity;
   height: 50px;
   border-radius: 40%;
 }
-/* Media query for smaller screens (e.g., mobile) */
+
 @media (max-width: 720px) {
   .container.wide {
     
@@ -165,7 +165,7 @@ scroll-snap-type: proximity;
      margin: 3px;
   }
   #subcategory{
-    margin-left: 40px;
+    margin-left: 45px;
   }
   .content{
     margin-left: 10px;
@@ -237,17 +237,15 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Your CSS Style */
-/* Your existing styles for .notifications-container */
-/* Your existing styles for .notifications-container */
+
 .notifications-container {
   background-color: #f0f0f0;
-  padding: 20px;
+  padding: 5px;
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 330px;
-  margin: 15px auto;
+ 
   height: 400px;
   overflow-y: auto;
   scroll-snap-type: end;
@@ -257,25 +255,22 @@ body {
 
 
 
-/* Adjust the scrollbar height */
 .notifications-container::-webkit-scrollbar {
   width: 8px; 
-  /* You can adjust this value to decrease the scrollbar width */
+
 }
 
-/* Styles for the scrollbar thumb and track */
 .notifications-container::-webkit-scrollbar-thumb {
-  background-color: #888; /* You can set the color of the scrollbar thumb */
+  background-color: #888; 
   border-radius: 5px;
-  height: 40px; /* You can adjust the border radius for rounded corners */
+  height: 40px; 
 }
 
 .notifications-container::-webkit-scrollbar-track {
   background-color: #f0f0f0; 
-  height: 40px;/* You can set the color of the scrollbar track */
+  height: 40px;
 }
 
-/* Your existing styles for .services-list */
 .services-list {
   padding: 0;
   height: 350px;
@@ -298,9 +293,10 @@ body {
 .services-list li:hover {
   background-color: #e0e0e0;
 }
+
 .scale-effect:hover {
   transition-duration: 0s;
-  transform: scale(1.02); /* Adjust the scale factor as needed */
+  transform: scale(1.02); 
 }
 .charts{
   padding: 12px;
@@ -310,14 +306,17 @@ body {
       padding: 12px;
       max-width: 250px;
   }
+  .editContent{
+    margin-left: 40px;
+  }
   .notifications-container {
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 5px;
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 220px;
-    margin: 15px auto;
+
     max-height: 400px;
     overflow-y: auto;
   }
