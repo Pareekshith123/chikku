@@ -33,6 +33,7 @@ interface Invoice {
   styleUrls: ['./paymentinvoice.component.css']
 })
 export class PaymentinvoiceComponent implements OnInit {
+  isSearching:boolean=false;
   invoices: Invoice[] = [];
   loading: boolean = true;
   error: string | null = null;
@@ -41,6 +42,7 @@ export class PaymentinvoiceComponent implements OnInit {
   maxPages = 8;
   displayedColumns: string[] = ['userName', 'emailId', 'mobileNumber', 'totalPrice', 'orderNumber', 'orderStatus', 'isAssigned', 'serviceStarted'];
   dataSource = new MatTableDataSource<Invoice>([]); // Initialize with an empty array
+  orders1: Invoice[] = [];
 
   constructor(private adminServiceService: AdminServiceService, private router: Router) {}
 
@@ -85,7 +87,22 @@ export class PaymentinvoiceComponent implements OnInit {
       return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
     }
   }
+  search(event: any): void {
+    if (parseInt((event.target as HTMLInputElement).value, 10) > 0) {
+      this.isSearching=true;
+      console.log(this.isSearching)
+    }
+    this.isSearching=true;
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase();
+    console.log("searching",searchTerm)
+    this.orders1 = this.invoices.filter(order =>
+      Object.values(order)
+        .some(value => value && typeof value === 'string' && value.toLowerCase().includes(searchTerm))
+    );
 
+    console.log("searched array",this.orders1)
+  }
+  
   setPage(event: PageEvent): void {
     if (event.pageIndex !== undefined) {
       this.page = event.pageIndex + 1;

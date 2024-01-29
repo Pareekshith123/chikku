@@ -21,12 +21,14 @@ interface Order {
   styleUrls: ['./paylater-orders.component.css']
 })
 export class PaylaterOrdersComponent {
+   isSearching:boolean=false;
   orders: Order[] = [];
   page = 1; 
   pageSize = 5;
   maxPages = 8;
   displayedColumns: string[] = ['userName', 'emailId', 'mobileNumber', 'totalPrice', 'orderNumber', 'orderStatus', 'isAssigned', 'serviceStarted'];
   dataSource = new MatTableDataSource<Order>([]);
+  orders1: Order[]=[];
   constructor(private adminservice: AdminServiceService,private router:Router) {}
 back(){
   this.router.navigate(['/']);
@@ -48,6 +50,9 @@ back(){
   ngOnInit() {
     this.getOrders();
   }
+
+
+  
   get totalPages(): number {
     return Math.ceil(this.orders.length / this.pageSize);
   }
@@ -67,7 +72,22 @@ back(){
       return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
     }
   }
+  search(event: any): void {
+    if (parseInt((event.target as HTMLInputElement).value, 10) > 0) {
+      this.isSearching=true;
+      console.log(this.isSearching)
+    }
+    this.isSearching=true;
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase();
+    console.log("searching",searchTerm)
+    this.orders1 = this.orders.filter(order =>
+      Object.values(order)
+        .some(value => value && typeof value === 'string' && value.toLowerCase().includes(searchTerm))
+    );
 
+    console.log("searched array",this.orders1)
+  }
+  
   setPage(event: PageEvent): void {
     if (event.pageIndex !== undefined) {
       this.page = event.pageIndex + 1;

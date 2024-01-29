@@ -36,6 +36,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -67,18 +69,24 @@ import {MatIconModule} from '@angular/material/icon';
     
   
   ],
+
+
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule,
+  
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatPaginatorModule,
-    MatPaginatorModule,
+ 
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+
   ],
   providers: [
     {
