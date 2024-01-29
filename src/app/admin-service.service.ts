@@ -6,7 +6,7 @@ import { Observable, identity } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminServiceService {
-  private baseUrl = 'chikku'; 
+  private baseUrl = 'chikkulive'; 
   authToken: any;
   
   constructor(private http: HttpClient) { }
