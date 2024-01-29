@@ -8,6 +8,13 @@
   margin-top: 10px; margin-left: 30px;
  
 }
+.services-list {
+ 
+  height: 350px;
+  scroll-padding-block: initial;
+  scroll-behavior: smooth;
+  scroll-padding: 10px;
+}
 .font-bold{
   font-size: large;
   color: black;
@@ -167,6 +174,17 @@
   #subcategory{
     margin-left: 45px;
   }
+  .cattille{
+    align-items: center;
+    width: 340px;
+    height: 140px;margin: 5px;
+    background-color:rgb(236, 232, 225) ;
+    border-radius: 20px;
+  }
+  .listtille{margin-left: 80px;
+    width: 250px;
+    height: 40px;
+  }
   .content{
     margin-left: 10px;
   }
@@ -319,6 +337,21 @@ body {
 
     max-height: 400px;
     overflow-y: auto;
+  }
+  .cattille{
+    width: 200px;
+    margin-top: 10px;
+    height: 150px;margin: 10px;
+    background-color:rgb(236, 232, 225) ;
+    border-radius: 20px;
+    scroll-padding-inline-start: initial;
+  }
+  .listtille{
+    margin-left: 15px;
+    margin-top: 50px;
+    width: 180px;
+    font-size: medium;
+    height: 50px;
   }
  
 }

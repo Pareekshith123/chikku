@@ -1,7 +1,7 @@
 
 {
   "/chikku/*": {
-    "target": "https://staging.chikku4u.com",
+    "target": "https://staging.chikku4u.com/",
     "secure": false,
     "logLevel": "debug"
   }
