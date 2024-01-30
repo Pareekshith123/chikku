@@ -1,4 +1,3 @@
-// engineer-form.component.ts
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service';
 import Swal from 'sweetalert2';
@@ -8,7 +7,9 @@ import Swal from 'sweetalert2';
   templateUrl: './engineer-form.component.html',
   styleUrls: ['./engineer-form.component.css']
 })
-export class EngineerFormComponent {
+export class EngineerFormComponent implements OnInit {
+  displayedColumns: string[] = ['engineerName', 'mobileNumber', 'expertise', 'experience', 'actions', 'addEngineer'];
+
   createEngineer() {
     this.isUpdateTrue = false;
     this.engineer = {
@@ -19,24 +20,22 @@ export class EngineerFormComponent {
       experience: null,
       bio: ''
     };
-    throw new Error('Method not implemented.');
   }
+
   onUpdate() {
-    console.log("up", this.engineer)
+    console.log("up", this.engineer);
     this.engineerService.updateEngineer(this.engineer).subscribe(() => {
-      Swal.fire("Updated Succesfully",)
+      Swal.fire("Updated Successfully");
       this.getAllEngineers();
     }, (error) => {
-      console.log(error)
-    }
-    )
-    this.getAllEngineers();
-    throw new Error('Method not implemented.');
+      console.error(error);
+    });
   }
-  allEngineers: any = [];
-  isUpdateTrue: boolean = false;
-  constructor(private engineerService: AdminServiceService) { }
 
+  allEngineers: any[] = [];
+  isUpdateTrue: boolean = false;
+
+  constructor(private engineerService: AdminServiceService) { }
 
   ngOnInit() {
     this.getAllEngineers();
@@ -53,9 +52,8 @@ export class EngineerFormComponent {
 
   onSubmit() {
     console.log(this.engineer);
-  
+
     if (
-     
       this.engineer.engineerName !== '' &&
       this.engineer.mobileNumber !== '' &&
       this.engineer.expertise !== '' &&
@@ -65,7 +63,6 @@ export class EngineerFormComponent {
       this.engineerService.createEngineer(this.engineer).subscribe(
         () => {
           console.log('Engineer added successfully');
-          // Optionally, reset the form or clear input fields
           this.engineer = {
             engineerId: 0,
             engineerName: '',
@@ -88,32 +85,28 @@ export class EngineerFormComponent {
       });
     }
   }
-  
+
   getAllEngineers() {
     this.engineerService.getAllEngineers().subscribe((data) => {
       this.allEngineers = data;
-      console.log('Enineers', this.allEngineers)
-
-    })
+      console.log('Engineers', this.allEngineers);
+    });
   }
+
   editEngineer(engineerId: number) {
-    this.isUpdateTrue = true
+    this.isUpdateTrue = true;
     this.engineerService.GetEngineerByEngineerId(engineerId).subscribe((data) => {
       this.engineer = data;
-      console.log("edit this", this.engineer)
+      console.log("edit this", this.engineer);
     });
-
   }
 
   deleteEngineer(engineerId: number) {
-    console.log("del id", engineerId)
+    console.log("del id", engineerId);
     this.engineerService.deleteEngineer(engineerId).subscribe(() => {
-      Swal.fire("deleted successfully")
-      console.log("deleted succesfully")
-
+      Swal.fire("Deleted successfully");
+      console.log("Deleted successfully");
       this.getAllEngineers();
-
     });
-    window.location.reload();
   }
 }

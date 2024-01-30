@@ -32,6 +32,12 @@ margin-top: 90px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.demo-table{
+    background-color: rgb(89, 207, 73);
+    max-width:100% ;
+   
+  
+  }
 
 /* Responsive styles */
 @media (max-width: 768px) {
