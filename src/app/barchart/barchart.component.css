@@ -1,5 +1,6 @@
 .charts{
     padding: 12px;
+    margin-top: -20px;
 }
 @media screen and (max-width:760px){
     .charts{

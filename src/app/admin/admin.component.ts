@@ -70,13 +70,13 @@ export class AdminComponent implements OnInit,AfterViewInit {
       console.log( this.services);
     });
   }
-  getAllEngineers(){
-    this.categoryService.getAllEngineers().subscribe((data)=>{
-      this.allEngineers=data;
-      console.log('Enineers',this.allEngineers)
-    
-    })
-    }
+  getAllEngineers() {
+    this.categoryService.getAllEngineers().subscribe((data) => {
+      this.allEngineers = data.slice(0,4); // Slice the array and assign it to allEngineers
+      console.log('Engineers', this.allEngineers);
+    });
+  }
+  
   createChart() {
     const ctx = document.getElementById('ordersChart') as HTMLCanvasElement;
     const ordersChart = new Chart(ctx, {

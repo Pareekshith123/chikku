@@ -107,6 +107,8 @@ export class EngineerFormComponent implements OnInit {
       Swal.fire("Deleted successfully");
       console.log("Deleted successfully");
       this.getAllEngineers();
+     
     });
+    window.location.reload();
   }
 }

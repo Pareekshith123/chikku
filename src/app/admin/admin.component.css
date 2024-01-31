@@ -15,6 +15,9 @@
   scroll-behavior: smooth;
   scroll-padding: 10px;
 }
+.charts{
+  margin-top: -20px;
+}
 .font-bold{
   font-size: large;
   color: black;
@@ -75,9 +78,9 @@
 .container.wide {
   width: 100%;
   max-width: 200vw;
-  margin: 0 auto;
+  margin:  auto;
   padding: 10px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 .notifications-container {
   width: 380px;
@@ -85,7 +88,15 @@
   scroll-margin: 2px;
   scroll-padding-block-start: initial;
   scrollbar-width: 2px;
-
+  margin-top: 20px;
+  margin-left: 5px;
+}
+.seebutton{
+  margin-left: 90%;
+  width: 100px;
+  height: 30px;
+  margin-top: 15px;
+  border-radius: 10px;
 }
 .component {
   display: flex;
@@ -282,6 +293,7 @@ body {
   background-color: #888; 
   border-radius: 5px;
   height: 40px; 
+  margin-top: 20px;
 }
 
 .notifications-container::-webkit-scrollbar-track {
@@ -334,7 +346,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 220px;
-
+ 
     max-height: 400px;
     overflow-y: auto;
   }

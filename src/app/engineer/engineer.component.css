@@ -135,7 +135,7 @@ input[type="checkbox"] {
 
 @media screen {
     .notifications-container {
-        background-color: #f0f0f0;
+        background-color: #f0efef;
         padding: 20px;
         border: 2px solid black;
         border-radius: 10px;

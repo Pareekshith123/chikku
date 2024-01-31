@@ -28,15 +28,19 @@ margin-top: 90px;
     list-style-type: none;
    overflow-y: auto;
     background-color: #f8f9fa;; /* White background for the list */
-    border: 1px solid #dee2e6; /* Light border color */
+    border: 1px solid #106dca; /* Light border color */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .demo-table{
-    background-color: rgb(89, 207, 73);
-    max-width:100% ;
+    background-color: rgb(11, 202, 216);
+    max-width:80% ;
    
   
+  }
+  .text1{
+    background-color:whitesmoke;
+    color: rgb(0, 0, 0);
   }
 
 /* Responsive styles */

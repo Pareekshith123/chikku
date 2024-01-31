@@ -36,18 +36,19 @@
       <!-- Import MatTableModule, MatSortModule, MatPaginatorModule in your module -->
      <div *ngIf="!isSearching">
       <mat-table [dataSource]="invoices | slice: (page-1)*pageSize : page*pageSize" matSort matPaginator
-      class="mat-elevation-z8 demo-table ">
+      class="mat-elevation-z8 demo-table">
 
       <!-- Customer Name Column -->
       <ng-container matColumnDef="userName">
         <mat-header-cell style="background-color:lavender;" class="text-primary" *matHeaderCellDef mat-sort-header> Customer Name </mat-header-cell>
-        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.userName }} </mat-cell>
+        <mat-cell class="text-secondary " *matCellDef="let invoice"> {{ invoice.userName }} </mat-cell>
       </ng-container>
 
       <!-- Email Column -->
       <ng-container matColumnDef="emailId">
         <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email </mat-header-cell>
         <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.emailId }} </mat-cell>
+     
       </ng-container>
 
       <!-- Contact Column -->
