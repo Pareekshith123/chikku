@@ -1,0 +1,33 @@
+<div class="helpdesk">
+    <button id="helpdesk-popup-button" (click)="openSupportPopup()">
+        Vegus
+        <img style="height:60px;" src="/assets/chat.png" alt="Chat Icon">
+    </button>
+    <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
+        <div id="helpdesk-popup-header">
+            Pollmonk Helpdesk
+            <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
+                Shut Up
+            </button>
+        </div>
+        <div id="helpdesk-popup-body">
+            <div class="messages" #scrollMe>
+                <div *ngFor="let question of messages" class="message">
+                    <div [class]="question.type">
+                        {{ question.question }}
+                    </div>
+                </div>
+                <div *ngIf="loading" class="message" style="width: 100%; display: block">
+                    <div [class]="'client'">...</div>
+                </div>
+            </div>
+        </div>
+        <form id="helpdesk-popup-footer" [formGroup]="chatForm">
+            <input formControlName="question" type="text" id="helpdesk-popup-input"
+                placeholder="Type your message here..." />
+            <button id="helpdesk-popup-submit-button" [disabled]="!chatForm.valid" (click)="sendMessage()">
+                Send
+            </button>
+        </form>
+    </div>
+</div>

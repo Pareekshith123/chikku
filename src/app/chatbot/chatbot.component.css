@@ -1,0 +1,88 @@
+/* Overall container */
+.helpdesk {
+  position: fixed; /* Keep it always visible */
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; /* Ensure it appears on top of other elements */
+}
+
+/* Chat button */
+#helpdesk-popup-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#helpdesk-popup-button img {
+  margin-left: 10px;
+}
+
+
+#helpdesk-popup {
+  display: none; 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup header */
+#helpdesk-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#helpdesk-popup-close-button {
+  background-color: #dc3545; /* Red */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Message container */
+.messages {
+  height: 300px;
+  overflow-y: auto; /* Enable scrolling for long conversations */
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.message.client {
+  background-color: #f0f0f0; /* Light gray for client messages */
+}
+
+.message.support {
+  background-color: #e0f7fa; /* Light blue for support messages */
+}
+
+/* Input and button */
+#helpdesk-popup-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+#helpdesk-popup-submit-button {
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

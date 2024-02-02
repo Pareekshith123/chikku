@@ -24,6 +24,7 @@ import { CompletedOrderComponent } from './completed-order/completed-order.compo
 import { AuthGuard } from 'src/AuthGuard';
 import { TotalordersComponent } from './totalorders/totalorders.component';
 import { CancelledordersComponent } from './cancelledorders/cancelledorders.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   {
@@ -99,6 +100,11 @@ const routes: Routes = [
 {
   path:'cancelledorders',
   component:CancelledordersComponent
+}
+,
+{
+  path:'chat',
+  component:ChatbotComponent
 }
 ,
 {

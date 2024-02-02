@@ -248,4 +248,8 @@ GetEngineerByEngineerId(id:any): Observable<any> {
     return this.http.get(`${this.baseUrl}/api/admin/getAllAssignedOrders`);
   
   }
-}
+  chat(question: string) {
+    return this.http.post('https://chikk-chatbot-app.onrender.com/api/ask', { question: question });
+    // return this.http.post('http://localhost:8080/chat', "pareekshith" );
+  
+}}

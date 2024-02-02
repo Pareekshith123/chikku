@@ -40,6 +40,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TotalordersComponent } from './totalorders/totalorders.component';
 import { CancelledordersComponent } from './cancelledorders/cancelledorders.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { CancelledordersComponent } from './cancelledorders/cancelledorders.comp
     CompletedOrderComponent,
     TotalordersComponent,
     CancelledordersComponent,
+    ChatbotComponent,
     
   
   ],
