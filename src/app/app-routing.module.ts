@@ -22,6 +22,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { PaylaterOrdersComponent } from './paylater-orders/paylater-orders.component';
 import { CompletedOrderComponent } from './completed-order/completed-order.component';
 import { AuthGuard } from 'src/AuthGuard';
+import { TotalordersComponent } from './totalorders/totalorders.component';
 
 const routes: Routes = [
   {
@@ -90,7 +91,11 @@ const routes: Routes = [
   path:'user',
   component:UserlistComponent
 },
-
+{
+  path:'totalorders',
+  component:TotalordersComponent
+}
+,
 {
   path:'allorders',
   component:PaymentinvoiceComponent

@@ -38,6 +38,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TotalordersComponent } from './totalorders/totalorders.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EngineerDashboardComponent,
     PaylaterOrdersComponent,
     CompletedOrderComponent,
+    TotalordersComponent,
     
   
   ],
