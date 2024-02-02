@@ -153,7 +153,7 @@ export class AdminComponent implements OnInit,AfterViewInit {
     
   }
   getCompletedOrders() {
-    this.categoryService.getAllCompletedOrders().subscribe(
+    this.categoryService.getAllCancelledOrders().subscribe(
       (data) => {
         this.CompletedOrders = data;
         console.log("CompletedOrders Orders:",this.CompletedOrders);

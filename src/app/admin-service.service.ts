@@ -118,6 +118,18 @@ getAllCompletedOrders(): Observable<any> {
     // Include the headers in the HTTP request
     return this.http.get(`${this.baseUrl}/api/admin/getAllCompletedOrders`);
   }
+getAllCancelledOrders(): Observable<any> {
+    // Get the token from wherever you store it (e.g., local storage, a service, etc.)
+    // const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJlZWtzaGl0aHRnQGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ0NzQ2MH0.VC_lmQo_0s_dmP0_rYpRlW1kZWkdzPCeXxZy_npFziw';
+
+    // Set the authorization header with the Bearer token
+    // const headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${this.authToken}`
+    // });
+
+    // Include the headers in the HTTP request
+    return this.http.get(`${this.baseUrl}/api/admin/getAllCancelledOrders`);
+  }
   getOtp(mobileNumber:string){
   return this.http.get(`${this.baseUrl}/login?mobileNumber=${mobileNumber}`)
   }

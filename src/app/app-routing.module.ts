@@ -23,6 +23,7 @@ import { PaylaterOrdersComponent } from './paylater-orders/paylater-orders.compo
 import { CompletedOrderComponent } from './completed-order/completed-order.component';
 import { AuthGuard } from 'src/AuthGuard';
 import { TotalordersComponent } from './totalorders/totalorders.component';
+import { CancelledordersComponent } from './cancelledorders/cancelledorders.component';
 
 const routes: Routes = [
   {
@@ -94,6 +95,10 @@ const routes: Routes = [
 {
   path:'totalorders',
   component:TotalordersComponent
+},
+{
+  path:'cancelledorders',
+  component:CancelledordersComponent
 }
 ,
 {

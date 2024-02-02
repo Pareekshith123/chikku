@@ -1,0 +1,163 @@
+<app-navbar></app-navbar>
+
+<div class="d-flex">
+  <app-sidebar></app-sidebar>
+  <div class="call container mt-4">
+    <!-- HTML -->
+    <div *ngIf="loading" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger">
+      <p>Error: {{ error }}</p>
+    </div>
+
+    <div *ngIf="!loading && !error" class="custom-container">
+      <div class="container mt-3 searchback">
+        <button class="btn" (click)="back()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z" />
+            <path d="M13.293 7.293 8.586 12l4.707 4.707 1.414-1.414L11.414 12l3.293-3.293-1.414-1.414z" />
+          </svg>
+        </button>
+        <h1>Total Cancelledorders list</h1>
+        <form class="form-inline d-flex">
+          <input type="search" class="form-control mr-sm-2" placeholder="Search..." aria-label="Search" (input)="search($event)">
+
+          <svg class="feather feather-search" fill="none" height="54" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 22 22" width="24"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" x2="16.65" y1="21" y2="16.65" />
+        </svg>
+        </form>
+      </div>
+
+      <!-- Import MatTableModule, MatSortModule, MatPaginatorModule in your module -->
+     <div *ngIf="!isSearching">
+      <mat-table [dataSource]="invoices | slice: (page-1)*pageSize : page*pageSize" matSort matPaginator
+      class="mat-elevation-z8 demo-table">
+
+      <!-- Customer Name Column -->
+      <ng-container matColumnDef="userName">
+        <mat-header-cell style="background-color:lavender;" class="text-primary" *matHeaderCellDef mat-sort-header> Customer Name </mat-header-cell>
+        <mat-cell class="text-secondary " *matCellDef="let invoice"> {{ invoice.userName }} </mat-cell>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="emailId">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.emailId }} </mat-cell>
+     
+      </ng-container>
+
+      <!-- Contact Column -->
+      <ng-container matColumnDef="mobileNumber">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Contact </mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.mobileNumber }} </mat-cell>
+      </ng-container>
+
+      <!-- Amount Column -->
+      <ng-container matColumnDef="totalPrice">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> ₹{{ invoice.totalPrice }} </mat-cell>
+      </ng-container>
+
+      <!-- Order Number Column -->
+      <ng-container matColumnDef="orderNumber">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Order Number </mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderNumber }} </mat-cell>
+      </ng-container>
+
+      <!-- Email Status Column -->
+      <ng-container matColumnDef="orderStatus">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email Status </mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderStatus ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Assigned Column -->
+      <ng-container matColumnDef="isAssigned">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef>Payment Staus</mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.paymentStatus }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Service Started Column -->
+      <ng-container matColumnDef="serviceStarted">
+        <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Oders Status</mat-header-cell>
+        <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderStatus  }}
+        </mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator showFirstLastButtons [length]="dataSource.data.length" [pageSize]="pageSize"
+      (page)="setPage($event)">
+    </mat-paginator>
+     </div>
+      <div *ngIf="isSearching">  <mat-table [dataSource]="orders1 | slice: (page-1)*pageSize : page*pageSize" matSort matPaginator class="mat-elevation-z8 demo-table " >
+
+        <!-- Customer Name Column -->
+        <ng-container matColumnDef="userName" >
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef mat-sort-header> Customer Name </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> {{ order.userName }} </mat-cell>
+        </ng-container>
+      
+        <!-- Email Column -->
+        <ng-container matColumnDef="emailId">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Email </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> {{ order.emailId }} </mat-cell>
+        </ng-container>
+      
+        <!-- Contact Column -->
+        <ng-container matColumnDef="mobileNumber">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Total Price </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> ₹{{ order.totalPrice }}  </mat-cell>
+        </ng-container>
+      
+        <!-- Amount Column -->
+        <ng-container matColumnDef="totalPrice">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Amount </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> ₹{{ order.totalPrice }} </mat-cell>
+        </ng-container>
+      
+        <!-- Order Number Column -->
+        <ng-container matColumnDef="orderNumber">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Order Number </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> {{ order.orderNumber }} </mat-cell>
+        </ng-container>
+      
+        <!-- Email Status Column -->
+        <ng-container matColumnDef="orderStatus">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Date Slot:</mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> {{ (order.dateSlot | date:'yyyy-MM-dd') || order.dateSlot }} </mat-cell>
+        </ng-container>
+      
+        <!-- Assigned Column -->
+        <ng-container matColumnDef="isAssigned">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Time </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order">{{ order.timeSlot }} </mat-cell>
+        </ng-container>
+      
+        <!-- Service Started Column -->
+        <ng-container matColumnDef="serviceStarted">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Service Started </mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let order"> {{ order.serviceStarted ? 'Yes' : 'No' }} </mat-cell>
+        </ng-container>
+        
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator 
+      
+       showFirstLastButtons [length]="dataSource.data.length" [pageSize]="pageSize" (page)="setPage($event)">
+      </mat-paginator></div>
+      <!-- [pageSizeOptions]="[5, 10, 25, 100]" -->
+
+    </div>
+  </div>
+</div>

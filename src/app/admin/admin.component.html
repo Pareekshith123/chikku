@@ -7,8 +7,11 @@
       <div class="brisk m-3">
          <div class="dashbox curser  text-bg-danger scale-effect" routerLink="/totalorders">
             <div style="margin-top: 20px;">
+
                <p class="text-center p-6">Total Orders</p>
+
                <p class="text-center ">{{orders.length }}</p>
+
             </div>
 
 
@@ -33,15 +36,17 @@
 
          </div>
          <div class="p-1"></div>
-         <div class="dashbox curser text-bg-success scale-effect" routerLink="/completed">
+         <div class="dashbox curser text-bg-success scale-effect" routerLink="/cancelledorders">
             <div style="margin-top: 20px;">
-               <p class="text-center p-6"> Completed Orders</p>
+               <p class="text-center p-6"> Cancelled Orders</p>
                <p class="text-center ">{{CompletedOrders.length}}</p>
+
             </div>
          </div>
       </div>
+
       <div class="brisk">
-         
+
          <div class=" marg" *ngFor="let engineer of allEngineers">
             <div class="dashbox border   scale-effect">
                <p class="text-center curser ">{{ engineer.engineerName }}</p>

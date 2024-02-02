@@ -39,6 +39,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TotalordersComponent } from './totalorders/totalorders.component';
+import { CancelledordersComponent } from './cancelledorders/cancelledorders.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { TotalordersComponent } from './totalorders/totalorders.component';
     PaylaterOrdersComponent,
     CompletedOrderComponent,
     TotalordersComponent,
+    CancelledordersComponent,
     
   
   ],
