@@ -137,15 +137,20 @@
         </ng-container>
       
         <!-- Assigned Column -->
-        <ng-container matColumnDef="isAssigned">
-          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Time </mat-header-cell>
-          <mat-cell class="text-secondary" *matCellDef="let order">{{ order.timeSlot }} </mat-cell>
-        </ng-container>
+      
       
         <!-- Service Started Column -->
+        <ng-container matColumnDef="isAssigned">
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef>Payment Staus</mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.paymentStatus }}
+          </mat-cell>
+        </ng-container>
+  
+        <!-- Service Started Column -->
         <ng-container matColumnDef="serviceStarted">
-          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Service Started </mat-header-cell>
-          <mat-cell class="text-secondary" *matCellDef="let order"> {{ order.serviceStarted ? 'Yes' : 'No' }} </mat-cell>
+          <mat-header-cell class="text-primary" style="background-color:lavender;" *matHeaderCellDef> Oders Status</mat-header-cell>
+          <mat-cell class="text-secondary" *matCellDef="let invoice"> {{ invoice.orderStatus  }}
+          </mat-cell>
         </ng-container>
         
       
