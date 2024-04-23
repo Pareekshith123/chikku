@@ -110,6 +110,7 @@ export class EditservicesComponent {
     
         this.adminServiceService.updateServices(this.serviceForm).subscribe(
           (res:any) => {
+            console.log("Updateobject",this.serviceForm)
          console.log("updated succesfully",res)
             this.serviceForm={};
             window.location.reload();
