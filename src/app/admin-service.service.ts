@@ -66,6 +66,10 @@ getCategories() {
     return this.http.get(`${this.baseUrl}/api/service/getServicesBySubCategory?subCategoryId=${id}`);
 
   }
+  getAllServiceTypes(){
+    return this.http.get(`${this.baseUrl}/api/serviceType/getAllServiceTypes`);
+
+  }
   getAllServicesByServiceId(id: number){
     return this.http.get(`${this.baseUrl}/api/service/getServiceById?serviceId=${id}`);
 

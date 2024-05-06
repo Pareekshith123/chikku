@@ -13,6 +13,9 @@ export class EditservicesComponent {
   subcategoryData: any = {};
   newSubcategory: any = {};
   selectedSubCategoryId:any=0;
+  selectedServiceTypeId: any = 0;
+  serviceTypes:any[] =[];
+
   selectedServiceId:any=0;
   getServicesbyIdList:any[]=[];
  serviceForm:any={}
@@ -21,6 +24,7 @@ export class EditservicesComponent {
 
   ngOnInit(): void {
     this.getCategories();
+   this.getAllServiceType();
     console.log(this.selectedCategoryId);
   }
 
@@ -29,12 +33,23 @@ export class EditservicesComponent {
       this.categories = data;
     });
   }
- 
+  onServiceTypechange(){
+    if (this.selectedServiceTypeId) {
+      console.log("serviceTypeId",this.selectedServiceTypeId)
+    }
+console.log(this.serviceForm);    
+  }
   onFileChange(event: any): void {
     const fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       this.encodeDocument = fileList[0];
     }
+  }
+  getAllServiceType() {
+    this.adminServiceService.getAllServiceTypes().subscribe((res: any) => {
+      this.serviceTypes = res;
+      console.log(this.serviceTypes)
+    });
   }
 
   onCategoryChange(): void {
@@ -99,6 +114,9 @@ export class EditservicesComponent {
           serviceId:this.selectedServiceId,
            serviceName: this.serviceForm.serviceName, // Corrected property name
            description: this.serviceForm.description,
+           serviceTypeId: this.selectedServiceTypeId, // Assign selectedServiceTypeId here
+
+          //  serviceTypeId:this.serviceForm.serviceTypeId,
            price:this.serviceForm.price,
            bannerUrl:this.serviceForm.bannerUrl,
            warrentyDuration:this.serviceForm.warrentyDuration,

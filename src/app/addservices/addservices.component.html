@@ -64,7 +64,15 @@
                             class="form-control border rounded w-full py-2 px-3" required="" value=""
                             [(ngModel)]="serviceForm.warrantyDuration" />
                     </div>
-        
+                    <div class="d-flex justify-content-center align-items-center p-2 bg-light mb-3">
+                  <label>serviceType</label>
+                      <select class="form-select border rounded w-100 py-2 px-3" [(ngModel)]="selectedServiceTypeId" name="selectedServiceTypeId" (change)="onServiceTypechange()">
+                        <option *ngFor="let serviceType of serviceTypes" [value]="serviceType.serviceTypeId">{{ serviceType.serviceTypeName }}</option>
+                      </select>
+                      
+                    </div>
+                  
+                  
         
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

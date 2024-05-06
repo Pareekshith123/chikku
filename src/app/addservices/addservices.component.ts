@@ -13,6 +13,8 @@ export class AddservicesComponent {
   subcategories: any[] = [];
   subcategoryData: any = {};
   newSubcategory: any = {};
+  serviceTypes:any[] =[];
+  selectedServiceTypeId: any = 0;
   selectedSubCategoryId:any=0;
   selectedServiceId:any=0;
  serviceForm:any={}
@@ -21,7 +23,9 @@ export class AddservicesComponent {
 
   ngOnInit(): void {
     this.getCategories();
-    console.log(this.selectedCategoryId);
+  
+
+    this.getAllServiceType();
   }
 
   getCategories(): void {
@@ -38,7 +42,7 @@ export class AddservicesComponent {
 
   onCategoryChange(): void {
     if (this.selectedCategoryId) {
-      console.log(this.selectedCategoryId);
+      console.log("selectedCategoryId",this.selectedCategoryId);
       this.adminServiceService.getSubcategories(this.selectedCategoryId).subscribe((data: any) => {
         this.subcategories = data;
         console.log(data);
@@ -47,7 +51,7 @@ export class AddservicesComponent {
   }
   onSubcategorychange(): void{
     if (this.selectedSubCategoryId) {
-      console.log(this.selectedSubCategoryId)
+      console.log("selectedSubCategoryId",this.selectedSubCategoryId)
     }
   }
 
@@ -64,6 +68,12 @@ export class AddservicesComponent {
       );
     }
   }
+  onServiceTypechange(){
+    if (this.selectedServiceTypeId) {
+      console.log("serviceTypeId",this.selectedServiceTypeId)
+    }
+console.log(this.serviceForm);    
+  }
   serviceSubmit(): void {
     if (this.encodeDocument) {
       const reader = new FileReader();
@@ -75,7 +85,7 @@ export class AddservicesComponent {
           subCategoryId: this.selectedSubCategoryId,
           serviceId:this.selectedServiceId,
            serviceName: this.serviceForm.serviceName,
-          
+           serviceTypeId: this.selectedServiceTypeId, // Assign selectedServiceTypeId here
            description: this.serviceForm.description,
           bannerUrl:this.serviceForm.bannerUrl,
            price:this.serviceForm.price,
@@ -115,28 +125,36 @@ export class AddservicesComponent {
            serviceName: this.serviceForm.serviceName, // Corrected property name
            description: this.serviceForm.description,
            price:this.serviceForm.price,
+           serviceTypeId:this.selectedServiceId,
+
            warrentyDuration:this.serviceForm.warrentyDuration,
            encodeDocument:base64String
          };
          console.log(this.serviceForm)
   
         // Call the modified addCategory method with the requestData object
-        this.adminServiceService.addService(this.serviceForm).subscribe(
-          (res:any) => {
-         console.log(res)
-            this.serviceForm={};
-          },
-          (error) => {
-            console.error('Error adding category:', error);
-          }
-        );
+        // this.adminServiceService.addService(this.serviceForm).subscribe(
+        //   (res:any) => {
+        //  console.log(res)
+        //     this.serviceForm={};
+        //   },
+        //   (error) => {
+        //     console.error('Error adding category:', error);
+        //   }
+        // );
       };
   
       reader.readAsDataURL(this.encodeDocument);
     } 
     
   }
-
+  getAllServiceType() {
+    this.adminServiceService.getAllServiceTypes().subscribe((res: any) => {
+      this.serviceTypes = res;
+      console.log(this.serviceTypes)
+    });
+  }
+  
   onSubmit(): void {
     // Include selectedCategoryId in the newSubcategory object
     this.subcategoryData = {
