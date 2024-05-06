@@ -22,7 +22,11 @@
     
             <label for="subcategoryDescription">Description:</label>
             <textarea id="subcategoryDescription" name="description" [(ngModel)]="newSubcategory.description" name="subcategoryDescription" required></textarea>
-    
+            <div class="mb-4">
+              <label for="image" class="form-label text-gray-700 text-sm font-bold mb-2">Image Upload</label>
+              <input type="file" id="image" name="encodeDocument" accept="image/*" class="form-control py-2 px-3"
+                  (change)="onFileChange($event)" />
+          </div>
             <button type="submit">Add Subcategory</button>
         </form>
     </div>

@@ -14,7 +14,7 @@ export class EditsubcategoryComponent implements OnInit {
   subcategoryData: any = {};
   newSubcategory: any = {};
   selectedSubCategoryId:any=0;
-
+  encodeDocument: File | null = null;
   constructor(private adminServiceService: AdminServiceService) {}
 
   ngOnInit(): void {
@@ -28,7 +28,12 @@ export class EditsubcategoryComponent implements OnInit {
       this.categories = data;
     });
   }
-
+  onFileChange(event: any): void {
+    const fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      this.encodeDocument = fileList[0];
+    }
+  }
   onCategoryChange(): void {
     if (this.selectedCategoryId) {
       console.log(this.selectedCategoryId);
@@ -64,33 +69,36 @@ export class EditsubcategoryComponent implements OnInit {
   }
   
   onSubmit(): void {
-    // Include selectedCategoryId in the newSubcategory object
-    this.subcategoryData = {
-      subCategoryId:this.selectedSubCategoryId,
-      categoryId: this.selectedCategoryId,
-      subCategoryName: this.newSubcategory.subCategoryName, // Corrected property name
-      description: this.newSubcategory.description
-    };
-  
-    if (this.selectedCategoryId && this.newSubcategory.subCategoryName && this.newSubcategory.description) {
-      console.log(this.subcategoryData)
-      this.adminServiceService.updateSubcategory( this.subcategoryData).subscribe(
-        () => {
-          console.log('Subcategory added successfully');
-          this.subcategoryData = {};
-          this.newSubcategory = {}; 
-          this.onCategoryChange(); 
-        
-        },
-        (error) => {
-          console.error('Error adding subcategory:', error);
-        }
-      );
+    if (this.encodeDocument) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64String = reader.result as string;
+        this.subcategoryData = {
+          subCategoryId:this.selectedSubCategoryId,
+
+          categoryId: this.selectedCategoryId,
+          subCategoryName: this.newSubcategory.subCategoryName,
+          description: this.newSubcategory.description,
+          encodeDocument: base64String,
+        };
+
+        this.adminServiceService.updateSubcategory(this.subcategoryData).subscribe(
+          (res: any) => {
+            console.log("Subcategory added successfully", res);
+            this.subcategoryData = {};
+            this.newSubcategory = {};
+            this.onCategoryChange();
+          },
+          (error) => {
+            console.error('Error adding subcategory:', error);
+          }
+        );
+      };
+
+      reader.readAsDataURL(this.encodeDocument);
     } else {
-      console.error('Please fill in all the required fields');
-      // You might want to show a user-friendly error message here
+      console.error('No file selected');
     }
-    window.location.reload();
   }
   
 }
